@@ -33,7 +33,8 @@ model Team {
   homeMatches Match[] @relation("HomeMatches")
   AwayMatches Match[] @relation("AwayMatches")
 
-  events MatchEvent[]
+  events  MatchEvent[]
+  players Player[]
 }
 
 model Season {
@@ -79,14 +80,33 @@ model MatchEvent {
   extraTime Int
 
   type   String
-  detail String
+  detail String?
 
-  teamId   Int
-  playerId Int
+  teamId   Int?
+  playerId Int?
 
   match Match @relation(fields: [matchId], references: [id])
 
+  team Team? @relation(fields: [teamId], references: [id])
+
+  player Player? @relation(fields: [playerId], references: [id])
+
+  createdAt DateTime @default(now())
+}
+
+model Player {
+  id Int @id @default(autoincrement())
+
+  name        String
+  position    String?
+  nationality String?
+  dateOfBirth DateTime?
+
+  teamId Int
+
   team Team @relation(fields: [teamId], references: [id])
+
+  events MatchEvent[]
 
   createdAt DateTime @default(now())
 }
