@@ -29,4 +29,40 @@ model Team {
   league League @relation(fields: [leagueId], references: [id])
 
   createdAt DateTime @default(now())
+
+  homeMatches Match[] @relation("HomeMatches")
+  AwayMatches Match[] @relation("AwayMatches")
+}
+
+model Season {
+  id        Int    @id @default(autoincrement())
+  name      String
+  startYear Int
+  endYear   Int
+
+  matches Match[]
+
+  createdAt DateTime @default(now())
+}
+
+model Match {
+  id Int @id @default(autoincrement())
+
+  homeTeamId Int
+  awayTeamId Int
+
+  homeScore Int
+  awayScore Int
+
+  playedAt DateTime
+  status   String
+
+  seasonId Int
+
+  homeTeam Team @relation("HomeMatches", fields: [homeTeamId], references: [id])
+  awayTeam Team @relation("AwayMatches", fields: [awayTeamId], references: [id])
+
+  season Season @relation(fields: [seasonId], references: [id])
+
+  createdAt DateTime @default(now())
 }
