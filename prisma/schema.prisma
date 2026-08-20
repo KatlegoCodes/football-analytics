@@ -5,6 +5,7 @@
 
 generator client {
   provider = "prisma-client"
+  output   = "../src/generated"
 }
 
 datasource db {
@@ -80,7 +81,7 @@ model MatchEvent {
   matchId Int
 
   minute    Int
-  extraTime Int
+  extraTime Int?
 
   type   String
   detail String?
