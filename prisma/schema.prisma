@@ -32,7 +32,7 @@ model Team {
   createdAt DateTime @default(now())
 
   homeMatches Match[] @relation("HomeMatches")
-  AwayMatches Match[] @relation("AwayMatches")
+  awayMatches Match[] @relation("awayMatches")
 
   events     MatchEvent[]
   matchStats teamMatchStat[]
@@ -65,7 +65,7 @@ model Match {
   seasonId Int
 
   homeTeam Team @relation("HomeMatches", fields: [homeTeamId], references: [id])
-  awayTeam Team @relation("AwayMatches", fields: [awayTeamId], references: [id])
+  awayTeam Team @relation("awayMatches", fields: [awayTeamId], references: [id])
 
   season Season @relation(fields: [seasonId], references: [id])
 
