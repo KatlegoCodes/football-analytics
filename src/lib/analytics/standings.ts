@@ -17,19 +17,7 @@ export const getStandings = async () => {
     let goalsFor = 0;
     let goalsAgainst = 0;
 
-    const homeMatches = (team.homeMatches ?? []) as Array<{
-      status: string;
-      homeScore: number;
-      awayScore: number;
-    }>;
-
-    const awayMatches = (team.awayMatches ?? []) as Array<{
-      status: string;
-      homeScore: number;
-      awayScore: number;
-    }>;
-
-    for (const match of homeMatches) {
+    for (const match of team.homeMatches) {
       if (match.status !== "FINISHED") continue;
 
       played++;
@@ -47,7 +35,7 @@ export const getStandings = async () => {
       }
     }
 
-    for (const match of awayMatches) {
+    for (const match of team.awayMatches) {
       if (match.status !== "FINISHED") continue;
 
       played++;
