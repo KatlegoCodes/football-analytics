@@ -68,19 +68,29 @@ const Dashboard = async () => {
               </thead>
 
               <tbody>
-                {standings.map((team) => (
-                  <tr key={team.teamId} className="border-b border-zinc-800 last:border-0">
-                    <td className="px-6 py-4 font-medium">{team.team}</td>
-                    <td className="px-6 py-4">{team.played}</td>
-                    <td className="px-6 py-4">{team.wins}</td>
-                    <td className="px-6 py-4">{team.draws}</td>
-                    <td className="px-6 py-4">{team.losses}</td>
-                    <td className="px-6 py-4">
-                      {team.goaldDifference > 0 ? `+${team.goaldDifference}` : team.goaldDifference}
+                {standings.length === 0 ? (
+                  <tr>
+                    <td colSpan={7} className="px-6 py-12 text-center text-zinc-500">
+                      No standings data available yet.
                     </td>
-                    <td className="px-6 py-4 font-bold">{team.points}</td>
                   </tr>
-                ))}
+                ) : (
+                  standings.map((team) => (
+                    <tr key={team.teamId} className="border-b border-zinc-800 last:border-0">
+                      <td className="px-6 py-4 font-medium">{team.team}</td>
+                      <td className="px-6 py-4">{team.played}</td>
+                      <td className="px-6 py-4">{team.wins}</td>
+                      <td className="px-6 py-4">{team.draws}</td>
+                      <td className="px-6 py-4">{team.losses}</td>
+                      <td className="px-6 py-4">
+                        {team.goaldDifference > 0
+                          ? `+${team.goaldDifference}`
+                          : team.goaldDifference}
+                      </td>
+                      <td className="px-6 py-4 font-bold">{team.points}</td>
+                    </tr>
+                  ))
+                )}
               </tbody>
             </table>
           </div>
