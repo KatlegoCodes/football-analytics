@@ -1,5 +1,6 @@
 import "dotenv/config";
 import { getCompetitionTeams } from "../src/lib/football/football-data/client";
+import { mapFootballDataTeam } from "../src/lib/football/football-data/mapper";
 
 async function main() {
   const data = await getCompetitionTeams("PL");
@@ -7,9 +8,9 @@ async function main() {
   console.log(`Competition: ${data.competition.name}`);
   console.log(`Teams returned: ${data.count}`);
 
-  for (const team of data.teams) {
-    console.log(`${team.name} (${team.tla})`);
-  }
+  const mappedTeams = data.teams.map(mapFootballDataTeam);
+
+  console.log(mappedTeams);
 }
 
 main().catch((error) => {
