@@ -1067,8 +1067,12 @@ export type LeagueScalarFieldEnum = (typeof LeagueScalarFieldEnum)[keyof typeof 
 
 export const TeamScalarFieldEnum = {
   id: 'id',
+  externalId: 'externalId',
+  provider: 'provider',
   name: 'name',
   shortName: 'shortName',
+  code: 'code',
+  crestUrl: 'crestUrl',
   leagueId: 'leagueId',
   createdAt: 'createdAt'
 } as const

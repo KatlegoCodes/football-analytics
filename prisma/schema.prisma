@@ -22,21 +22,25 @@ model League {
 }
 
 model Team {
-  id        Int    @id @default(autoincrement())
-  name      String
-  shortName String
-  leagueId  Int
+  id         Int     @id @default(autoincrement())
+  externalId Int?
+  provider   String?
+  name       String
+  shortName  String?
+  code       String?
+  crestUrl   String?
+  leagueId   Int
 
-  league League @relation(fields: [leagueId], references: [id])
+  league      League          @relation(fields: [leagueId], references: [id])
+  players     Player[]
+  homeMatches Match[]         @relation("HomeMatches")
+  awayMatches Match[]         @relation("awayMatches")
+  events      MatchEvent[]
+  matchStats  teamMatchStat[]
 
   createdAt DateTime @default(now())
 
-  homeMatches Match[] @relation("HomeMatches")
-  awayMatches Match[] @relation("awayMatches")
-
-  events     MatchEvent[]
-  matchStats teamMatchStat[]
-  players    Player[]
+  @@unique([provider, externalId])
 }
 
 model Season {
