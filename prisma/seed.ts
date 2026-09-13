@@ -25,7 +25,7 @@ async function main() {
       country: "England",
     },
   });
-  console.log("Database bootstrap comple.");
+  console.log("Database bootstrap completed.");
 }
 
 main()
