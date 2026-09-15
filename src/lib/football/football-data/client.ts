@@ -1,4 +1,4 @@
-import type { FootballDataTeamsResponse } from "./types";
+import type { FootballDataTeamsResponse, FootballDataMatchesResponse } from "./types";
 
 const BASE_URL = "https://api.football-data.org/v4";
 
@@ -25,5 +25,20 @@ export const getCompetitionTeams = async (
     throw new Error(`Football data API request failed: ${response.status} ${response.statusText} `);
   }
 
+  return response.json();
+};
+
+export const getCompetitionMatches = async (
+  competitionCode: string
+): Promise<FootballDataMatchesResponse> => {
+  const response = await fetch(`${BASE_URL}/competitions/${competitionCode}/matches`, {
+    headers: {
+      "X-Auth-Token": getApiKey(),
+    },
+  });
+
+  if (!response.ok) {
+    throw new Error(`Football Data API request failed: ${response.status} ${response.statusText}`);
+  }
   return response.json();
 };

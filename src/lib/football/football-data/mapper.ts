@@ -1,4 +1,4 @@
-import { FootballDataTeam } from "./types";
+import { FootballDataTeam, FootballDataMatch } from "./types";
 
 export type MappedTeam = {
   externalId: number;
@@ -9,6 +9,18 @@ export type MappedTeam = {
   crestUrl: string | null;
 };
 
+export type MappedMatch = {
+  externalId: number;
+  provider: "football-data";
+  homeTeamExternalId: number;
+  awayTeamExternalId: number;
+  homeScore: number | null;
+  awayScore: number | null;
+  playedAt: Date;
+  status: string;
+  matchday: number | null;
+};
+
 export const mapFootballDataTeam = (team: FootballDataTeam): MappedTeam => {
   return {
     externalId: team.id,
@@ -17,5 +29,19 @@ export const mapFootballDataTeam = (team: FootballDataTeam): MappedTeam => {
     shortName: team.name,
     code: team.tla || null,
     crestUrl: team.crest || null,
+  };
+};
+
+export const mapFootballDataMatch = (match: FootballDataMatch): MappedMatch => {
+  return {
+    externalId: match.id,
+    provider: "football-data",
+    homeTeamExternalId: match.homeTeam.id,
+    awayTeamExternalId: match.awayTeam.id,
+    homeScore: match.score.fulltime.home,
+    awayScore: match.score.fulltime.away,
+    playedAt: new Date(match.utcDate),
+    status: match.status,
+    matchday: match.matchday,
   };
 };
