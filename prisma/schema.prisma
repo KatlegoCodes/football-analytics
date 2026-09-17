@@ -44,18 +44,23 @@ model Team {
 }
 
 model Season {
-  id        Int    @id @default(autoincrement())
-  name      String
-  startYear Int
-  endYear   Int
+  id         Int     @id @default(autoincrement())
+  externalId Int?
+  provider   String?
+  name       String
+  startYear  Int
+  endYear    Int
 
-  matches Match[]
-
+  matches   Match[]
   createdAt DateTime @default(now())
+
+  @@unique([provider, externalId])
 }
 
 model Match {
-  id Int @id @default(autoincrement())
+  id         Int     @id @default(autoincrement())
+  externalId Int?
+  provider   String?
 
   homeTeamId Int
   awayTeamId Int
@@ -68,10 +73,9 @@ model Match {
 
   seasonId Int
 
-  homeTeam Team @relation("HomeMatches", fields: [homeTeamId], references: [id])
-  awayTeam Team @relation("awayMatches", fields: [awayTeamId], references: [id])
-
-  season Season @relation(fields: [seasonId], references: [id])
+  homeTeam Team   @relation("HomeMatches", fields: [homeTeamId], references: [id])
+  awayTeam Team   @relation("awayMatches", fields: [awayTeamId], references: [id])
+  season   Season @relation(fields: [seasonId], references: [id])
 
   createdAt   DateTime          @default(now())
   playerStats playerMatchStat[]
