@@ -104,6 +104,8 @@ export type TeamScalarFieldEnum = (typeof TeamScalarFieldEnum)[keyof typeof Team
 
 export const SeasonScalarFieldEnum = {
   id: 'id',
+  externalId: 'externalId',
+  provider: 'provider',
   name: 'name',
   startYear: 'startYear',
   endYear: 'endYear',
@@ -115,6 +117,8 @@ export type SeasonScalarFieldEnum = (typeof SeasonScalarFieldEnum)[keyof typeof 
 
 export const MatchScalarFieldEnum = {
   id: 'id',
+  externalId: 'externalId',
+  provider: 'provider',
   homeTeamId: 'homeTeamId',
   awayTeamId: 'awayTeamId',
   homeScore: 'homeScore',

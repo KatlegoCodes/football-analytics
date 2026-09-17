@@ -28,6 +28,7 @@ export type AggregateMatch = {
 
 export type MatchAvgAggregateOutputType = {
   id: number | null
+  externalId: number | null
   homeTeamId: number | null
   awayTeamId: number | null
   homeScore: number | null
@@ -37,6 +38,7 @@ export type MatchAvgAggregateOutputType = {
 
 export type MatchSumAggregateOutputType = {
   id: number | null
+  externalId: number | null
   homeTeamId: number | null
   awayTeamId: number | null
   homeScore: number | null
@@ -46,6 +48,8 @@ export type MatchSumAggregateOutputType = {
 
 export type MatchMinAggregateOutputType = {
   id: number | null
+  externalId: number | null
+  provider: string | null
   homeTeamId: number | null
   awayTeamId: number | null
   homeScore: number | null
@@ -58,6 +62,8 @@ export type MatchMinAggregateOutputType = {
 
 export type MatchMaxAggregateOutputType = {
   id: number | null
+  externalId: number | null
+  provider: string | null
   homeTeamId: number | null
   awayTeamId: number | null
   homeScore: number | null
@@ -70,6 +76,8 @@ export type MatchMaxAggregateOutputType = {
 
 export type MatchCountAggregateOutputType = {
   id: number
+  externalId: number
+  provider: number
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -84,6 +92,7 @@ export type MatchCountAggregateOutputType = {
 
 export type MatchAvgAggregateInputType = {
   id?: true
+  externalId?: true
   homeTeamId?: true
   awayTeamId?: true
   homeScore?: true
@@ -93,6 +102,7 @@ export type MatchAvgAggregateInputType = {
 
 export type MatchSumAggregateInputType = {
   id?: true
+  externalId?: true
   homeTeamId?: true
   awayTeamId?: true
   homeScore?: true
@@ -102,6 +112,8 @@ export type MatchSumAggregateInputType = {
 
 export type MatchMinAggregateInputType = {
   id?: true
+  externalId?: true
+  provider?: true
   homeTeamId?: true
   awayTeamId?: true
   homeScore?: true
@@ -114,6 +126,8 @@ export type MatchMinAggregateInputType = {
 
 export type MatchMaxAggregateInputType = {
   id?: true
+  externalId?: true
+  provider?: true
   homeTeamId?: true
   awayTeamId?: true
   homeScore?: true
@@ -126,6 +140,8 @@ export type MatchMaxAggregateInputType = {
 
 export type MatchCountAggregateInputType = {
   id?: true
+  externalId?: true
+  provider?: true
   homeTeamId?: true
   awayTeamId?: true
   homeScore?: true
@@ -225,6 +241,8 @@ export type MatchGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 
 export type MatchGroupByOutputType = {
   id: number
+  externalId: number | null
+  provider: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -260,6 +278,8 @@ export type MatchWhereInput = {
   OR?: Prisma.MatchWhereInput[]
   NOT?: Prisma.MatchWhereInput | Prisma.MatchWhereInput[]
   id?: Prisma.IntFilter<"Match"> | number
+  externalId?: Prisma.IntNullableFilter<"Match"> | number | null
+  provider?: Prisma.StringNullableFilter<"Match"> | string | null
   homeTeamId?: Prisma.IntFilter<"Match"> | number
   awayTeamId?: Prisma.IntFilter<"Match"> | number
   homeScore?: Prisma.IntFilter<"Match"> | number
@@ -278,6 +298,8 @@ export type MatchWhereInput = {
 
 export type MatchOrderByWithRelationInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrderInput | Prisma.SortOrder
+  provider?: Prisma.SortOrderInput | Prisma.SortOrder
   homeTeamId?: Prisma.SortOrder
   awayTeamId?: Prisma.SortOrder
   homeScore?: Prisma.SortOrder
@@ -299,6 +321,8 @@ export type MatchWhereUniqueInput = Prisma.AtLeast<{
   AND?: Prisma.MatchWhereInput | Prisma.MatchWhereInput[]
   OR?: Prisma.MatchWhereInput[]
   NOT?: Prisma.MatchWhereInput | Prisma.MatchWhereInput[]
+  externalId?: Prisma.IntNullableFilter<"Match"> | number | null
+  provider?: Prisma.StringNullableFilter<"Match"> | string | null
   homeTeamId?: Prisma.IntFilter<"Match"> | number
   awayTeamId?: Prisma.IntFilter<"Match"> | number
   homeScore?: Prisma.IntFilter<"Match"> | number
@@ -317,6 +341,8 @@ export type MatchWhereUniqueInput = Prisma.AtLeast<{
 
 export type MatchOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrderInput | Prisma.SortOrder
+  provider?: Prisma.SortOrderInput | Prisma.SortOrder
   homeTeamId?: Prisma.SortOrder
   awayTeamId?: Prisma.SortOrder
   homeScore?: Prisma.SortOrder
@@ -337,6 +363,8 @@ export type MatchScalarWhereWithAggregatesInput = {
   OR?: Prisma.MatchScalarWhereWithAggregatesInput[]
   NOT?: Prisma.MatchScalarWhereWithAggregatesInput | Prisma.MatchScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Match"> | number
+  externalId?: Prisma.IntNullableWithAggregatesFilter<"Match"> | number | null
+  provider?: Prisma.StringNullableWithAggregatesFilter<"Match"> | string | null
   homeTeamId?: Prisma.IntWithAggregatesFilter<"Match"> | number
   awayTeamId?: Prisma.IntWithAggregatesFilter<"Match"> | number
   homeScore?: Prisma.IntWithAggregatesFilter<"Match"> | number
@@ -348,6 +376,8 @@ export type MatchScalarWhereWithAggregatesInput = {
 }
 
 export type MatchCreateInput = {
+  externalId?: number | null
+  provider?: string | null
   homeScore: number
   awayScore: number
   playedAt: Date | string
@@ -363,6 +393,8 @@ export type MatchCreateInput = {
 
 export type MatchUncheckedCreateInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -377,6 +409,8 @@ export type MatchUncheckedCreateInput = {
 }
 
 export type MatchUpdateInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -392,6 +426,8 @@ export type MatchUpdateInput = {
 
 export type MatchUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -407,6 +443,8 @@ export type MatchUncheckedUpdateInput = {
 
 export type MatchCreateManyInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -418,6 +456,8 @@ export type MatchCreateManyInput = {
 }
 
 export type MatchUpdateManyMutationInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -427,6 +467,8 @@ export type MatchUpdateManyMutationInput = {
 
 export type MatchUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -449,6 +491,8 @@ export type MatchOrderByRelationAggregateInput = {
 
 export type MatchCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
   homeTeamId?: Prisma.SortOrder
   awayTeamId?: Prisma.SortOrder
   homeScore?: Prisma.SortOrder
@@ -461,6 +505,7 @@ export type MatchCountOrderByAggregateInput = {
 
 export type MatchAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   homeTeamId?: Prisma.SortOrder
   awayTeamId?: Prisma.SortOrder
   homeScore?: Prisma.SortOrder
@@ -470,6 +515,8 @@ export type MatchAvgOrderByAggregateInput = {
 
 export type MatchMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
   homeTeamId?: Prisma.SortOrder
   awayTeamId?: Prisma.SortOrder
   homeScore?: Prisma.SortOrder
@@ -482,6 +529,8 @@ export type MatchMaxOrderByAggregateInput = {
 
 export type MatchMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
   homeTeamId?: Prisma.SortOrder
   awayTeamId?: Prisma.SortOrder
   homeScore?: Prisma.SortOrder
@@ -494,6 +543,7 @@ export type MatchMinOrderByAggregateInput = {
 
 export type MatchSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   homeTeamId?: Prisma.SortOrder
   awayTeamId?: Prisma.SortOrder
   homeScore?: Prisma.SortOrder
@@ -675,6 +725,8 @@ export type MatchUpdateOneRequiredWithoutTeamStatsNestedInput = {
 }
 
 export type MatchCreateWithoutHomeTeamInput = {
+  externalId?: number | null
+  provider?: string | null
   homeScore: number
   awayScore: number
   playedAt: Date | string
@@ -689,6 +741,8 @@ export type MatchCreateWithoutHomeTeamInput = {
 
 export type MatchUncheckedCreateWithoutHomeTeamInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   awayTeamId: number
   homeScore: number
   awayScore: number
@@ -712,6 +766,8 @@ export type MatchCreateManyHomeTeamInputEnvelope = {
 }
 
 export type MatchCreateWithoutAwayTeamInput = {
+  externalId?: number | null
+  provider?: string | null
   homeScore: number
   awayScore: number
   playedAt: Date | string
@@ -726,6 +782,8 @@ export type MatchCreateWithoutAwayTeamInput = {
 
 export type MatchUncheckedCreateWithoutAwayTeamInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   homeScore: number
   awayScore: number
@@ -769,6 +827,8 @@ export type MatchScalarWhereInput = {
   OR?: Prisma.MatchScalarWhereInput[]
   NOT?: Prisma.MatchScalarWhereInput | Prisma.MatchScalarWhereInput[]
   id?: Prisma.IntFilter<"Match"> | number
+  externalId?: Prisma.IntNullableFilter<"Match"> | number | null
+  provider?: Prisma.StringNullableFilter<"Match"> | string | null
   homeTeamId?: Prisma.IntFilter<"Match"> | number
   awayTeamId?: Prisma.IntFilter<"Match"> | number
   homeScore?: Prisma.IntFilter<"Match"> | number
@@ -796,6 +856,8 @@ export type MatchUpdateManyWithWhereWithoutAwayTeamInput = {
 }
 
 export type MatchCreateWithoutSeasonInput = {
+  externalId?: number | null
+  provider?: string | null
   homeScore: number
   awayScore: number
   playedAt: Date | string
@@ -810,6 +872,8 @@ export type MatchCreateWithoutSeasonInput = {
 
 export type MatchUncheckedCreateWithoutSeasonInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -849,6 +913,8 @@ export type MatchUpdateManyWithWhereWithoutSeasonInput = {
 }
 
 export type MatchCreateWithoutMatchEventsInput = {
+  externalId?: number | null
+  provider?: string | null
   homeScore: number
   awayScore: number
   playedAt: Date | string
@@ -863,6 +929,8 @@ export type MatchCreateWithoutMatchEventsInput = {
 
 export type MatchUncheckedCreateWithoutMatchEventsInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -892,6 +960,8 @@ export type MatchUpdateToOneWithWhereWithoutMatchEventsInput = {
 }
 
 export type MatchUpdateWithoutMatchEventsInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -906,6 +976,8 @@ export type MatchUpdateWithoutMatchEventsInput = {
 
 export type MatchUncheckedUpdateWithoutMatchEventsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -919,6 +991,8 @@ export type MatchUncheckedUpdateWithoutMatchEventsInput = {
 }
 
 export type MatchCreateWithoutPlayerStatsInput = {
+  externalId?: number | null
+  provider?: string | null
   homeScore: number
   awayScore: number
   playedAt: Date | string
@@ -933,6 +1007,8 @@ export type MatchCreateWithoutPlayerStatsInput = {
 
 export type MatchUncheckedCreateWithoutPlayerStatsInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -962,6 +1038,8 @@ export type MatchUpdateToOneWithWhereWithoutPlayerStatsInput = {
 }
 
 export type MatchUpdateWithoutPlayerStatsInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -976,6 +1054,8 @@ export type MatchUpdateWithoutPlayerStatsInput = {
 
 export type MatchUncheckedUpdateWithoutPlayerStatsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -989,6 +1069,8 @@ export type MatchUncheckedUpdateWithoutPlayerStatsInput = {
 }
 
 export type MatchCreateWithoutTeamStatsInput = {
+  externalId?: number | null
+  provider?: string | null
   homeScore: number
   awayScore: number
   playedAt: Date | string
@@ -1003,6 +1085,8 @@ export type MatchCreateWithoutTeamStatsInput = {
 
 export type MatchUncheckedCreateWithoutTeamStatsInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -1032,6 +1116,8 @@ export type MatchUpdateToOneWithWhereWithoutTeamStatsInput = {
 }
 
 export type MatchUpdateWithoutTeamStatsInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1046,6 +1132,8 @@ export type MatchUpdateWithoutTeamStatsInput = {
 
 export type MatchUncheckedUpdateWithoutTeamStatsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1060,6 +1148,8 @@ export type MatchUncheckedUpdateWithoutTeamStatsInput = {
 
 export type MatchCreateManyHomeTeamInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   awayTeamId: number
   homeScore: number
   awayScore: number
@@ -1071,6 +1161,8 @@ export type MatchCreateManyHomeTeamInput = {
 
 export type MatchCreateManyAwayTeamInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   homeScore: number
   awayScore: number
@@ -1081,6 +1173,8 @@ export type MatchCreateManyAwayTeamInput = {
 }
 
 export type MatchUpdateWithoutHomeTeamInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1095,6 +1189,8 @@ export type MatchUpdateWithoutHomeTeamInput = {
 
 export type MatchUncheckedUpdateWithoutHomeTeamInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1109,6 +1205,8 @@ export type MatchUncheckedUpdateWithoutHomeTeamInput = {
 
 export type MatchUncheckedUpdateManyWithoutHomeTeamInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1119,6 +1217,8 @@ export type MatchUncheckedUpdateManyWithoutHomeTeamInput = {
 }
 
 export type MatchUpdateWithoutAwayTeamInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1133,6 +1233,8 @@ export type MatchUpdateWithoutAwayTeamInput = {
 
 export type MatchUncheckedUpdateWithoutAwayTeamInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1147,6 +1249,8 @@ export type MatchUncheckedUpdateWithoutAwayTeamInput = {
 
 export type MatchUncheckedUpdateManyWithoutAwayTeamInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1158,6 +1262,8 @@ export type MatchUncheckedUpdateManyWithoutAwayTeamInput = {
 
 export type MatchCreateManySeasonInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   homeTeamId: number
   awayTeamId: number
   homeScore: number
@@ -1168,6 +1274,8 @@ export type MatchCreateManySeasonInput = {
 }
 
 export type MatchUpdateWithoutSeasonInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
   awayScore?: Prisma.IntFieldUpdateOperationsInput | number
   playedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1182,6 +1290,8 @@ export type MatchUpdateWithoutSeasonInput = {
 
 export type MatchUncheckedUpdateWithoutSeasonInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1196,6 +1306,8 @@ export type MatchUncheckedUpdateWithoutSeasonInput = {
 
 export type MatchUncheckedUpdateManyWithoutSeasonInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   homeTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   awayTeamId?: Prisma.IntFieldUpdateOperationsInput | number
   homeScore?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1256,6 +1368,8 @@ export type MatchCountOutputTypeCountTeamStatsArgs<ExtArgs extends runtime.Types
 
 export type MatchSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   homeTeamId?: boolean
   awayTeamId?: boolean
   homeScore?: boolean
@@ -1275,6 +1389,8 @@ export type MatchSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
 
 export type MatchSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   homeTeamId?: boolean
   awayTeamId?: boolean
   homeScore?: boolean
@@ -1290,6 +1406,8 @@ export type MatchSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 
 export type MatchSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   homeTeamId?: boolean
   awayTeamId?: boolean
   homeScore?: boolean
@@ -1305,6 +1423,8 @@ export type MatchSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
 
 export type MatchSelectScalar = {
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   homeTeamId?: boolean
   awayTeamId?: boolean
   homeScore?: boolean
@@ -1315,7 +1435,7 @@ export type MatchSelectScalar = {
   createdAt?: boolean
 }
 
-export type MatchOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "homeTeamId" | "awayTeamId" | "homeScore" | "awayScore" | "playedAt" | "status" | "seasonId" | "createdAt", ExtArgs["result"]["match"]>
+export type MatchOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "externalId" | "provider" | "homeTeamId" | "awayTeamId" | "homeScore" | "awayScore" | "playedAt" | "status" | "seasonId" | "createdAt", ExtArgs["result"]["match"]>
 export type MatchInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   homeTeam?: boolean | Prisma.TeamDefaultArgs<ExtArgs>
   awayTeam?: boolean | Prisma.TeamDefaultArgs<ExtArgs>
@@ -1348,6 +1468,8 @@ export type $MatchPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
+    externalId: number | null
+    provider: string | null
     homeTeamId: number
     awayTeamId: number
     homeScore: number
@@ -1786,6 +1908,8 @@ export interface Prisma__MatchClient<T, Null = never, ExtArgs extends runtime.Ty
  */
 export interface MatchFieldRefs {
   readonly id: Prisma.FieldRef<"Match", 'Int'>
+  readonly externalId: Prisma.FieldRef<"Match", 'Int'>
+  readonly provider: Prisma.FieldRef<"Match", 'String'>
   readonly homeTeamId: Prisma.FieldRef<"Match", 'Int'>
   readonly awayTeamId: Prisma.FieldRef<"Match", 'Int'>
   readonly homeScore: Prisma.FieldRef<"Match", 'Int'>

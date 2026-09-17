@@ -28,18 +28,22 @@ export type AggregateSeason = {
 
 export type SeasonAvgAggregateOutputType = {
   id: number | null
+  externalId: number | null
   startYear: number | null
   endYear: number | null
 }
 
 export type SeasonSumAggregateOutputType = {
   id: number | null
+  externalId: number | null
   startYear: number | null
   endYear: number | null
 }
 
 export type SeasonMinAggregateOutputType = {
   id: number | null
+  externalId: number | null
+  provider: string | null
   name: string | null
   startYear: number | null
   endYear: number | null
@@ -48,6 +52,8 @@ export type SeasonMinAggregateOutputType = {
 
 export type SeasonMaxAggregateOutputType = {
   id: number | null
+  externalId: number | null
+  provider: string | null
   name: string | null
   startYear: number | null
   endYear: number | null
@@ -56,6 +62,8 @@ export type SeasonMaxAggregateOutputType = {
 
 export type SeasonCountAggregateOutputType = {
   id: number
+  externalId: number
+  provider: number
   name: number
   startYear: number
   endYear: number
@@ -66,18 +74,22 @@ export type SeasonCountAggregateOutputType = {
 
 export type SeasonAvgAggregateInputType = {
   id?: true
+  externalId?: true
   startYear?: true
   endYear?: true
 }
 
 export type SeasonSumAggregateInputType = {
   id?: true
+  externalId?: true
   startYear?: true
   endYear?: true
 }
 
 export type SeasonMinAggregateInputType = {
   id?: true
+  externalId?: true
+  provider?: true
   name?: true
   startYear?: true
   endYear?: true
@@ -86,6 +98,8 @@ export type SeasonMinAggregateInputType = {
 
 export type SeasonMaxAggregateInputType = {
   id?: true
+  externalId?: true
+  provider?: true
   name?: true
   startYear?: true
   endYear?: true
@@ -94,6 +108,8 @@ export type SeasonMaxAggregateInputType = {
 
 export type SeasonCountAggregateInputType = {
   id?: true
+  externalId?: true
+  provider?: true
   name?: true
   startYear?: true
   endYear?: true
@@ -189,6 +205,8 @@ export type SeasonGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalA
 
 export type SeasonGroupByOutputType = {
   id: number
+  externalId: number | null
+  provider: string | null
   name: string
   startYear: number
   endYear: number
@@ -220,6 +238,8 @@ export type SeasonWhereInput = {
   OR?: Prisma.SeasonWhereInput[]
   NOT?: Prisma.SeasonWhereInput | Prisma.SeasonWhereInput[]
   id?: Prisma.IntFilter<"Season"> | number
+  externalId?: Prisma.IntNullableFilter<"Season"> | number | null
+  provider?: Prisma.StringNullableFilter<"Season"> | string | null
   name?: Prisma.StringFilter<"Season"> | string
   startYear?: Prisma.IntFilter<"Season"> | number
   endYear?: Prisma.IntFilter<"Season"> | number
@@ -229,6 +249,8 @@ export type SeasonWhereInput = {
 
 export type SeasonOrderByWithRelationInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrderInput | Prisma.SortOrder
+  provider?: Prisma.SortOrderInput | Prisma.SortOrder
   name?: Prisma.SortOrder
   startYear?: Prisma.SortOrder
   endYear?: Prisma.SortOrder
@@ -238,18 +260,23 @@ export type SeasonOrderByWithRelationInput = {
 
 export type SeasonWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  provider_externalId?: Prisma.SeasonProviderExternalIdCompoundUniqueInput
   AND?: Prisma.SeasonWhereInput | Prisma.SeasonWhereInput[]
   OR?: Prisma.SeasonWhereInput[]
   NOT?: Prisma.SeasonWhereInput | Prisma.SeasonWhereInput[]
+  externalId?: Prisma.IntNullableFilter<"Season"> | number | null
+  provider?: Prisma.StringNullableFilter<"Season"> | string | null
   name?: Prisma.StringFilter<"Season"> | string
   startYear?: Prisma.IntFilter<"Season"> | number
   endYear?: Prisma.IntFilter<"Season"> | number
   createdAt?: Prisma.DateTimeFilter<"Season"> | Date | string
   matches?: Prisma.MatchListRelationFilter
-}, "id">
+}, "id" | "provider_externalId">
 
 export type SeasonOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrderInput | Prisma.SortOrder
+  provider?: Prisma.SortOrderInput | Prisma.SortOrder
   name?: Prisma.SortOrder
   startYear?: Prisma.SortOrder
   endYear?: Prisma.SortOrder
@@ -266,6 +293,8 @@ export type SeasonScalarWhereWithAggregatesInput = {
   OR?: Prisma.SeasonScalarWhereWithAggregatesInput[]
   NOT?: Prisma.SeasonScalarWhereWithAggregatesInput | Prisma.SeasonScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"Season"> | number
+  externalId?: Prisma.IntNullableWithAggregatesFilter<"Season"> | number | null
+  provider?: Prisma.StringNullableWithAggregatesFilter<"Season"> | string | null
   name?: Prisma.StringWithAggregatesFilter<"Season"> | string
   startYear?: Prisma.IntWithAggregatesFilter<"Season"> | number
   endYear?: Prisma.IntWithAggregatesFilter<"Season"> | number
@@ -273,6 +302,8 @@ export type SeasonScalarWhereWithAggregatesInput = {
 }
 
 export type SeasonCreateInput = {
+  externalId?: number | null
+  provider?: string | null
   name: string
   startYear: number
   endYear: number
@@ -282,6 +313,8 @@ export type SeasonCreateInput = {
 
 export type SeasonUncheckedCreateInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   name: string
   startYear: number
   endYear: number
@@ -290,6 +323,8 @@ export type SeasonUncheckedCreateInput = {
 }
 
 export type SeasonUpdateInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.StringFieldUpdateOperationsInput | string
   startYear?: Prisma.IntFieldUpdateOperationsInput | number
   endYear?: Prisma.IntFieldUpdateOperationsInput | number
@@ -299,6 +334,8 @@ export type SeasonUpdateInput = {
 
 export type SeasonUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.StringFieldUpdateOperationsInput | string
   startYear?: Prisma.IntFieldUpdateOperationsInput | number
   endYear?: Prisma.IntFieldUpdateOperationsInput | number
@@ -308,6 +345,8 @@ export type SeasonUncheckedUpdateInput = {
 
 export type SeasonCreateManyInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   name: string
   startYear: number
   endYear: number
@@ -315,6 +354,8 @@ export type SeasonCreateManyInput = {
 }
 
 export type SeasonUpdateManyMutationInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.StringFieldUpdateOperationsInput | string
   startYear?: Prisma.IntFieldUpdateOperationsInput | number
   endYear?: Prisma.IntFieldUpdateOperationsInput | number
@@ -323,14 +364,23 @@ export type SeasonUpdateManyMutationInput = {
 
 export type SeasonUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.StringFieldUpdateOperationsInput | string
   startYear?: Prisma.IntFieldUpdateOperationsInput | number
   endYear?: Prisma.IntFieldUpdateOperationsInput | number
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
+export type SeasonProviderExternalIdCompoundUniqueInput = {
+  provider: string
+  externalId: number
+}
+
 export type SeasonCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
   name?: Prisma.SortOrder
   startYear?: Prisma.SortOrder
   endYear?: Prisma.SortOrder
@@ -339,12 +389,15 @@ export type SeasonCountOrderByAggregateInput = {
 
 export type SeasonAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   startYear?: Prisma.SortOrder
   endYear?: Prisma.SortOrder
 }
 
 export type SeasonMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
   name?: Prisma.SortOrder
   startYear?: Prisma.SortOrder
   endYear?: Prisma.SortOrder
@@ -353,6 +406,8 @@ export type SeasonMaxOrderByAggregateInput = {
 
 export type SeasonMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
   name?: Prisma.SortOrder
   startYear?: Prisma.SortOrder
   endYear?: Prisma.SortOrder
@@ -361,6 +416,7 @@ export type SeasonMinOrderByAggregateInput = {
 
 export type SeasonSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   startYear?: Prisma.SortOrder
   endYear?: Prisma.SortOrder
 }
@@ -385,6 +441,8 @@ export type SeasonUpdateOneRequiredWithoutMatchesNestedInput = {
 }
 
 export type SeasonCreateWithoutMatchesInput = {
+  externalId?: number | null
+  provider?: string | null
   name: string
   startYear: number
   endYear: number
@@ -393,6 +451,8 @@ export type SeasonCreateWithoutMatchesInput = {
 
 export type SeasonUncheckedCreateWithoutMatchesInput = {
   id?: number
+  externalId?: number | null
+  provider?: string | null
   name: string
   startYear: number
   endYear: number
@@ -416,6 +476,8 @@ export type SeasonUpdateToOneWithWhereWithoutMatchesInput = {
 }
 
 export type SeasonUpdateWithoutMatchesInput = {
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.StringFieldUpdateOperationsInput | string
   startYear?: Prisma.IntFieldUpdateOperationsInput | number
   endYear?: Prisma.IntFieldUpdateOperationsInput | number
@@ -424,6 +486,8 @@ export type SeasonUpdateWithoutMatchesInput = {
 
 export type SeasonUncheckedUpdateWithoutMatchesInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  externalId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  provider?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   name?: Prisma.StringFieldUpdateOperationsInput | string
   startYear?: Prisma.IntFieldUpdateOperationsInput | number
   endYear?: Prisma.IntFieldUpdateOperationsInput | number
@@ -463,6 +527,8 @@ export type SeasonCountOutputTypeCountMatchesArgs<ExtArgs extends runtime.Types.
 
 export type SeasonSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   name?: boolean
   startYear?: boolean
   endYear?: boolean
@@ -473,6 +539,8 @@ export type SeasonSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs =
 
 export type SeasonSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   name?: boolean
   startYear?: boolean
   endYear?: boolean
@@ -481,6 +549,8 @@ export type SeasonSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extens
 
 export type SeasonSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   name?: boolean
   startYear?: boolean
   endYear?: boolean
@@ -489,13 +559,15 @@ export type SeasonSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extens
 
 export type SeasonSelectScalar = {
   id?: boolean
+  externalId?: boolean
+  provider?: boolean
   name?: boolean
   startYear?: boolean
   endYear?: boolean
   createdAt?: boolean
 }
 
-export type SeasonOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "startYear" | "endYear" | "createdAt", ExtArgs["result"]["season"]>
+export type SeasonOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "externalId" | "provider" | "name" | "startYear" | "endYear" | "createdAt", ExtArgs["result"]["season"]>
 export type SeasonInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   matches?: boolean | Prisma.Season$matchesArgs<ExtArgs>
   _count?: boolean | Prisma.SeasonCountOutputTypeDefaultArgs<ExtArgs>
@@ -510,6 +582,8 @@ export type $SeasonPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
+    externalId: number | null
+    provider: string | null
     name: string
     startYear: number
     endYear: number
@@ -939,6 +1013,8 @@ export interface Prisma__SeasonClient<T, Null = never, ExtArgs extends runtime.T
  */
 export interface SeasonFieldRefs {
   readonly id: Prisma.FieldRef<"Season", 'Int'>
+  readonly externalId: Prisma.FieldRef<"Season", 'Int'>
+  readonly provider: Prisma.FieldRef<"Season", 'String'>
   readonly name: Prisma.FieldRef<"Season", 'String'>
   readonly startYear: Prisma.FieldRef<"Season", 'Int'>
   readonly endYear: Prisma.FieldRef<"Season", 'Int'>

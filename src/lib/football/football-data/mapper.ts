@@ -38,10 +38,10 @@ export const mapFootballDataMatch = (match: FootballDataMatch): MappedMatch => {
     provider: "football-data",
     homeTeamExternalId: match.homeTeam.id,
     awayTeamExternalId: match.awayTeam.id,
-    homeScore: match.score.fulltime.home,
-    awayScore: match.score.fulltime.away,
+    homeScore: match.score.fulltime?.home ?? null,
+    awayScore: match.score.fulltime?.away ?? null,
     playedAt: new Date(match.utcDate),
     status: match.status,
-    matchday: match.matchday,
+    matchday: match.matchday ?? null,
   };
 };
