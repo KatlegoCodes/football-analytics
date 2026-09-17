@@ -12,6 +12,8 @@ export type MappedTeam = {
 export type MappedMatch = {
   externalId: number;
   provider: "football-data";
+
+  seasonExternalId: number;
   homeTeamExternalId: number;
   awayTeamExternalId: number;
   homeScore: number | null;
@@ -43,5 +45,6 @@ export const mapFootballDataMatch = (match: FootballDataMatch): MappedMatch => {
     playedAt: new Date(match.utcDate),
     status: match.status,
     matchday: match.matchday ?? null,
+    seasonExternalId: match.season.id,
   };
 };

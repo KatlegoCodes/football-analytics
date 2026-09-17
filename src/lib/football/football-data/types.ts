@@ -64,6 +64,8 @@ export type FootballDataMatch = {
   homeTeam: FootballDataMatch;
   awayTeam: FootballDataMatch;
   score: FootballDataScore;
+
+  season: FootballDataMatchSeason;
 };
 
 export type FootballDataMatchesResponse = {
@@ -79,4 +81,11 @@ export type FootballDataMatchesResponse = {
   };
   competition: FootballDataCompetition;
   matches: FootballDataMatch[];
+};
+
+export type FootballDataMatchSeason = {
+  id: number;
+  startDate: string;
+  endDate: string;
+  currentMatchday: number | null;
 };
