@@ -65,8 +65,8 @@ model Match {
   homeTeamId Int
   awayTeamId Int
 
-  homeScore Int
-  awayScore Int
+  homeScore Int?
+  awayScore Int?
 
   playedAt DateTime
   status   String
@@ -81,6 +81,8 @@ model Match {
   playerStats playerMatchStat[]
   matchEvents MatchEvent[]
   teamStats   teamMatchStat[]
+
+  @@unique([provider, externalId])
 }
 
 model MatchEvent {
