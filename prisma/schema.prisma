@@ -71,6 +71,8 @@ model Match {
   playedAt DateTime
   status   String
 
+  matchday Int?
+
   seasonId Int
 
   homeTeam Team   @relation("HomeMatches", fields: [homeTeamId], references: [id])

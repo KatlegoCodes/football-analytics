@@ -125,6 +125,7 @@ export const MatchScalarFieldEnum = {
   awayScore: 'awayScore',
   playedAt: 'playedAt',
   status: 'status',
+  matchday: 'matchday',
   seasonId: 'seasonId',
   createdAt: 'createdAt'
 } as const
