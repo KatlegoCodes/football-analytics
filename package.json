@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "sync:football": "tsx scripts/sync-football.ts"
   },
   "dependencies": {
     "@prisma/client": "^7.9.1",
