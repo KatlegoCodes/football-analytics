@@ -49,7 +49,7 @@ export type FootballDataMatchTeam = {
 export type FootballDataScore = {
   winner: "HOME_TEAM" | "AWAY_TEAM" | "DRAW" | null;
   duration: string;
-  fulltime: {
+  fullTime: {
     home: number | null;
     away: number | null;
   };
