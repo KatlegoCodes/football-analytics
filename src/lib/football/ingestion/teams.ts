@@ -9,20 +9,28 @@ export const syncCompetitionTeams = async (competitionCode: string, leagueId: nu
 
   const teams = response.teams.map(mapFootballDataTeam);
 
-  let created = 0;
+  const externalIds = teams.map((team) => team.externalId);
 
+  const existingTeams = await prisma.team.findMany({
+    where: {
+      provider: PROVIDER,
+      externalId: {
+        in: externalIds,
+      },
+    },
+    select: {
+      externalId: true,
+    },
+  });
+
+  const existingIds = new Set(
+    existingTeams.map((team) => team.externalId).filter((id): id is number => id !== null)
+  );
+
+  let created = 0;
   let updated = 0;
 
   for (const team of teams) {
-    const existingTeam = await prisma.team.findUnique({
-      where: {
-        provider_externalId: {
-          provider: team.provider,
-          externalId: team.externalId,
-        },
-      },
-    });
-
     await prisma.team.upsert({
       where: {
         provider_externalId: {
@@ -38,7 +46,6 @@ export const syncCompetitionTeams = async (competitionCode: string, leagueId: nu
         crestUrl: team.crestUrl,
         leagueId,
       },
-
       create: {
         externalId: team.externalId,
         provider: PROVIDER,
@@ -50,7 +57,7 @@ export const syncCompetitionTeams = async (competitionCode: string, leagueId: nu
       },
     });
 
-    if (existingTeam) {
+    if (existingIds.has(team.externalId)) {
       updated++;
     } else {
       created++;
