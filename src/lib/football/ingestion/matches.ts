@@ -37,7 +37,6 @@ export const syncCompetitionMatches = async (competitionCode: string) => {
         externalId: seasonExternalId,
       },
     },
-
     update: {
       name: `${startYear}/${String(endYear).slice(-2)}`,
       startYear,
@@ -52,42 +51,56 @@ export const syncCompetitionMatches = async (competitionCode: string) => {
     },
   });
 
+  const teamExternalIds = [
+    ...new Set(matches.flatMap((match) => [match.homeTeamExternalId, match.awayTeamExternalId])),
+  ];
+
+  const teams = await prisma.team.findMany({
+    where: {
+      provider: PROVIDER,
+      externalId: {
+        in: teamExternalIds,
+      },
+    },
+    select: {
+      id: true,
+      externalId: true,
+    },
+  });
+
+  const teamIdByExternalId = new Map(
+    teams
+      .filter((team): team is typeof team & { externalId: number } => team.externalId !== null)
+      .map((team) => [team.externalId, team.id])
+  );
+
+  const matchExternalIds = matches.map((match) => match.externalId);
+  const existingMatches = await prisma.match.findMany({
+    where: {
+      provider: PROVIDER,
+      externalId: {
+        in: matchExternalIds,
+      },
+    },
+    select: {
+      externalId: true,
+    },
+  });
+
+  const existingMatchIds = new Set(
+    existingMatches.map((match) => match.externalId).filter((id): id is number => id !== null)
+  );
+
   let created = 0;
   let updated = 0;
 
   for (const match of matches) {
-    const [homeTeam, awayTeam] = await Promise.all([
-      prisma.team.findUnique({
-        where: {
-          provider_externalId: {
-            provider: PROVIDER,
-            externalId: match.homeTeamExternalId,
-          },
-        },
-      }),
+    const homeTeamId = teamIdByExternalId.get(match.homeTeamExternalId);
+    const awayTeamId = teamIdByExternalId.get(match.awayTeamExternalId);
 
-      prisma.team.findUnique({
-        where: {
-          provider_externalId: {
-            provider: PROVIDER,
-            externalId: match.awayTeamExternalId,
-          },
-        },
-      }),
-    ]);
-
-    if (!homeTeam || !awayTeam) {
+    if (!homeTeamId || !awayTeamId) {
       throw new Error(`Could not resolve teams for external match ${match.externalId}`);
     }
-
-    const existingMatch = await prisma.match.findUnique({
-      where: {
-        provider_externalId: {
-          provider: PROVIDER,
-          externalId: match.externalId,
-        },
-      },
-    });
 
     await prisma.match.upsert({
       where: {
@@ -96,10 +109,9 @@ export const syncCompetitionMatches = async (competitionCode: string) => {
           externalId: match.externalId,
         },
       },
-
       update: {
-        homeTeamId: homeTeam.id,
-        awayTeamId: awayTeam.id,
+        homeTeamId,
+        awayTeamId,
         homeScore: match.homeScore,
         awayScore: match.awayScore,
         playedAt: match.playedAt,
@@ -107,12 +119,11 @@ export const syncCompetitionMatches = async (competitionCode: string) => {
         matchday: match.matchday,
         seasonId: season.id,
       },
-
       create: {
         provider: PROVIDER,
         externalId: match.externalId,
-        homeTeamId: homeTeam.id,
-        awayTeamId: awayTeam.id,
+        homeTeamId,
+        awayTeamId,
         homeScore: match.homeScore,
         awayScore: match.awayScore,
         playedAt: match.playedAt,
@@ -122,7 +133,11 @@ export const syncCompetitionMatches = async (competitionCode: string) => {
       },
     });
 
-    existingMatch ? updated++ : created++;
+    if (existingMatchIds.has(match.externalId)) {
+      updated++;
+    } else {
+      created++;
+    }
   }
 
   return {
