@@ -31,3 +31,32 @@ export type TeamForm = {
   points: number;
   pointsPerGame: number;
 };
+
+export type PerformanceSplit = {
+  played: number;
+  wins: number;
+  draws: number;
+  losses: number;
+
+  goalsFor: number;
+  goalsAgainst: number;
+  goalDifference: number;
+
+  points: number;
+  pointsPerGame: number;
+
+  goalsPerGame: number;
+  goalsAgainstPerGame: number;
+
+  cleanSheets: number;
+  failedToScore: number;
+};
+
+export type TeamPerformance = {
+  teamId: number;
+  team: string;
+
+  overall: PerformanceSplit;
+  home: PerformanceSplit;
+  away: PerformanceSplit;
+};
