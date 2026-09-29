@@ -60,3 +60,37 @@ export type TeamPerformance = {
   home: PerformanceSplit;
   away: PerformanceSplit;
 };
+
+export type MatchOutcome = "HOME_WIN" | "AWAY_WIN" | "DRAW" | null;
+
+export type MatchTeamDetail = {
+  id: number;
+  name: string;
+  shortName: string | null;
+  code: string | null;
+  crestUrl: string | null;
+};
+
+export type MatchDetail = {
+  id: number;
+  externalId: number | null;
+
+  playedAt: Date;
+  status: string;
+  matchday: number | null;
+
+  homeTeam: MatchTeamDetail;
+  awayTeam: MatchTeamDetail;
+
+  homeScore: number | null;
+  awayScore: number | null;
+
+  outcome: MatchOutcome;
+
+  season: {
+    id: number;
+    name: string;
+    startYear: number;
+    endYear: number;
+  };
+};
