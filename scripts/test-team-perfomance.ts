@@ -1,6 +1,6 @@
 import "dotenv/config";
 import { prisma } from "@/lib/db/prisma";
-import { getTeamPerformance } from "@/lib/analytics/team-perfomance";
+import { getTeamPerformance } from "@/lib/analytics/team-performance";
 
 const main = async () => {
   const team = await prisma.team.findFirst({
