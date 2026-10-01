@@ -131,6 +131,14 @@ const TeamPage = async ({ params }: TeamPageProps) => {
             />
           </div>
         </section>
+
+        <section className="mb-10">
+          <h2 className="mb-4 text-xl font-semibold">Venue Breakdown</h2>
+          <div className="grid gap-6 md:grid-cols-2">
+            <PerformancePanel title="Home" performance={performance.home} />
+            <PerformancePanel title="Away" performance={performance.away} />
+          </div>
+        </section>
       </div>
     </main>
   );
