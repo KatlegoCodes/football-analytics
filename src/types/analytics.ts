@@ -94,3 +94,22 @@ export type MatchDetail = {
     endYear: number;
   };
 };
+
+export type TeamPerformanceTrendPoint = {
+  matchId: number;
+  opponent: string;
+  playedAt: Date;
+
+  result: MatchResult;
+
+  points: number;
+  rollingPoints: number;
+  rollingPointsPerGame: number;
+};
+
+export type TeamPerformanceTrend = {
+  teamId: number;
+  team: string;
+
+  matches: TeamPerformanceTrendPoint[];
+};
