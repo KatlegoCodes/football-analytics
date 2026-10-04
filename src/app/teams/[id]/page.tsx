@@ -4,6 +4,8 @@ import { notFound } from "next/navigation";
 import { prisma } from "@/lib/db/prisma";
 import { getTeamForm } from "@/lib/analytics/team-forms";
 import { getTeamPerformance } from "@/lib/analytics/team-performance";
+import { getTeamPerformanceTrend } from "@/lib/analytics/team-trend";
+import { TeamFormChart } from "@/components/analytics/TeamFormChart";
 
 type TeamPageProps = {
   params: Promise<{
@@ -20,7 +22,7 @@ const TeamPage = async ({ params }: TeamPageProps) => {
     notFound();
   }
 
-  const [team, form, performance] = await Promise.all([
+  const [team, form, performance, trend] = await Promise.all([
     prisma.team.findUnique({
       where: {
         id: teamId,
@@ -30,9 +32,11 @@ const TeamPage = async ({ params }: TeamPageProps) => {
     getTeamForm(teamId),
 
     getTeamPerformance(teamId),
+
+    getTeamPerformanceTrend(teamId, 10),
   ]);
 
-  if (!team || !form || !performance) {
+  if (!team || !form || !performance || !trend) {
     notFound();
   }
 
@@ -98,6 +102,27 @@ const TeamPage = async ({ params }: TeamPageProps) => {
               ))}
             </div>
           )}
+        </section>
+
+        <section className="mb-10">
+          <div className="mb-4">
+            <h2 className="text-xl font-semibold">Performance Trend</h2>
+
+            <p className="mt-1 text-sm text-zinc-400">
+              Rolling points per game across the last 10 completed matches.
+            </p>
+          </div>
+
+          <div className="rounded-xl border border-zinx-800 bg-zinc-900 p-5">
+            <TeamFormChart
+              data={trend.matches.map((match) => ({
+                matchId: match.matchId,
+                opponent: match.opponent,
+                result: match.result,
+                rollingPointsPerGame: match.rollingPointsPerGame,
+              }))}
+            />
+          </div>
         </section>
 
         <section className="mb-10">
