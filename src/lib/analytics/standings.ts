@@ -1,10 +1,21 @@
 import { prisma } from "@/lib/db/prisma";
 
-export const getStandings = async () => {
+export const getStandings = async (seasonId: number) => {
   const teams = await prisma.team.findMany({
     include: {
-      homeMatches: true,
-      awayMatches: true,
+      homeMatches: {
+        where: {
+          seasonId,
+          status: "FINISHED",
+        },
+      },
+
+      awayMatches: {
+        where: {
+          seasonId,
+          status: "FINISHED",
+        },
+      },
     },
   });
 

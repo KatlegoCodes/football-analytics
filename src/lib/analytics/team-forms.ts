@@ -1,7 +1,11 @@
 import { prisma } from "@/lib/db/prisma";
 import { MatchResult, TeamForm, TeamFormResult } from "@/types/analytics";
 
-export const getTeamForm = async (teamId: number, limit = 5): Promise<TeamForm | null> => {
+export const getTeamForm = async (
+  teamId: number,
+  seasonId: number,
+  limit = 5
+): Promise<TeamForm | null> => {
   const team = await prisma.team.findUnique({
     where: {
       id: teamId,
@@ -14,6 +18,7 @@ export const getTeamForm = async (teamId: number, limit = 5): Promise<TeamForm |
 
   const matches = await prisma.match.findMany({
     where: {
+      seasonId,
       status: "FINISHED",
       OR: [{ homeTeamId: teamId }, { awayTeamId: teamId }],
     },

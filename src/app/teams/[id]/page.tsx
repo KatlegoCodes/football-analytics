@@ -22,21 +22,37 @@ const TeamPage = async ({ params }: TeamPageProps) => {
     notFound();
   }
 
-  const [team, form, performance, trend] = await Promise.all([
-    prisma.team.findUnique({
-      where: {
-        id: teamId,
-      },
-    }),
+  const team = await prisma.team.findUnique({
+    where: {
+      id: teamId,
+    },
+  });
 
-    getTeamForm(teamId),
+  if (!team) {
+    notFound();
+  }
 
-    getTeamPerformance(teamId),
+  const season = await prisma.season.findFirst({
+    where: {
+      provider: "football-data",
+    },
 
-    getTeamPerformanceTrend(teamId, 10),
+    orderBy: {
+      startYear: "desc",
+    },
+  });
+
+  if (!season) {
+    notFound();
+  }
+
+  const [form, performance, trend] = await Promise.all([
+    getTeamForm(teamId, season.id),
+    getTeamPerformance(teamId, season.id),
+    getTeamPerformanceTrend(teamId, season.id, 10),
   ]);
 
-  if (!team || !form || !performance || !trend) {
+  if (!form || !performance || !trend) {
     notFound();
   }
 

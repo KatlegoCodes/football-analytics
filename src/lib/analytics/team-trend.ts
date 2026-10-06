@@ -3,6 +3,7 @@ import { TeamPerformanceTrendPoint, TeamPerformanceTrend, MatchResult } from "@/
 
 export const getTeamPerformanceTrend = async (
   teamId: number,
+  seasonId: number,
   limit = 10
 ): Promise<TeamPerformanceTrend | null> => {
   const team = await prisma.team.findUnique({
@@ -17,6 +18,7 @@ export const getTeamPerformanceTrend = async (
 
   const matches = await prisma.match.findMany({
     where: {
+      seasonId,
       status: "FINISHED",
 
       OR: [{ homeTeamId: teamId }, { awayTeamId: teamId }],

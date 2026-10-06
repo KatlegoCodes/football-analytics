@@ -91,7 +91,30 @@ const SummaryCard = ({ label, value }: { label: string; value: number }) => {
 };
 
 const Dashboard = async () => {
-  const [dashboard, standings] = await Promise.all([getDashboardData(), getStandings()]);
+  const currentSeason = await prisma.season.findFirst({
+    where: {
+      provider: "football-data",
+    },
+    orderBy: {
+      startYear: "desc",
+    },
+  });
+
+  if (!currentSeason) {
+    return (
+      <main className="min-h-screen bg-zinc-950 text-white">
+        <div className="mx-auto max-w-7xl px-6 py-10">
+          <h1 className="text-3xl font-bold">Premier League</h1>
+          <p className="mt-4 text-zinc-400 ">No season data is available yet</p>
+        </div>
+      </main>
+    );
+  }
+
+  const [dashboard, standings] = await Promise.all([
+    getDashboardData(currentSeason.id),
+    getStandings(currentSeason.id),
+  ]);
 
   return (
     <main className="min-h-screen bg-zinc-950 text-white">

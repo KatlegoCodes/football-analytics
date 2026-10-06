@@ -13,7 +13,21 @@ async function main() {
     throw new Error("No provider-backed team found.");
   }
 
-  const form = await getTeamForm(team.id);
+  const season = await prisma.season.findFirst({
+    where: {
+      provider: "football-data",
+    },
+
+    orderBy: {
+      startYear: "desc",
+    },
+  });
+
+  if (!season) {
+    throw new Error("No provider-backed season found.");
+  }
+
+  const form = await getTeamForm(team.id, season.id);
 
   console.dir(form, {
     depth: null,

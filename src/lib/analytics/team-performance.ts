@@ -66,7 +66,10 @@ const calculateSplit = (matches: MatchPerformance[]): PerformanceSplit => {
   };
 };
 
-export async function getTeamPerformance(teamId: number): Promise<TeamPerformance | null> {
+export async function getTeamPerformance(
+  teamId: number,
+  seasonId: number
+): Promise<TeamPerformance | null> {
   const team = await prisma.team.findUnique({
     where: {
       id: teamId,
@@ -79,6 +82,7 @@ export async function getTeamPerformance(teamId: number): Promise<TeamPerformanc
 
   const matches = await prisma.match.findMany({
     where: {
+      seasonId,
       status: "FINISHED",
       OR: [{ homeTeamId: teamId }, { awayTeamId: teamId }],
     },

@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 
-export const getDashboardData = async () => {
+export const getDashboardData = async (seasonId: number) => {
   const [teamCount, matchCount, finishedMatchCount, recentMatches, upcomingMatches] =
     await Promise.all([
       prisma.team.count({
@@ -11,12 +11,14 @@ export const getDashboardData = async () => {
 
       prisma.match.count({
         where: {
+          seasonId,
           provider: "football-data",
         },
       }),
 
       prisma.match.count({
         where: {
+          seasonId,
           provider: "football-data",
           status: "FINISHED",
         },
@@ -24,6 +26,7 @@ export const getDashboardData = async () => {
 
       prisma.match.findMany({
         where: {
+          seasonId,
           provider: "football-data",
           status: "FINISHED",
         },
@@ -42,6 +45,7 @@ export const getDashboardData = async () => {
 
       prisma.match.findMany({
         where: {
+          seasonId,
           provider: "football-data",
           status: {
             not: "FINISHED",
@@ -67,6 +71,7 @@ export const getDashboardData = async () => {
 
   const goals = await prisma.match.aggregate({
     where: {
+      seasonId,
       provider: "football-data",
       status: "FINISHED",
     },
