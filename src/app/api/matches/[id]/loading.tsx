@@ -9,3 +9,5 @@ const MatchLoading = () => {
     </main>
   );
 };
+
+export default MatchLoading;
