@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
-import { TeamPerformanceTrendPoint, TeamPerformanceTrend, MatchResult } from "@/types/analytics";
+import { TeamPerformanceTrend, TeamPerformanceTrendPoint, MatchResult } from "@/types/analytics";
+import { calculateRollingPPG } from "./calculations/trend";
 
 export const getTeamPerformanceTrend = async (
   teamId: number,
@@ -20,70 +21,63 @@ export const getTeamPerformanceTrend = async (
     where: {
       seasonId,
       status: "FINISHED",
-
       OR: [{ homeTeamId: teamId }, { awayTeamId: teamId }],
     },
-
     include: {
       homeTeam: true,
       awayTeam: true,
     },
-
     orderBy: {
       playedAt: "desc",
     },
-
     take: limit,
   });
 
   matches.reverse();
 
-  let rollingPoints = 0;
-  let validMatches = 0;
-
-  const trendMatches: TeamPerformanceTrendPoint[] = matches.flatMap((match, index) => {
+  const rawMatchInputs = matches.flatMap((match) => {
     if (match.homeScore === null || match.awayScore === null) {
       return [];
     }
 
     const isHome = match.homeTeamId === teamId;
-
     const goalsFor = isHome ? match.homeScore : match.awayScore;
     const goalsAgainst = isHome ? match.awayScore : match.homeScore;
+    const opponent = isHome ? match.awayTeam : match.homeTeam;
 
-    let result: MatchResult;
-    let points: number;
-
+    let result: MatchResult = "D";
     if (goalsFor > goalsAgainst) {
       result = "W";
-      points = 3;
     } else if (goalsFor < goalsAgainst) {
       result = "L";
-      points = 0;
-    } else {
-      result = "D";
-      points = 1;
     }
-
-    rollingPoints += points;
-    validMatches++;
-
-    const opponent = isHome ? match.awayTeam : match.homeTeam;
 
     return [
       {
         matchId: match.id,
         opponent: opponent.shortName ?? opponent.name,
         playedAt: match.playedAt,
-
         result,
-        points,
-
-        rollingPoints,
-
-        rollingPointsPerGame: Number((rollingPoints / validMatches).toFixed(2)),
       },
     ];
+  });
+
+  const rollingPPGValues = calculateRollingPPG(rawMatchInputs.map((m) => ({ result: m.result })));
+
+  let rollingPoints = 0;
+  const trendMatches: TeamPerformanceTrendPoint[] = rawMatchInputs.map((match, index) => {
+    const points = match.result === "W" ? 3 : match.result === "D" ? 1 : 0;
+    rollingPoints += points;
+
+    return {
+      matchId: match.matchId,
+      opponent: match.opponent,
+      playedAt: match.playedAt,
+      result: match.result,
+      points,
+      rollingPoints,
+      rollingPointsPerGame: rollingPPGValues[index],
+    };
   });
 
   return {
