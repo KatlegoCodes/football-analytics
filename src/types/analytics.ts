@@ -113,3 +113,31 @@ export type TeamPerformanceTrend = {
 
   matches: TeamPerformanceTrendPoint[];
 };
+
+export type PlayerPerformanceSummary = {
+  playerId: number;
+
+  appearances: number;
+  starts: number;
+  minutesPlayed: number;
+
+  goals: number;
+  assists: number;
+
+  shots: number;
+  shotsOnTarget: number;
+
+  passesCompleted: number;
+  passesAttempted: number;
+  passAccuracy: number | null;
+
+  tackles: number;
+  interceptions: number;
+
+  yellowCards: number;
+  redCards: number;
+
+  goalsPer90: number;
+  assistsPer90: number;
+  goalContributionsPer90: number;
+};
