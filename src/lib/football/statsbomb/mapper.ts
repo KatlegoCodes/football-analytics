@@ -54,7 +54,7 @@ export type MappedstatsBombEvent = {
   externalPlayerId: number | null;
 };
 
-const mappedStatsBombEvent = (event: StatsBombEvent): MappedstatsBombEvent => {
+const mapStatsBombEvent = (event: StatsBombEvent): MappedstatsBombEvent => {
   const isShot = event.type.name === "Shot";
 
   return {
@@ -77,4 +77,4 @@ const mappedStatsBombEvent = (event: StatsBombEvent): MappedstatsBombEvent => {
   };
 };
 
-export default mappedStatsBombEvent;
+export default mapStatsBombEvent;
