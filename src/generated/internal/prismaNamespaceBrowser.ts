@@ -57,7 +57,7 @@ export const ModelName = {
   Match: 'Match',
   MatchEvent: 'MatchEvent',
   Player: 'Player',
-  playerMatchStat: 'playerMatchStat',
+  PlayerMatchStat: 'PlayerMatchStat',
   teamMatchStat: 'teamMatchStat'
 } as const
 
@@ -135,11 +135,22 @@ export type MatchScalarFieldEnum = (typeof MatchScalarFieldEnum)[keyof typeof Ma
 
 export const MatchEventScalarFieldEnum = {
   id: 'id',
+  provider: 'provider',
+  externalId: 'externalId',
   matchId: 'matchId',
   minute: 'minute',
   extraTime: 'extraTime',
+  period: 'period',
+  timestamp: 'timestamp',
+  eventIndex: 'eventIndex',
   type: 'type',
   detail: 'detail',
+  locationX: 'locationX',
+  locationY: 'locationY',
+  shotOutcome: 'shotOutcome',
+  shotXg: 'shotXg',
+  shotBodyPart: 'shotBodyPart',
+  shotTechnique: 'shotTechnique',
   teamId: 'teamId',
   playerId: 'playerId',
   createdAt: 'createdAt'
@@ -150,6 +161,8 @@ export type MatchEventScalarFieldEnum = (typeof MatchEventScalarFieldEnum)[keyof
 
 export const PlayerScalarFieldEnum = {
   id: 'id',
+  externalId: 'externalId',
+  provider: 'provider',
   name: 'name',
   position: 'position',
   nationality: 'nationality',

@@ -31,6 +31,11 @@ export type MatchEventAvgAggregateOutputType = {
   matchId: number | null
   minute: number | null
   extraTime: number | null
+  period: number | null
+  eventIndex: number | null
+  locationX: number | null
+  locationY: number | null
+  shotXg: number | null
   teamId: number | null
   playerId: number | null
 }
@@ -40,17 +45,33 @@ export type MatchEventSumAggregateOutputType = {
   matchId: number | null
   minute: number | null
   extraTime: number | null
+  period: number | null
+  eventIndex: number | null
+  locationX: number | null
+  locationY: number | null
+  shotXg: number | null
   teamId: number | null
   playerId: number | null
 }
 
 export type MatchEventMinAggregateOutputType = {
   id: number | null
+  provider: string | null
+  externalId: string | null
   matchId: number | null
   minute: number | null
   extraTime: number | null
+  period: number | null
+  timestamp: string | null
+  eventIndex: number | null
   type: string | null
   detail: string | null
+  locationX: number | null
+  locationY: number | null
+  shotOutcome: string | null
+  shotXg: number | null
+  shotBodyPart: string | null
+  shotTechnique: string | null
   teamId: number | null
   playerId: number | null
   createdAt: Date | null
@@ -58,11 +79,22 @@ export type MatchEventMinAggregateOutputType = {
 
 export type MatchEventMaxAggregateOutputType = {
   id: number | null
+  provider: string | null
+  externalId: string | null
   matchId: number | null
   minute: number | null
   extraTime: number | null
+  period: number | null
+  timestamp: string | null
+  eventIndex: number | null
   type: string | null
   detail: string | null
+  locationX: number | null
+  locationY: number | null
+  shotOutcome: string | null
+  shotXg: number | null
+  shotBodyPart: string | null
+  shotTechnique: string | null
   teamId: number | null
   playerId: number | null
   createdAt: Date | null
@@ -70,11 +102,22 @@ export type MatchEventMaxAggregateOutputType = {
 
 export type MatchEventCountAggregateOutputType = {
   id: number
+  provider: number
+  externalId: number
   matchId: number
   minute: number
   extraTime: number
+  period: number
+  timestamp: number
+  eventIndex: number
   type: number
   detail: number
+  locationX: number
+  locationY: number
+  shotOutcome: number
+  shotXg: number
+  shotBodyPart: number
+  shotTechnique: number
   teamId: number
   playerId: number
   createdAt: number
@@ -87,6 +130,11 @@ export type MatchEventAvgAggregateInputType = {
   matchId?: true
   minute?: true
   extraTime?: true
+  period?: true
+  eventIndex?: true
+  locationX?: true
+  locationY?: true
+  shotXg?: true
   teamId?: true
   playerId?: true
 }
@@ -96,17 +144,33 @@ export type MatchEventSumAggregateInputType = {
   matchId?: true
   minute?: true
   extraTime?: true
+  period?: true
+  eventIndex?: true
+  locationX?: true
+  locationY?: true
+  shotXg?: true
   teamId?: true
   playerId?: true
 }
 
 export type MatchEventMinAggregateInputType = {
   id?: true
+  provider?: true
+  externalId?: true
   matchId?: true
   minute?: true
   extraTime?: true
+  period?: true
+  timestamp?: true
+  eventIndex?: true
   type?: true
   detail?: true
+  locationX?: true
+  locationY?: true
+  shotOutcome?: true
+  shotXg?: true
+  shotBodyPart?: true
+  shotTechnique?: true
   teamId?: true
   playerId?: true
   createdAt?: true
@@ -114,11 +178,22 @@ export type MatchEventMinAggregateInputType = {
 
 export type MatchEventMaxAggregateInputType = {
   id?: true
+  provider?: true
+  externalId?: true
   matchId?: true
   minute?: true
   extraTime?: true
+  period?: true
+  timestamp?: true
+  eventIndex?: true
   type?: true
   detail?: true
+  locationX?: true
+  locationY?: true
+  shotOutcome?: true
+  shotXg?: true
+  shotBodyPart?: true
+  shotTechnique?: true
   teamId?: true
   playerId?: true
   createdAt?: true
@@ -126,11 +201,22 @@ export type MatchEventMaxAggregateInputType = {
 
 export type MatchEventCountAggregateInputType = {
   id?: true
+  provider?: true
+  externalId?: true
   matchId?: true
   minute?: true
   extraTime?: true
+  period?: true
+  timestamp?: true
+  eventIndex?: true
   type?: true
   detail?: true
+  locationX?: true
+  locationY?: true
+  shotOutcome?: true
+  shotXg?: true
+  shotBodyPart?: true
+  shotTechnique?: true
   teamId?: true
   playerId?: true
   createdAt?: true
@@ -225,11 +311,22 @@ export type MatchEventGroupByArgs<ExtArgs extends runtime.Types.Extensions.Inter
 
 export type MatchEventGroupByOutputType = {
   id: number
+  provider: string
+  externalId: string
   matchId: number
   minute: number
   extraTime: number | null
+  period: number | null
+  timestamp: string | null
+  eventIndex: number | null
   type: string
   detail: string | null
+  locationX: number | null
+  locationY: number | null
+  shotOutcome: string | null
+  shotXg: number | null
+  shotBodyPart: string | null
+  shotTechnique: string | null
   teamId: number | null
   playerId: number | null
   createdAt: Date
@@ -260,11 +357,22 @@ export type MatchEventWhereInput = {
   OR?: Prisma.MatchEventWhereInput[]
   NOT?: Prisma.MatchEventWhereInput | Prisma.MatchEventWhereInput[]
   id?: Prisma.IntFilter<"MatchEvent"> | number
+  provider?: Prisma.StringFilter<"MatchEvent"> | string
+  externalId?: Prisma.StringFilter<"MatchEvent"> | string
   matchId?: Prisma.IntFilter<"MatchEvent"> | number
   minute?: Prisma.IntFilter<"MatchEvent"> | number
   extraTime?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  period?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  timestamp?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  eventIndex?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   type?: Prisma.StringFilter<"MatchEvent"> | string
   detail?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  locationX?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  locationY?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  shotOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  shotXg?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  shotBodyPart?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  shotTechnique?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeFilter<"MatchEvent"> | Date | string
@@ -275,11 +383,22 @@ export type MatchEventWhereInput = {
 
 export type MatchEventOrderByWithRelationInput = {
   id?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
   minute?: Prisma.SortOrder
   extraTime?: Prisma.SortOrderInput | Prisma.SortOrder
+  period?: Prisma.SortOrderInput | Prisma.SortOrder
+  timestamp?: Prisma.SortOrderInput | Prisma.SortOrder
+  eventIndex?: Prisma.SortOrderInput | Prisma.SortOrder
   type?: Prisma.SortOrder
   detail?: Prisma.SortOrderInput | Prisma.SortOrder
+  locationX?: Prisma.SortOrderInput | Prisma.SortOrder
+  locationY?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotOutcome?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotXg?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotBodyPart?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotTechnique?: Prisma.SortOrderInput | Prisma.SortOrder
   teamId?: Prisma.SortOrderInput | Prisma.SortOrder
   playerId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -290,29 +409,52 @@ export type MatchEventOrderByWithRelationInput = {
 
 export type MatchEventWhereUniqueInput = Prisma.AtLeast<{
   id?: number
+  provider_externalId?: Prisma.MatchEventProviderExternalIdCompoundUniqueInput
   AND?: Prisma.MatchEventWhereInput | Prisma.MatchEventWhereInput[]
   OR?: Prisma.MatchEventWhereInput[]
   NOT?: Prisma.MatchEventWhereInput | Prisma.MatchEventWhereInput[]
+  provider?: Prisma.StringFilter<"MatchEvent"> | string
+  externalId?: Prisma.StringFilter<"MatchEvent"> | string
   matchId?: Prisma.IntFilter<"MatchEvent"> | number
   minute?: Prisma.IntFilter<"MatchEvent"> | number
   extraTime?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  period?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  timestamp?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  eventIndex?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   type?: Prisma.StringFilter<"MatchEvent"> | string
   detail?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  locationX?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  locationY?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  shotOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  shotXg?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  shotBodyPart?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  shotTechnique?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeFilter<"MatchEvent"> | Date | string
   match?: Prisma.XOR<Prisma.MatchScalarRelationFilter, Prisma.MatchWhereInput>
   team?: Prisma.XOR<Prisma.TeamNullableScalarRelationFilter, Prisma.TeamWhereInput> | null
   player?: Prisma.XOR<Prisma.PlayerNullableScalarRelationFilter, Prisma.PlayerWhereInput> | null
-}, "id">
+}, "id" | "provider_externalId">
 
 export type MatchEventOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
   minute?: Prisma.SortOrder
   extraTime?: Prisma.SortOrderInput | Prisma.SortOrder
+  period?: Prisma.SortOrderInput | Prisma.SortOrder
+  timestamp?: Prisma.SortOrderInput | Prisma.SortOrder
+  eventIndex?: Prisma.SortOrderInput | Prisma.SortOrder
   type?: Prisma.SortOrder
   detail?: Prisma.SortOrderInput | Prisma.SortOrder
+  locationX?: Prisma.SortOrderInput | Prisma.SortOrder
+  locationY?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotOutcome?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotXg?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotBodyPart?: Prisma.SortOrderInput | Prisma.SortOrder
+  shotTechnique?: Prisma.SortOrderInput | Prisma.SortOrder
   teamId?: Prisma.SortOrderInput | Prisma.SortOrder
   playerId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -328,21 +470,43 @@ export type MatchEventScalarWhereWithAggregatesInput = {
   OR?: Prisma.MatchEventScalarWhereWithAggregatesInput[]
   NOT?: Prisma.MatchEventScalarWhereWithAggregatesInput | Prisma.MatchEventScalarWhereWithAggregatesInput[]
   id?: Prisma.IntWithAggregatesFilter<"MatchEvent"> | number
+  provider?: Prisma.StringWithAggregatesFilter<"MatchEvent"> | string
+  externalId?: Prisma.StringWithAggregatesFilter<"MatchEvent"> | string
   matchId?: Prisma.IntWithAggregatesFilter<"MatchEvent"> | number
   minute?: Prisma.IntWithAggregatesFilter<"MatchEvent"> | number
   extraTime?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  period?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  timestamp?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  eventIndex?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
   type?: Prisma.StringWithAggregatesFilter<"MatchEvent"> | string
   detail?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  locationX?: Prisma.FloatNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  locationY?: Prisma.FloatNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  shotOutcome?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  shotXg?: Prisma.FloatNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  shotBodyPart?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  shotTechnique?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"MatchEvent"> | Date | string
 }
 
 export type MatchEventCreateInput = {
+  provider: string
+  externalId: string
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   createdAt?: Date | string
   match: Prisma.MatchCreateNestedOneWithoutMatchEventsInput
   team?: Prisma.TeamCreateNestedOneWithoutEventsInput
@@ -351,21 +515,43 @@ export type MatchEventCreateInput = {
 
 export type MatchEventUncheckedCreateInput = {
   id?: number
+  provider: string
+  externalId: string
   matchId: number
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
 }
 
 export type MatchEventUpdateInput = {
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   match?: Prisma.MatchUpdateOneRequiredWithoutMatchEventsNestedInput
   team?: Prisma.TeamUpdateOneWithoutEventsNestedInput
@@ -374,11 +560,22 @@ export type MatchEventUpdateInput = {
 
 export type MatchEventUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -386,31 +583,64 @@ export type MatchEventUncheckedUpdateInput = {
 
 export type MatchEventCreateManyInput = {
   id?: number
+  provider: string
+  externalId: string
   matchId: number
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
 }
 
 export type MatchEventUpdateManyMutationInput = {
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MatchEventUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -426,13 +656,29 @@ export type MatchEventOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type MatchEventProviderExternalIdCompoundUniqueInput = {
+  provider: string
+  externalId: string
+}
+
 export type MatchEventCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
   minute?: Prisma.SortOrder
   extraTime?: Prisma.SortOrder
+  period?: Prisma.SortOrder
+  timestamp?: Prisma.SortOrder
+  eventIndex?: Prisma.SortOrder
   type?: Prisma.SortOrder
   detail?: Prisma.SortOrder
+  locationX?: Prisma.SortOrder
+  locationY?: Prisma.SortOrder
+  shotOutcome?: Prisma.SortOrder
+  shotXg?: Prisma.SortOrder
+  shotBodyPart?: Prisma.SortOrder
+  shotTechnique?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -443,17 +689,33 @@ export type MatchEventAvgOrderByAggregateInput = {
   matchId?: Prisma.SortOrder
   minute?: Prisma.SortOrder
   extraTime?: Prisma.SortOrder
+  period?: Prisma.SortOrder
+  eventIndex?: Prisma.SortOrder
+  locationX?: Prisma.SortOrder
+  locationY?: Prisma.SortOrder
+  shotXg?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
 }
 
 export type MatchEventMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
   minute?: Prisma.SortOrder
   extraTime?: Prisma.SortOrder
+  period?: Prisma.SortOrder
+  timestamp?: Prisma.SortOrder
+  eventIndex?: Prisma.SortOrder
   type?: Prisma.SortOrder
   detail?: Prisma.SortOrder
+  locationX?: Prisma.SortOrder
+  locationY?: Prisma.SortOrder
+  shotOutcome?: Prisma.SortOrder
+  shotXg?: Prisma.SortOrder
+  shotBodyPart?: Prisma.SortOrder
+  shotTechnique?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -461,11 +723,22 @@ export type MatchEventMaxOrderByAggregateInput = {
 
 export type MatchEventMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
+  provider?: Prisma.SortOrder
+  externalId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
   minute?: Prisma.SortOrder
   extraTime?: Prisma.SortOrder
+  period?: Prisma.SortOrder
+  timestamp?: Prisma.SortOrder
+  eventIndex?: Prisma.SortOrder
   type?: Prisma.SortOrder
   detail?: Prisma.SortOrder
+  locationX?: Prisma.SortOrder
+  locationY?: Prisma.SortOrder
+  shotOutcome?: Prisma.SortOrder
+  shotXg?: Prisma.SortOrder
+  shotBodyPart?: Prisma.SortOrder
+  shotTechnique?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -476,6 +749,11 @@ export type MatchEventSumOrderByAggregateInput = {
   matchId?: Prisma.SortOrder
   minute?: Prisma.SortOrder
   extraTime?: Prisma.SortOrder
+  period?: Prisma.SortOrder
+  eventIndex?: Prisma.SortOrder
+  locationX?: Prisma.SortOrder
+  locationY?: Prisma.SortOrder
+  shotXg?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
 }
@@ -564,6 +842,14 @@ export type MatchEventUncheckedUpdateManyWithoutMatchNestedInput = {
   deleteMany?: Prisma.MatchEventScalarWhereInput | Prisma.MatchEventScalarWhereInput[]
 }
 
+export type NullableFloatFieldUpdateOperationsInput = {
+  set?: number | null
+  increment?: number
+  decrement?: number
+  multiply?: number
+  divide?: number
+}
+
 export type MatchEventCreateNestedManyWithoutPlayerInput = {
   create?: Prisma.XOR<Prisma.MatchEventCreateWithoutPlayerInput, Prisma.MatchEventUncheckedCreateWithoutPlayerInput> | Prisma.MatchEventCreateWithoutPlayerInput[] | Prisma.MatchEventUncheckedCreateWithoutPlayerInput[]
   connectOrCreate?: Prisma.MatchEventCreateOrConnectWithoutPlayerInput | Prisma.MatchEventCreateOrConnectWithoutPlayerInput[]
@@ -607,10 +893,21 @@ export type MatchEventUncheckedUpdateManyWithoutPlayerNestedInput = {
 }
 
 export type MatchEventCreateWithoutTeamInput = {
+  provider: string
+  externalId: string
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   createdAt?: Date | string
   match: Prisma.MatchCreateNestedOneWithoutMatchEventsInput
   player?: Prisma.PlayerCreateNestedOneWithoutEventsInput
@@ -618,11 +915,22 @@ export type MatchEventCreateWithoutTeamInput = {
 
 export type MatchEventUncheckedCreateWithoutTeamInput = {
   id?: number
+  provider: string
+  externalId: string
   matchId: number
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   playerId?: number | null
   createdAt?: Date | string
 }
@@ -658,21 +966,43 @@ export type MatchEventScalarWhereInput = {
   OR?: Prisma.MatchEventScalarWhereInput[]
   NOT?: Prisma.MatchEventScalarWhereInput | Prisma.MatchEventScalarWhereInput[]
   id?: Prisma.IntFilter<"MatchEvent"> | number
+  provider?: Prisma.StringFilter<"MatchEvent"> | string
+  externalId?: Prisma.StringFilter<"MatchEvent"> | string
   matchId?: Prisma.IntFilter<"MatchEvent"> | number
   minute?: Prisma.IntFilter<"MatchEvent"> | number
   extraTime?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  period?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  timestamp?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  eventIndex?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   type?: Prisma.StringFilter<"MatchEvent"> | string
   detail?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  locationX?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  locationY?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  shotOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  shotXg?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
+  shotBodyPart?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  shotTechnique?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeFilter<"MatchEvent"> | Date | string
 }
 
 export type MatchEventCreateWithoutMatchInput = {
+  provider: string
+  externalId: string
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   createdAt?: Date | string
   team?: Prisma.TeamCreateNestedOneWithoutEventsInput
   player?: Prisma.PlayerCreateNestedOneWithoutEventsInput
@@ -680,10 +1010,21 @@ export type MatchEventCreateWithoutMatchInput = {
 
 export type MatchEventUncheckedCreateWithoutMatchInput = {
   id?: number
+  provider: string
+  externalId: string
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
@@ -716,10 +1057,21 @@ export type MatchEventUpdateManyWithWhereWithoutMatchInput = {
 }
 
 export type MatchEventCreateWithoutPlayerInput = {
+  provider: string
+  externalId: string
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   createdAt?: Date | string
   match: Prisma.MatchCreateNestedOneWithoutMatchEventsInput
   team?: Prisma.TeamCreateNestedOneWithoutEventsInput
@@ -727,11 +1079,22 @@ export type MatchEventCreateWithoutPlayerInput = {
 
 export type MatchEventUncheckedCreateWithoutPlayerInput = {
   id?: number
+  provider: string
+  externalId: string
   matchId: number
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   teamId?: number | null
   createdAt?: Date | string
 }
@@ -764,20 +1127,42 @@ export type MatchEventUpdateManyWithWhereWithoutPlayerInput = {
 
 export type MatchEventCreateManyTeamInput = {
   id?: number
+  provider: string
+  externalId: string
   matchId: number
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   playerId?: number | null
   createdAt?: Date | string
 }
 
 export type MatchEventUpdateWithoutTeamInput = {
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   match?: Prisma.MatchUpdateOneRequiredWithoutMatchEventsNestedInput
   player?: Prisma.PlayerUpdateOneWithoutEventsNestedInput
@@ -785,42 +1170,86 @@ export type MatchEventUpdateWithoutTeamInput = {
 
 export type MatchEventUncheckedUpdateWithoutTeamInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MatchEventUncheckedUpdateManyWithoutTeamInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MatchEventCreateManyMatchInput = {
   id?: number
+  provider: string
+  externalId: string
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
 }
 
 export type MatchEventUpdateWithoutMatchInput = {
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   team?: Prisma.TeamUpdateOneWithoutEventsNestedInput
   player?: Prisma.PlayerUpdateOneWithoutEventsNestedInput
@@ -828,10 +1257,21 @@ export type MatchEventUpdateWithoutMatchInput = {
 
 export type MatchEventUncheckedUpdateWithoutMatchInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -839,10 +1279,21 @@ export type MatchEventUncheckedUpdateWithoutMatchInput = {
 
 export type MatchEventUncheckedUpdateManyWithoutMatchInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -850,20 +1301,42 @@ export type MatchEventUncheckedUpdateManyWithoutMatchInput = {
 
 export type MatchEventCreateManyPlayerInput = {
   id?: number
+  provider: string
+  externalId: string
   matchId: number
   minute: number
   extraTime?: number | null
+  period?: number | null
+  timestamp?: string | null
+  eventIndex?: number | null
   type: string
   detail?: string | null
+  locationX?: number | null
+  locationY?: number | null
+  shotOutcome?: string | null
+  shotXg?: number | null
+  shotBodyPart?: string | null
+  shotTechnique?: string | null
   teamId?: number | null
   createdAt?: Date | string
 }
 
 export type MatchEventUpdateWithoutPlayerInput = {
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   match?: Prisma.MatchUpdateOneRequiredWithoutMatchEventsNestedInput
   team?: Prisma.TeamUpdateOneWithoutEventsNestedInput
@@ -871,22 +1344,44 @@ export type MatchEventUpdateWithoutPlayerInput = {
 
 export type MatchEventUncheckedUpdateWithoutPlayerInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type MatchEventUncheckedUpdateManyWithoutPlayerInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
+  provider?: Prisma.StringFieldUpdateOperationsInput | string
+  externalId?: Prisma.StringFieldUpdateOperationsInput | string
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minute?: Prisma.IntFieldUpdateOperationsInput | number
   extraTime?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  period?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  timestamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  eventIndex?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   type?: Prisma.StringFieldUpdateOperationsInput | string
   detail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  locationX?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  locationY?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
+  shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -895,11 +1390,22 @@ export type MatchEventUncheckedUpdateManyWithoutPlayerInput = {
 
 export type MatchEventSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  provider?: boolean
+  externalId?: boolean
   matchId?: boolean
   minute?: boolean
   extraTime?: boolean
+  period?: boolean
+  timestamp?: boolean
+  eventIndex?: boolean
   type?: boolean
   detail?: boolean
+  locationX?: boolean
+  locationY?: boolean
+  shotOutcome?: boolean
+  shotXg?: boolean
+  shotBodyPart?: boolean
+  shotTechnique?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
@@ -910,11 +1416,22 @@ export type MatchEventSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
 
 export type MatchEventSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  provider?: boolean
+  externalId?: boolean
   matchId?: boolean
   minute?: boolean
   extraTime?: boolean
+  period?: boolean
+  timestamp?: boolean
+  eventIndex?: boolean
   type?: boolean
   detail?: boolean
+  locationX?: boolean
+  locationY?: boolean
+  shotOutcome?: boolean
+  shotXg?: boolean
+  shotBodyPart?: boolean
+  shotTechnique?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
@@ -925,11 +1442,22 @@ export type MatchEventSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
 
 export type MatchEventSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
+  provider?: boolean
+  externalId?: boolean
   matchId?: boolean
   minute?: boolean
   extraTime?: boolean
+  period?: boolean
+  timestamp?: boolean
+  eventIndex?: boolean
   type?: boolean
   detail?: boolean
+  locationX?: boolean
+  locationY?: boolean
+  shotOutcome?: boolean
+  shotXg?: boolean
+  shotBodyPart?: boolean
+  shotTechnique?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
@@ -940,17 +1468,28 @@ export type MatchEventSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
 
 export type MatchEventSelectScalar = {
   id?: boolean
+  provider?: boolean
+  externalId?: boolean
   matchId?: boolean
   minute?: boolean
   extraTime?: boolean
+  period?: boolean
+  timestamp?: boolean
+  eventIndex?: boolean
   type?: boolean
   detail?: boolean
+  locationX?: boolean
+  locationY?: boolean
+  shotOutcome?: boolean
+  shotXg?: boolean
+  shotBodyPart?: boolean
+  shotTechnique?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
 }
 
-export type MatchEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "matchId" | "minute" | "extraTime" | "type" | "detail" | "teamId" | "playerId" | "createdAt", ExtArgs["result"]["matchEvent"]>
+export type MatchEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "provider" | "externalId" | "matchId" | "minute" | "extraTime" | "period" | "timestamp" | "eventIndex" | "type" | "detail" | "locationX" | "locationY" | "shotOutcome" | "shotXg" | "shotBodyPart" | "shotTechnique" | "teamId" | "playerId" | "createdAt", ExtArgs["result"]["matchEvent"]>
 export type MatchEventInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
   team?: boolean | Prisma.MatchEvent$teamArgs<ExtArgs>
@@ -976,11 +1515,22 @@ export type $MatchEventPayload<ExtArgs extends runtime.Types.Extensions.Internal
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
+    provider: string
+    externalId: string
     matchId: number
     minute: number
     extraTime: number | null
+    period: number | null
+    timestamp: string | null
+    eventIndex: number | null
     type: string
     detail: string | null
+    locationX: number | null
+    locationY: number | null
+    shotOutcome: string | null
+    shotXg: number | null
+    shotBodyPart: string | null
+    shotTechnique: string | null
     teamId: number | null
     playerId: number | null
     createdAt: Date
@@ -1411,11 +1961,22 @@ export interface Prisma__MatchEventClient<T, Null = never, ExtArgs extends runti
  */
 export interface MatchEventFieldRefs {
   readonly id: Prisma.FieldRef<"MatchEvent", 'Int'>
+  readonly provider: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly externalId: Prisma.FieldRef<"MatchEvent", 'String'>
   readonly matchId: Prisma.FieldRef<"MatchEvent", 'Int'>
   readonly minute: Prisma.FieldRef<"MatchEvent", 'Int'>
   readonly extraTime: Prisma.FieldRef<"MatchEvent", 'Int'>
+  readonly period: Prisma.FieldRef<"MatchEvent", 'Int'>
+  readonly timestamp: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly eventIndex: Prisma.FieldRef<"MatchEvent", 'Int'>
   readonly type: Prisma.FieldRef<"MatchEvent", 'String'>
   readonly detail: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly locationX: Prisma.FieldRef<"MatchEvent", 'Float'>
+  readonly locationY: Prisma.FieldRef<"MatchEvent", 'Float'>
+  readonly shotOutcome: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly shotXg: Prisma.FieldRef<"MatchEvent", 'Float'>
+  readonly shotBodyPart: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly shotTechnique: Prisma.FieldRef<"MatchEvent", 'String'>
   readonly teamId: Prisma.FieldRef<"MatchEvent", 'Int'>
   readonly playerId: Prisma.FieldRef<"MatchEvent", 'Int'>
   readonly createdAt: Prisma.FieldRef<"MatchEvent", 'DateTime'>

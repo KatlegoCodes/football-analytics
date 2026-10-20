@@ -4,7 +4,7 @@
 // biome-ignore-all lint: generated file
 // @ts-nocheck 
 /*
- * This file exports the `playerMatchStat` model and its related types.
+ * This file exports the `PlayerMatchStat` model and its related types.
  *
  * 🟢 You can import this file directly.
  */
@@ -13,10 +13,10 @@ import type * as $Enums from "../enums"
 import type * as Prisma from "../internal/prismaNamespace"
 
 /**
- * Model playerMatchStat
+ * Model PlayerMatchStat
  * 
  */
-export type playerMatchStatModel = runtime.Types.Result.DefaultSelection<Prisma.$playerMatchStatPayload>
+export type PlayerMatchStatModel = runtime.Types.Result.DefaultSelection<Prisma.$PlayerMatchStatPayload>
 
 export type AggregatePlayerMatchStat = {
   _count: PlayerMatchStatCountAggregateOutputType | null
@@ -207,37 +207,37 @@ export type PlayerMatchStatCountAggregateInputType = {
 
 export type PlayerMatchStatAggregateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which playerMatchStat to aggregate.
+   * Filter which PlayerMatchStat to aggregate.
    */
-  where?: Prisma.playerMatchStatWhereInput
+  where?: Prisma.PlayerMatchStatWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of playerMatchStats to fetch.
+   * Determine the order of PlayerMatchStats to fetch.
    */
-  orderBy?: Prisma.playerMatchStatOrderByWithRelationInput | Prisma.playerMatchStatOrderByWithRelationInput[]
+  orderBy?: Prisma.PlayerMatchStatOrderByWithRelationInput | Prisma.PlayerMatchStatOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
    * Sets the start position
    */
-  cursor?: Prisma.playerMatchStatWhereUniqueInput
+  cursor?: Prisma.PlayerMatchStatWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` playerMatchStats from the position of the cursor.
+   * Take `±n` PlayerMatchStats from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` playerMatchStats.
+   * Skip the first `n` PlayerMatchStats.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/aggregations Aggregation Docs}
    * 
-   * Count returned playerMatchStats
+   * Count returned PlayerMatchStats
   **/
   _count?: true | PlayerMatchStatCountAggregateInputType
   /**
@@ -277,11 +277,11 @@ export type GetPlayerMatchStatAggregateType<T extends PlayerMatchStatAggregateAr
 
 
 
-export type playerMatchStatGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.playerMatchStatWhereInput
-  orderBy?: Prisma.playerMatchStatOrderByWithAggregationInput | Prisma.playerMatchStatOrderByWithAggregationInput[]
+export type PlayerMatchStatGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.PlayerMatchStatWhereInput
+  orderBy?: Prisma.PlayerMatchStatOrderByWithAggregationInput | Prisma.PlayerMatchStatOrderByWithAggregationInput[]
   by: Prisma.PlayerMatchStatScalarFieldEnum[] | Prisma.PlayerMatchStatScalarFieldEnum
-  having?: Prisma.playerMatchStatScalarWhereWithAggregatesInput
+  having?: Prisma.PlayerMatchStatScalarWhereWithAggregatesInput
   take?: number
   skip?: number
   _count?: PlayerMatchStatCountAggregateInputType | true
@@ -314,7 +314,7 @@ export type PlayerMatchStatGroupByOutputType = {
   _max: PlayerMatchStatMaxAggregateOutputType | null
 }
 
-export type GetPlayerMatchStatGroupByPayload<T extends playerMatchStatGroupByArgs> = Prisma.PrismaPromise<
+export type GetPlayerMatchStatGroupByPayload<T extends PlayerMatchStatGroupByArgs> = Prisma.PrismaPromise<
   Array<
     Prisma.PickEnumerable<PlayerMatchStatGroupByOutputType, T['by']> &
       {
@@ -329,30 +329,30 @@ export type GetPlayerMatchStatGroupByPayload<T extends playerMatchStatGroupByArg
 
 
 
-export type playerMatchStatWhereInput = {
-  AND?: Prisma.playerMatchStatWhereInput | Prisma.playerMatchStatWhereInput[]
-  OR?: Prisma.playerMatchStatWhereInput[]
-  NOT?: Prisma.playerMatchStatWhereInput | Prisma.playerMatchStatWhereInput[]
-  id?: Prisma.IntFilter<"playerMatchStat"> | number
-  playerId?: Prisma.IntFilter<"playerMatchStat"> | number
-  matchId?: Prisma.IntFilter<"playerMatchStat"> | number
-  minutesPlayed?: Prisma.IntNullableFilter<"playerMatchStat"> | number | null
-  goals?: Prisma.IntFilter<"playerMatchStat"> | number
-  assists?: Prisma.IntFilter<"playerMatchStat"> | number
-  shots?: Prisma.IntFilter<"playerMatchStat"> | number
-  shotsOnTarget?: Prisma.IntFilter<"playerMatchStat"> | number
-  passes?: Prisma.IntFilter<"playerMatchStat"> | number
-  keyPasses?: Prisma.IntFilter<"playerMatchStat"> | number
-  tackles?: Prisma.IntFilter<"playerMatchStat"> | number
-  interceptions?: Prisma.IntFilter<"playerMatchStat"> | number
-  yellowCards?: Prisma.IntFilter<"playerMatchStat"> | number
-  redCards?: Prisma.IntFilter<"playerMatchStat"> | number
-  createdAt?: Prisma.DateTimeFilter<"playerMatchStat"> | Date | string
+export type PlayerMatchStatWhereInput = {
+  AND?: Prisma.PlayerMatchStatWhereInput | Prisma.PlayerMatchStatWhereInput[]
+  OR?: Prisma.PlayerMatchStatWhereInput[]
+  NOT?: Prisma.PlayerMatchStatWhereInput | Prisma.PlayerMatchStatWhereInput[]
+  id?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  playerId?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  matchId?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  minutesPlayed?: Prisma.IntNullableFilter<"PlayerMatchStat"> | number | null
+  goals?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  assists?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  shots?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  shotsOnTarget?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  passes?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  keyPasses?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  tackles?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  interceptions?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  yellowCards?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  redCards?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  createdAt?: Prisma.DateTimeFilter<"PlayerMatchStat"> | Date | string
   player?: Prisma.XOR<Prisma.PlayerScalarRelationFilter, Prisma.PlayerWhereInput>
   match?: Prisma.XOR<Prisma.MatchScalarRelationFilter, Prisma.MatchWhereInput>
 }
 
-export type playerMatchStatOrderByWithRelationInput = {
+export type PlayerMatchStatOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
@@ -372,31 +372,31 @@ export type playerMatchStatOrderByWithRelationInput = {
   match?: Prisma.MatchOrderByWithRelationInput
 }
 
-export type playerMatchStatWhereUniqueInput = Prisma.AtLeast<{
+export type PlayerMatchStatWhereUniqueInput = Prisma.AtLeast<{
   id?: number
-  playerId_matchId?: Prisma.playerMatchStatPlayerIdMatchIdCompoundUniqueInput
-  AND?: Prisma.playerMatchStatWhereInput | Prisma.playerMatchStatWhereInput[]
-  OR?: Prisma.playerMatchStatWhereInput[]
-  NOT?: Prisma.playerMatchStatWhereInput | Prisma.playerMatchStatWhereInput[]
-  playerId?: Prisma.IntFilter<"playerMatchStat"> | number
-  matchId?: Prisma.IntFilter<"playerMatchStat"> | number
-  minutesPlayed?: Prisma.IntNullableFilter<"playerMatchStat"> | number | null
-  goals?: Prisma.IntFilter<"playerMatchStat"> | number
-  assists?: Prisma.IntFilter<"playerMatchStat"> | number
-  shots?: Prisma.IntFilter<"playerMatchStat"> | number
-  shotsOnTarget?: Prisma.IntFilter<"playerMatchStat"> | number
-  passes?: Prisma.IntFilter<"playerMatchStat"> | number
-  keyPasses?: Prisma.IntFilter<"playerMatchStat"> | number
-  tackles?: Prisma.IntFilter<"playerMatchStat"> | number
-  interceptions?: Prisma.IntFilter<"playerMatchStat"> | number
-  yellowCards?: Prisma.IntFilter<"playerMatchStat"> | number
-  redCards?: Prisma.IntFilter<"playerMatchStat"> | number
-  createdAt?: Prisma.DateTimeFilter<"playerMatchStat"> | Date | string
+  playerId_matchId?: Prisma.PlayerMatchStatPlayerIdMatchIdCompoundUniqueInput
+  AND?: Prisma.PlayerMatchStatWhereInput | Prisma.PlayerMatchStatWhereInput[]
+  OR?: Prisma.PlayerMatchStatWhereInput[]
+  NOT?: Prisma.PlayerMatchStatWhereInput | Prisma.PlayerMatchStatWhereInput[]
+  playerId?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  matchId?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  minutesPlayed?: Prisma.IntNullableFilter<"PlayerMatchStat"> | number | null
+  goals?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  assists?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  shots?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  shotsOnTarget?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  passes?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  keyPasses?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  tackles?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  interceptions?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  yellowCards?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  redCards?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  createdAt?: Prisma.DateTimeFilter<"PlayerMatchStat"> | Date | string
   player?: Prisma.XOR<Prisma.PlayerScalarRelationFilter, Prisma.PlayerWhereInput>
   match?: Prisma.XOR<Prisma.MatchScalarRelationFilter, Prisma.MatchWhereInput>
 }, "id" | "playerId_matchId">
 
-export type playerMatchStatOrderByWithAggregationInput = {
+export type PlayerMatchStatOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
@@ -412,35 +412,35 @@ export type playerMatchStatOrderByWithAggregationInput = {
   yellowCards?: Prisma.SortOrder
   redCards?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
-  _count?: Prisma.playerMatchStatCountOrderByAggregateInput
-  _avg?: Prisma.playerMatchStatAvgOrderByAggregateInput
-  _max?: Prisma.playerMatchStatMaxOrderByAggregateInput
-  _min?: Prisma.playerMatchStatMinOrderByAggregateInput
-  _sum?: Prisma.playerMatchStatSumOrderByAggregateInput
+  _count?: Prisma.PlayerMatchStatCountOrderByAggregateInput
+  _avg?: Prisma.PlayerMatchStatAvgOrderByAggregateInput
+  _max?: Prisma.PlayerMatchStatMaxOrderByAggregateInput
+  _min?: Prisma.PlayerMatchStatMinOrderByAggregateInput
+  _sum?: Prisma.PlayerMatchStatSumOrderByAggregateInput
 }
 
-export type playerMatchStatScalarWhereWithAggregatesInput = {
-  AND?: Prisma.playerMatchStatScalarWhereWithAggregatesInput | Prisma.playerMatchStatScalarWhereWithAggregatesInput[]
-  OR?: Prisma.playerMatchStatScalarWhereWithAggregatesInput[]
-  NOT?: Prisma.playerMatchStatScalarWhereWithAggregatesInput | Prisma.playerMatchStatScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  playerId?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  matchId?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  minutesPlayed?: Prisma.IntNullableWithAggregatesFilter<"playerMatchStat"> | number | null
-  goals?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  assists?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  shots?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  shotsOnTarget?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  passes?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  keyPasses?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  tackles?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  interceptions?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  yellowCards?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  redCards?: Prisma.IntWithAggregatesFilter<"playerMatchStat"> | number
-  createdAt?: Prisma.DateTimeWithAggregatesFilter<"playerMatchStat"> | Date | string
+export type PlayerMatchStatScalarWhereWithAggregatesInput = {
+  AND?: Prisma.PlayerMatchStatScalarWhereWithAggregatesInput | Prisma.PlayerMatchStatScalarWhereWithAggregatesInput[]
+  OR?: Prisma.PlayerMatchStatScalarWhereWithAggregatesInput[]
+  NOT?: Prisma.PlayerMatchStatScalarWhereWithAggregatesInput | Prisma.PlayerMatchStatScalarWhereWithAggregatesInput[]
+  id?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  playerId?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  matchId?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  minutesPlayed?: Prisma.IntNullableWithAggregatesFilter<"PlayerMatchStat"> | number | null
+  goals?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  assists?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  shots?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  shotsOnTarget?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  passes?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  keyPasses?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  tackles?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  interceptions?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  yellowCards?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  redCards?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  createdAt?: Prisma.DateTimeWithAggregatesFilter<"PlayerMatchStat"> | Date | string
 }
 
-export type playerMatchStatCreateInput = {
+export type PlayerMatchStatCreateInput = {
   minutesPlayed?: number | null
   goals?: number
   assists?: number
@@ -457,7 +457,7 @@ export type playerMatchStatCreateInput = {
   match: Prisma.MatchCreateNestedOneWithoutPlayerStatsInput
 }
 
-export type playerMatchStatUncheckedCreateInput = {
+export type PlayerMatchStatUncheckedCreateInput = {
   id?: number
   playerId: number
   matchId: number
@@ -475,7 +475,7 @@ export type playerMatchStatUncheckedCreateInput = {
   createdAt?: Date | string
 }
 
-export type playerMatchStatUpdateInput = {
+export type PlayerMatchStatUpdateInput = {
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goals?: Prisma.IntFieldUpdateOperationsInput | number
   assists?: Prisma.IntFieldUpdateOperationsInput | number
@@ -492,7 +492,7 @@ export type playerMatchStatUpdateInput = {
   match?: Prisma.MatchUpdateOneRequiredWithoutPlayerStatsNestedInput
 }
 
-export type playerMatchStatUncheckedUpdateInput = {
+export type PlayerMatchStatUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   playerId?: Prisma.IntFieldUpdateOperationsInput | number
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
@@ -510,7 +510,7 @@ export type playerMatchStatUncheckedUpdateInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type playerMatchStatCreateManyInput = {
+export type PlayerMatchStatCreateManyInput = {
   id?: number
   playerId: number
   matchId: number
@@ -528,7 +528,7 @@ export type playerMatchStatCreateManyInput = {
   createdAt?: Date | string
 }
 
-export type playerMatchStatUpdateManyMutationInput = {
+export type PlayerMatchStatUpdateManyMutationInput = {
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goals?: Prisma.IntFieldUpdateOperationsInput | number
   assists?: Prisma.IntFieldUpdateOperationsInput | number
@@ -543,7 +543,7 @@ export type playerMatchStatUpdateManyMutationInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type playerMatchStatUncheckedUpdateManyInput = {
+export type PlayerMatchStatUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   playerId?: Prisma.IntFieldUpdateOperationsInput | number
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
@@ -562,21 +562,21 @@ export type playerMatchStatUncheckedUpdateManyInput = {
 }
 
 export type PlayerMatchStatListRelationFilter = {
-  every?: Prisma.playerMatchStatWhereInput
-  some?: Prisma.playerMatchStatWhereInput
-  none?: Prisma.playerMatchStatWhereInput
+  every?: Prisma.PlayerMatchStatWhereInput
+  some?: Prisma.PlayerMatchStatWhereInput
+  none?: Prisma.PlayerMatchStatWhereInput
 }
 
-export type playerMatchStatOrderByRelationAggregateInput = {
+export type PlayerMatchStatOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
-export type playerMatchStatPlayerIdMatchIdCompoundUniqueInput = {
+export type PlayerMatchStatPlayerIdMatchIdCompoundUniqueInput = {
   playerId: number
   matchId: number
 }
 
-export type playerMatchStatCountOrderByAggregateInput = {
+export type PlayerMatchStatCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
@@ -594,7 +594,7 @@ export type playerMatchStatCountOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
 }
 
-export type playerMatchStatAvgOrderByAggregateInput = {
+export type PlayerMatchStatAvgOrderByAggregateInput = {
   id?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
@@ -611,25 +611,7 @@ export type playerMatchStatAvgOrderByAggregateInput = {
   redCards?: Prisma.SortOrder
 }
 
-export type playerMatchStatMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  playerId?: Prisma.SortOrder
-  matchId?: Prisma.SortOrder
-  minutesPlayed?: Prisma.SortOrder
-  goals?: Prisma.SortOrder
-  assists?: Prisma.SortOrder
-  shots?: Prisma.SortOrder
-  shotsOnTarget?: Prisma.SortOrder
-  passes?: Prisma.SortOrder
-  keyPasses?: Prisma.SortOrder
-  tackles?: Prisma.SortOrder
-  interceptions?: Prisma.SortOrder
-  yellowCards?: Prisma.SortOrder
-  redCards?: Prisma.SortOrder
-  createdAt?: Prisma.SortOrder
-}
-
-export type playerMatchStatMinOrderByAggregateInput = {
+export type PlayerMatchStatMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
@@ -647,7 +629,25 @@ export type playerMatchStatMinOrderByAggregateInput = {
   createdAt?: Prisma.SortOrder
 }
 
-export type playerMatchStatSumOrderByAggregateInput = {
+export type PlayerMatchStatMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  playerId?: Prisma.SortOrder
+  matchId?: Prisma.SortOrder
+  minutesPlayed?: Prisma.SortOrder
+  goals?: Prisma.SortOrder
+  assists?: Prisma.SortOrder
+  shots?: Prisma.SortOrder
+  shotsOnTarget?: Prisma.SortOrder
+  passes?: Prisma.SortOrder
+  keyPasses?: Prisma.SortOrder
+  tackles?: Prisma.SortOrder
+  interceptions?: Prisma.SortOrder
+  yellowCards?: Prisma.SortOrder
+  redCards?: Prisma.SortOrder
+  createdAt?: Prisma.SortOrder
+}
+
+export type PlayerMatchStatSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   matchId?: Prisma.SortOrder
@@ -664,91 +664,91 @@ export type playerMatchStatSumOrderByAggregateInput = {
   redCards?: Prisma.SortOrder
 }
 
-export type playerMatchStatCreateNestedManyWithoutMatchInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutMatchInput, Prisma.playerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.playerMatchStatCreateWithoutMatchInput[] | Prisma.playerMatchStatUncheckedCreateWithoutMatchInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutMatchInput | Prisma.playerMatchStatCreateOrConnectWithoutMatchInput[]
-  createMany?: Prisma.playerMatchStatCreateManyMatchInputEnvelope
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
+export type PlayerMatchStatCreateNestedManyWithoutMatchInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.PlayerMatchStatCreateWithoutMatchInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput | Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyMatchInputEnvelope
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
 }
 
-export type playerMatchStatUncheckedCreateNestedManyWithoutMatchInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutMatchInput, Prisma.playerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.playerMatchStatCreateWithoutMatchInput[] | Prisma.playerMatchStatUncheckedCreateWithoutMatchInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutMatchInput | Prisma.playerMatchStatCreateOrConnectWithoutMatchInput[]
-  createMany?: Prisma.playerMatchStatCreateManyMatchInputEnvelope
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
+export type PlayerMatchStatUncheckedCreateNestedManyWithoutMatchInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.PlayerMatchStatCreateWithoutMatchInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput | Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyMatchInputEnvelope
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
 }
 
-export type playerMatchStatUpdateManyWithoutMatchNestedInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutMatchInput, Prisma.playerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.playerMatchStatCreateWithoutMatchInput[] | Prisma.playerMatchStatUncheckedCreateWithoutMatchInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutMatchInput | Prisma.playerMatchStatCreateOrConnectWithoutMatchInput[]
-  upsert?: Prisma.playerMatchStatUpsertWithWhereUniqueWithoutMatchInput | Prisma.playerMatchStatUpsertWithWhereUniqueWithoutMatchInput[]
-  createMany?: Prisma.playerMatchStatCreateManyMatchInputEnvelope
-  set?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  disconnect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  delete?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  update?: Prisma.playerMatchStatUpdateWithWhereUniqueWithoutMatchInput | Prisma.playerMatchStatUpdateWithWhereUniqueWithoutMatchInput[]
-  updateMany?: Prisma.playerMatchStatUpdateManyWithWhereWithoutMatchInput | Prisma.playerMatchStatUpdateManyWithWhereWithoutMatchInput[]
-  deleteMany?: Prisma.playerMatchStatScalarWhereInput | Prisma.playerMatchStatScalarWhereInput[]
+export type PlayerMatchStatUpdateManyWithoutMatchNestedInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.PlayerMatchStatCreateWithoutMatchInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput | Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput[]
+  upsert?: Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutMatchInput | Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutMatchInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyMatchInputEnvelope
+  set?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  disconnect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  delete?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  update?: Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutMatchInput | Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutMatchInput[]
+  updateMany?: Prisma.PlayerMatchStatUpdateManyWithWhereWithoutMatchInput | Prisma.PlayerMatchStatUpdateManyWithWhereWithoutMatchInput[]
+  deleteMany?: Prisma.PlayerMatchStatScalarWhereInput | Prisma.PlayerMatchStatScalarWhereInput[]
 }
 
-export type playerMatchStatUncheckedUpdateManyWithoutMatchNestedInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutMatchInput, Prisma.playerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.playerMatchStatCreateWithoutMatchInput[] | Prisma.playerMatchStatUncheckedCreateWithoutMatchInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutMatchInput | Prisma.playerMatchStatCreateOrConnectWithoutMatchInput[]
-  upsert?: Prisma.playerMatchStatUpsertWithWhereUniqueWithoutMatchInput | Prisma.playerMatchStatUpsertWithWhereUniqueWithoutMatchInput[]
-  createMany?: Prisma.playerMatchStatCreateManyMatchInputEnvelope
-  set?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  disconnect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  delete?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  update?: Prisma.playerMatchStatUpdateWithWhereUniqueWithoutMatchInput | Prisma.playerMatchStatUpdateWithWhereUniqueWithoutMatchInput[]
-  updateMany?: Prisma.playerMatchStatUpdateManyWithWhereWithoutMatchInput | Prisma.playerMatchStatUpdateManyWithWhereWithoutMatchInput[]
-  deleteMany?: Prisma.playerMatchStatScalarWhereInput | Prisma.playerMatchStatScalarWhereInput[]
+export type PlayerMatchStatUncheckedUpdateManyWithoutMatchNestedInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput> | Prisma.PlayerMatchStatCreateWithoutMatchInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput | Prisma.PlayerMatchStatCreateOrConnectWithoutMatchInput[]
+  upsert?: Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutMatchInput | Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutMatchInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyMatchInputEnvelope
+  set?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  disconnect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  delete?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  update?: Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutMatchInput | Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutMatchInput[]
+  updateMany?: Prisma.PlayerMatchStatUpdateManyWithWhereWithoutMatchInput | Prisma.PlayerMatchStatUpdateManyWithWhereWithoutMatchInput[]
+  deleteMany?: Prisma.PlayerMatchStatScalarWhereInput | Prisma.PlayerMatchStatScalarWhereInput[]
 }
 
-export type playerMatchStatCreateNestedManyWithoutPlayerInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutPlayerInput, Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.playerMatchStatCreateWithoutPlayerInput[] | Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput[]
-  createMany?: Prisma.playerMatchStatCreateManyPlayerInputEnvelope
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
+export type PlayerMatchStatCreateNestedManyWithoutPlayerInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.PlayerMatchStatCreateWithoutPlayerInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyPlayerInputEnvelope
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
 }
 
-export type playerMatchStatUncheckedCreateNestedManyWithoutPlayerInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutPlayerInput, Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.playerMatchStatCreateWithoutPlayerInput[] | Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput[]
-  createMany?: Prisma.playerMatchStatCreateManyPlayerInputEnvelope
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
+export type PlayerMatchStatUncheckedCreateNestedManyWithoutPlayerInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.PlayerMatchStatCreateWithoutPlayerInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyPlayerInputEnvelope
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
 }
 
-export type playerMatchStatUpdateManyWithoutPlayerNestedInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutPlayerInput, Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.playerMatchStatCreateWithoutPlayerInput[] | Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput[]
-  upsert?: Prisma.playerMatchStatUpsertWithWhereUniqueWithoutPlayerInput | Prisma.playerMatchStatUpsertWithWhereUniqueWithoutPlayerInput[]
-  createMany?: Prisma.playerMatchStatCreateManyPlayerInputEnvelope
-  set?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  disconnect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  delete?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  update?: Prisma.playerMatchStatUpdateWithWhereUniqueWithoutPlayerInput | Prisma.playerMatchStatUpdateWithWhereUniqueWithoutPlayerInput[]
-  updateMany?: Prisma.playerMatchStatUpdateManyWithWhereWithoutPlayerInput | Prisma.playerMatchStatUpdateManyWithWhereWithoutPlayerInput[]
-  deleteMany?: Prisma.playerMatchStatScalarWhereInput | Prisma.playerMatchStatScalarWhereInput[]
+export type PlayerMatchStatUpdateManyWithoutPlayerNestedInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.PlayerMatchStatCreateWithoutPlayerInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput[]
+  upsert?: Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutPlayerInput | Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutPlayerInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyPlayerInputEnvelope
+  set?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  disconnect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  delete?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  update?: Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutPlayerInput | Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutPlayerInput[]
+  updateMany?: Prisma.PlayerMatchStatUpdateManyWithWhereWithoutPlayerInput | Prisma.PlayerMatchStatUpdateManyWithWhereWithoutPlayerInput[]
+  deleteMany?: Prisma.PlayerMatchStatScalarWhereInput | Prisma.PlayerMatchStatScalarWhereInput[]
 }
 
-export type playerMatchStatUncheckedUpdateManyWithoutPlayerNestedInput = {
-  create?: Prisma.XOR<Prisma.playerMatchStatCreateWithoutPlayerInput, Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.playerMatchStatCreateWithoutPlayerInput[] | Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput[]
-  connectOrCreate?: Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.playerMatchStatCreateOrConnectWithoutPlayerInput[]
-  upsert?: Prisma.playerMatchStatUpsertWithWhereUniqueWithoutPlayerInput | Prisma.playerMatchStatUpsertWithWhereUniqueWithoutPlayerInput[]
-  createMany?: Prisma.playerMatchStatCreateManyPlayerInputEnvelope
-  set?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  disconnect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  delete?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  connect?: Prisma.playerMatchStatWhereUniqueInput | Prisma.playerMatchStatWhereUniqueInput[]
-  update?: Prisma.playerMatchStatUpdateWithWhereUniqueWithoutPlayerInput | Prisma.playerMatchStatUpdateWithWhereUniqueWithoutPlayerInput[]
-  updateMany?: Prisma.playerMatchStatUpdateManyWithWhereWithoutPlayerInput | Prisma.playerMatchStatUpdateManyWithWhereWithoutPlayerInput[]
-  deleteMany?: Prisma.playerMatchStatScalarWhereInput | Prisma.playerMatchStatScalarWhereInput[]
+export type PlayerMatchStatUncheckedUpdateManyWithoutPlayerNestedInput = {
+  create?: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput> | Prisma.PlayerMatchStatCreateWithoutPlayerInput[] | Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput[]
+  connectOrCreate?: Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput | Prisma.PlayerMatchStatCreateOrConnectWithoutPlayerInput[]
+  upsert?: Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutPlayerInput | Prisma.PlayerMatchStatUpsertWithWhereUniqueWithoutPlayerInput[]
+  createMany?: Prisma.PlayerMatchStatCreateManyPlayerInputEnvelope
+  set?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  disconnect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  delete?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  connect?: Prisma.PlayerMatchStatWhereUniqueInput | Prisma.PlayerMatchStatWhereUniqueInput[]
+  update?: Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutPlayerInput | Prisma.PlayerMatchStatUpdateWithWhereUniqueWithoutPlayerInput[]
+  updateMany?: Prisma.PlayerMatchStatUpdateManyWithWhereWithoutPlayerInput | Prisma.PlayerMatchStatUpdateManyWithWhereWithoutPlayerInput[]
+  deleteMany?: Prisma.PlayerMatchStatScalarWhereInput | Prisma.PlayerMatchStatScalarWhereInput[]
 }
 
-export type playerMatchStatCreateWithoutMatchInput = {
+export type PlayerMatchStatCreateWithoutMatchInput = {
   minutesPlayed?: number | null
   goals?: number
   assists?: number
@@ -764,7 +764,7 @@ export type playerMatchStatCreateWithoutMatchInput = {
   player: Prisma.PlayerCreateNestedOneWithoutMatchStatsInput
 }
 
-export type playerMatchStatUncheckedCreateWithoutMatchInput = {
+export type PlayerMatchStatUncheckedCreateWithoutMatchInput = {
   id?: number
   playerId: number
   minutesPlayed?: number | null
@@ -781,54 +781,54 @@ export type playerMatchStatUncheckedCreateWithoutMatchInput = {
   createdAt?: Date | string
 }
 
-export type playerMatchStatCreateOrConnectWithoutMatchInput = {
-  where: Prisma.playerMatchStatWhereUniqueInput
-  create: Prisma.XOR<Prisma.playerMatchStatCreateWithoutMatchInput, Prisma.playerMatchStatUncheckedCreateWithoutMatchInput>
+export type PlayerMatchStatCreateOrConnectWithoutMatchInput = {
+  where: Prisma.PlayerMatchStatWhereUniqueInput
+  create: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput>
 }
 
-export type playerMatchStatCreateManyMatchInputEnvelope = {
-  data: Prisma.playerMatchStatCreateManyMatchInput | Prisma.playerMatchStatCreateManyMatchInput[]
+export type PlayerMatchStatCreateManyMatchInputEnvelope = {
+  data: Prisma.PlayerMatchStatCreateManyMatchInput | Prisma.PlayerMatchStatCreateManyMatchInput[]
   skipDuplicates?: boolean
 }
 
-export type playerMatchStatUpsertWithWhereUniqueWithoutMatchInput = {
-  where: Prisma.playerMatchStatWhereUniqueInput
-  update: Prisma.XOR<Prisma.playerMatchStatUpdateWithoutMatchInput, Prisma.playerMatchStatUncheckedUpdateWithoutMatchInput>
-  create: Prisma.XOR<Prisma.playerMatchStatCreateWithoutMatchInput, Prisma.playerMatchStatUncheckedCreateWithoutMatchInput>
+export type PlayerMatchStatUpsertWithWhereUniqueWithoutMatchInput = {
+  where: Prisma.PlayerMatchStatWhereUniqueInput
+  update: Prisma.XOR<Prisma.PlayerMatchStatUpdateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedUpdateWithoutMatchInput>
+  create: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedCreateWithoutMatchInput>
 }
 
-export type playerMatchStatUpdateWithWhereUniqueWithoutMatchInput = {
-  where: Prisma.playerMatchStatWhereUniqueInput
-  data: Prisma.XOR<Prisma.playerMatchStatUpdateWithoutMatchInput, Prisma.playerMatchStatUncheckedUpdateWithoutMatchInput>
+export type PlayerMatchStatUpdateWithWhereUniqueWithoutMatchInput = {
+  where: Prisma.PlayerMatchStatWhereUniqueInput
+  data: Prisma.XOR<Prisma.PlayerMatchStatUpdateWithoutMatchInput, Prisma.PlayerMatchStatUncheckedUpdateWithoutMatchInput>
 }
 
-export type playerMatchStatUpdateManyWithWhereWithoutMatchInput = {
-  where: Prisma.playerMatchStatScalarWhereInput
-  data: Prisma.XOR<Prisma.playerMatchStatUpdateManyMutationInput, Prisma.playerMatchStatUncheckedUpdateManyWithoutMatchInput>
+export type PlayerMatchStatUpdateManyWithWhereWithoutMatchInput = {
+  where: Prisma.PlayerMatchStatScalarWhereInput
+  data: Prisma.XOR<Prisma.PlayerMatchStatUpdateManyMutationInput, Prisma.PlayerMatchStatUncheckedUpdateManyWithoutMatchInput>
 }
 
-export type playerMatchStatScalarWhereInput = {
-  AND?: Prisma.playerMatchStatScalarWhereInput | Prisma.playerMatchStatScalarWhereInput[]
-  OR?: Prisma.playerMatchStatScalarWhereInput[]
-  NOT?: Prisma.playerMatchStatScalarWhereInput | Prisma.playerMatchStatScalarWhereInput[]
-  id?: Prisma.IntFilter<"playerMatchStat"> | number
-  playerId?: Prisma.IntFilter<"playerMatchStat"> | number
-  matchId?: Prisma.IntFilter<"playerMatchStat"> | number
-  minutesPlayed?: Prisma.IntNullableFilter<"playerMatchStat"> | number | null
-  goals?: Prisma.IntFilter<"playerMatchStat"> | number
-  assists?: Prisma.IntFilter<"playerMatchStat"> | number
-  shots?: Prisma.IntFilter<"playerMatchStat"> | number
-  shotsOnTarget?: Prisma.IntFilter<"playerMatchStat"> | number
-  passes?: Prisma.IntFilter<"playerMatchStat"> | number
-  keyPasses?: Prisma.IntFilter<"playerMatchStat"> | number
-  tackles?: Prisma.IntFilter<"playerMatchStat"> | number
-  interceptions?: Prisma.IntFilter<"playerMatchStat"> | number
-  yellowCards?: Prisma.IntFilter<"playerMatchStat"> | number
-  redCards?: Prisma.IntFilter<"playerMatchStat"> | number
-  createdAt?: Prisma.DateTimeFilter<"playerMatchStat"> | Date | string
+export type PlayerMatchStatScalarWhereInput = {
+  AND?: Prisma.PlayerMatchStatScalarWhereInput | Prisma.PlayerMatchStatScalarWhereInput[]
+  OR?: Prisma.PlayerMatchStatScalarWhereInput[]
+  NOT?: Prisma.PlayerMatchStatScalarWhereInput | Prisma.PlayerMatchStatScalarWhereInput[]
+  id?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  playerId?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  matchId?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  minutesPlayed?: Prisma.IntNullableFilter<"PlayerMatchStat"> | number | null
+  goals?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  assists?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  shots?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  shotsOnTarget?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  passes?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  keyPasses?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  tackles?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  interceptions?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  yellowCards?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  redCards?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  createdAt?: Prisma.DateTimeFilter<"PlayerMatchStat"> | Date | string
 }
 
-export type playerMatchStatCreateWithoutPlayerInput = {
+export type PlayerMatchStatCreateWithoutPlayerInput = {
   minutesPlayed?: number | null
   goals?: number
   assists?: number
@@ -844,7 +844,7 @@ export type playerMatchStatCreateWithoutPlayerInput = {
   match: Prisma.MatchCreateNestedOneWithoutPlayerStatsInput
 }
 
-export type playerMatchStatUncheckedCreateWithoutPlayerInput = {
+export type PlayerMatchStatUncheckedCreateWithoutPlayerInput = {
   id?: number
   matchId: number
   minutesPlayed?: number | null
@@ -861,33 +861,33 @@ export type playerMatchStatUncheckedCreateWithoutPlayerInput = {
   createdAt?: Date | string
 }
 
-export type playerMatchStatCreateOrConnectWithoutPlayerInput = {
-  where: Prisma.playerMatchStatWhereUniqueInput
-  create: Prisma.XOR<Prisma.playerMatchStatCreateWithoutPlayerInput, Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput>
+export type PlayerMatchStatCreateOrConnectWithoutPlayerInput = {
+  where: Prisma.PlayerMatchStatWhereUniqueInput
+  create: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput>
 }
 
-export type playerMatchStatCreateManyPlayerInputEnvelope = {
-  data: Prisma.playerMatchStatCreateManyPlayerInput | Prisma.playerMatchStatCreateManyPlayerInput[]
+export type PlayerMatchStatCreateManyPlayerInputEnvelope = {
+  data: Prisma.PlayerMatchStatCreateManyPlayerInput | Prisma.PlayerMatchStatCreateManyPlayerInput[]
   skipDuplicates?: boolean
 }
 
-export type playerMatchStatUpsertWithWhereUniqueWithoutPlayerInput = {
-  where: Prisma.playerMatchStatWhereUniqueInput
-  update: Prisma.XOR<Prisma.playerMatchStatUpdateWithoutPlayerInput, Prisma.playerMatchStatUncheckedUpdateWithoutPlayerInput>
-  create: Prisma.XOR<Prisma.playerMatchStatCreateWithoutPlayerInput, Prisma.playerMatchStatUncheckedCreateWithoutPlayerInput>
+export type PlayerMatchStatUpsertWithWhereUniqueWithoutPlayerInput = {
+  where: Prisma.PlayerMatchStatWhereUniqueInput
+  update: Prisma.XOR<Prisma.PlayerMatchStatUpdateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedUpdateWithoutPlayerInput>
+  create: Prisma.XOR<Prisma.PlayerMatchStatCreateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedCreateWithoutPlayerInput>
 }
 
-export type playerMatchStatUpdateWithWhereUniqueWithoutPlayerInput = {
-  where: Prisma.playerMatchStatWhereUniqueInput
-  data: Prisma.XOR<Prisma.playerMatchStatUpdateWithoutPlayerInput, Prisma.playerMatchStatUncheckedUpdateWithoutPlayerInput>
+export type PlayerMatchStatUpdateWithWhereUniqueWithoutPlayerInput = {
+  where: Prisma.PlayerMatchStatWhereUniqueInput
+  data: Prisma.XOR<Prisma.PlayerMatchStatUpdateWithoutPlayerInput, Prisma.PlayerMatchStatUncheckedUpdateWithoutPlayerInput>
 }
 
-export type playerMatchStatUpdateManyWithWhereWithoutPlayerInput = {
-  where: Prisma.playerMatchStatScalarWhereInput
-  data: Prisma.XOR<Prisma.playerMatchStatUpdateManyMutationInput, Prisma.playerMatchStatUncheckedUpdateManyWithoutPlayerInput>
+export type PlayerMatchStatUpdateManyWithWhereWithoutPlayerInput = {
+  where: Prisma.PlayerMatchStatScalarWhereInput
+  data: Prisma.XOR<Prisma.PlayerMatchStatUpdateManyMutationInput, Prisma.PlayerMatchStatUncheckedUpdateManyWithoutPlayerInput>
 }
 
-export type playerMatchStatCreateManyMatchInput = {
+export type PlayerMatchStatCreateManyMatchInput = {
   id?: number
   playerId: number
   minutesPlayed?: number | null
@@ -904,7 +904,7 @@ export type playerMatchStatCreateManyMatchInput = {
   createdAt?: Date | string
 }
 
-export type playerMatchStatUpdateWithoutMatchInput = {
+export type PlayerMatchStatUpdateWithoutMatchInput = {
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goals?: Prisma.IntFieldUpdateOperationsInput | number
   assists?: Prisma.IntFieldUpdateOperationsInput | number
@@ -920,7 +920,7 @@ export type playerMatchStatUpdateWithoutMatchInput = {
   player?: Prisma.PlayerUpdateOneRequiredWithoutMatchStatsNestedInput
 }
 
-export type playerMatchStatUncheckedUpdateWithoutMatchInput = {
+export type PlayerMatchStatUncheckedUpdateWithoutMatchInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   playerId?: Prisma.IntFieldUpdateOperationsInput | number
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -937,7 +937,7 @@ export type playerMatchStatUncheckedUpdateWithoutMatchInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type playerMatchStatUncheckedUpdateManyWithoutMatchInput = {
+export type PlayerMatchStatUncheckedUpdateManyWithoutMatchInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   playerId?: Prisma.IntFieldUpdateOperationsInput | number
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -954,7 +954,7 @@ export type playerMatchStatUncheckedUpdateManyWithoutMatchInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type playerMatchStatCreateManyPlayerInput = {
+export type PlayerMatchStatCreateManyPlayerInput = {
   id?: number
   matchId: number
   minutesPlayed?: number | null
@@ -971,7 +971,7 @@ export type playerMatchStatCreateManyPlayerInput = {
   createdAt?: Date | string
 }
 
-export type playerMatchStatUpdateWithoutPlayerInput = {
+export type PlayerMatchStatUpdateWithoutPlayerInput = {
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   goals?: Prisma.IntFieldUpdateOperationsInput | number
   assists?: Prisma.IntFieldUpdateOperationsInput | number
@@ -987,7 +987,7 @@ export type playerMatchStatUpdateWithoutPlayerInput = {
   match?: Prisma.MatchUpdateOneRequiredWithoutPlayerStatsNestedInput
 }
 
-export type playerMatchStatUncheckedUpdateWithoutPlayerInput = {
+export type PlayerMatchStatUncheckedUpdateWithoutPlayerInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -1004,7 +1004,7 @@ export type playerMatchStatUncheckedUpdateWithoutPlayerInput = {
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
-export type playerMatchStatUncheckedUpdateManyWithoutPlayerInput = {
+export type PlayerMatchStatUncheckedUpdateManyWithoutPlayerInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   matchId?: Prisma.IntFieldUpdateOperationsInput | number
   minutesPlayed?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
@@ -1023,7 +1023,7 @@ export type playerMatchStatUncheckedUpdateManyWithoutPlayerInput = {
 
 
 
-export type playerMatchStatSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type PlayerMatchStatSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   playerId?: boolean
   matchId?: boolean
@@ -1043,7 +1043,7 @@ export type playerMatchStatSelect<ExtArgs extends runtime.Types.Extensions.Inter
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["playerMatchStat"]>
 
-export type playerMatchStatSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type PlayerMatchStatSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   playerId?: boolean
   matchId?: boolean
@@ -1063,7 +1063,7 @@ export type playerMatchStatSelectCreateManyAndReturn<ExtArgs extends runtime.Typ
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["playerMatchStat"]>
 
-export type playerMatchStatSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
+export type PlayerMatchStatSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
   playerId?: boolean
   matchId?: boolean
@@ -1083,7 +1083,7 @@ export type playerMatchStatSelectUpdateManyAndReturn<ExtArgs extends runtime.Typ
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["playerMatchStat"]>
 
-export type playerMatchStatSelectScalar = {
+export type PlayerMatchStatSelectScalar = {
   id?: boolean
   playerId?: boolean
   matchId?: boolean
@@ -1101,22 +1101,22 @@ export type playerMatchStatSelectScalar = {
   createdAt?: boolean
 }
 
-export type playerMatchStatOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "playerId" | "matchId" | "minutesPlayed" | "goals" | "assists" | "shots" | "shotsOnTarget" | "passes" | "keyPasses" | "tackles" | "interceptions" | "yellowCards" | "redCards" | "createdAt", ExtArgs["result"]["playerMatchStat"]>
-export type playerMatchStatInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "playerId" | "matchId" | "minutesPlayed" | "goals" | "assists" | "shots" | "shotsOnTarget" | "passes" | "keyPasses" | "tackles" | "interceptions" | "yellowCards" | "redCards" | "createdAt", ExtArgs["result"]["playerMatchStat"]>
+export type PlayerMatchStatInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   player?: boolean | Prisma.PlayerDefaultArgs<ExtArgs>
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
 }
-export type playerMatchStatIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   player?: boolean | Prisma.PlayerDefaultArgs<ExtArgs>
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
 }
-export type playerMatchStatIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   player?: boolean | Prisma.PlayerDefaultArgs<ExtArgs>
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
 }
 
-export type $playerMatchStatPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  name: "playerMatchStat"
+export type $PlayerMatchStatPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  name: "PlayerMatchStat"
   objects: {
     player: Prisma.$PlayerPayload<ExtArgs>
     match: Prisma.$MatchPayload<ExtArgs>
@@ -1141,18 +1141,18 @@ export type $playerMatchStatPayload<ExtArgs extends runtime.Types.Extensions.Int
   composites: {}
 }
 
-export type playerMatchStatGetPayload<S extends boolean | null | undefined | playerMatchStatDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload, S>
+export type PlayerMatchStatGetPayload<S extends boolean | null | undefined | PlayerMatchStatDefaultArgs> = runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload, S>
 
-export type playerMatchStatCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
-  Omit<playerMatchStatFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
+export type PlayerMatchStatCountArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> =
+  Omit<PlayerMatchStatFindManyArgs, 'select' | 'include' | 'distinct' | 'omit'> & {
     select?: PlayerMatchStatCountAggregateInputType | true
   }
 
-export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
-  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['playerMatchStat'], meta: { name: 'playerMatchStat' } }
+export interface PlayerMatchStatDelegate<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> {
+  [K: symbol]: { types: Prisma.TypeMap<ExtArgs>['model']['PlayerMatchStat'], meta: { name: 'PlayerMatchStat' } }
   /**
    * Find zero or one PlayerMatchStat that matches the filter.
-   * @param {playerMatchStatFindUniqueArgs} args - Arguments to find a PlayerMatchStat
+   * @param {PlayerMatchStatFindUniqueArgs} args - Arguments to find a PlayerMatchStat
    * @example
    * // Get one PlayerMatchStat
    * const playerMatchStat = await prisma.playerMatchStat.findUnique({
@@ -1161,12 +1161,12 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    *   }
    * })
    */
-  findUnique<T extends playerMatchStatFindUniqueArgs>(args: Prisma.SelectSubset<T, playerMatchStatFindUniqueArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findUnique<T extends PlayerMatchStatFindUniqueArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatFindUniqueArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "findUnique", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find one PlayerMatchStat that matches the filter or throw an error with `error.code='P2025'`
    * if no matches were found.
-   * @param {playerMatchStatFindUniqueOrThrowArgs} args - Arguments to find a PlayerMatchStat
+   * @param {PlayerMatchStatFindUniqueOrThrowArgs} args - Arguments to find a PlayerMatchStat
    * @example
    * // Get one PlayerMatchStat
    * const playerMatchStat = await prisma.playerMatchStat.findUniqueOrThrow({
@@ -1175,13 +1175,13 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    *   }
    * })
    */
-  findUniqueOrThrow<T extends playerMatchStatFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, playerMatchStatFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findUniqueOrThrow<T extends PlayerMatchStatFindUniqueOrThrowArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatFindUniqueOrThrowArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first PlayerMatchStat that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {playerMatchStatFindFirstArgs} args - Arguments to find a PlayerMatchStat
+   * @param {PlayerMatchStatFindFirstArgs} args - Arguments to find a PlayerMatchStat
    * @example
    * // Get one PlayerMatchStat
    * const playerMatchStat = await prisma.playerMatchStat.findFirst({
@@ -1190,14 +1190,14 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    *   }
    * })
    */
-  findFirst<T extends playerMatchStatFindFirstArgs>(args?: Prisma.SelectSubset<T, playerMatchStatFindFirstArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  findFirst<T extends PlayerMatchStatFindFirstArgs>(args?: Prisma.SelectSubset<T, PlayerMatchStatFindFirstArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "findFirst", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find the first PlayerMatchStat that matches the filter or
    * throw `PrismaKnownClientError` with `P2025` code if no matches were found.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {playerMatchStatFindFirstOrThrowArgs} args - Arguments to find a PlayerMatchStat
+   * @param {PlayerMatchStatFindFirstOrThrowArgs} args - Arguments to find a PlayerMatchStat
    * @example
    * // Get one PlayerMatchStat
    * const playerMatchStat = await prisma.playerMatchStat.findFirstOrThrow({
@@ -1206,13 +1206,13 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    *   }
    * })
    */
-  findFirstOrThrow<T extends playerMatchStatFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, playerMatchStatFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  findFirstOrThrow<T extends PlayerMatchStatFindFirstOrThrowArgs>(args?: Prisma.SelectSubset<T, PlayerMatchStatFindFirstOrThrowArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "findFirstOrThrow", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Find zero or more PlayerMatchStats that matches the filter.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {playerMatchStatFindManyArgs} args - Arguments to filter and select certain fields only.
+   * @param {PlayerMatchStatFindManyArgs} args - Arguments to filter and select certain fields only.
    * @example
    * // Get all PlayerMatchStats
    * const playerMatchStats = await prisma.playerMatchStat.findMany()
@@ -1224,11 +1224,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * const playerMatchStatWithIdOnly = await prisma.playerMatchStat.findMany({ select: { id: true } })
    * 
    */
-  findMany<T extends playerMatchStatFindManyArgs>(args?: Prisma.SelectSubset<T, playerMatchStatFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
+  findMany<T extends PlayerMatchStatFindManyArgs>(args?: Prisma.SelectSubset<T, PlayerMatchStatFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
 
   /**
    * Create a PlayerMatchStat.
-   * @param {playerMatchStatCreateArgs} args - Arguments to create a PlayerMatchStat.
+   * @param {PlayerMatchStatCreateArgs} args - Arguments to create a PlayerMatchStat.
    * @example
    * // Create one PlayerMatchStat
    * const PlayerMatchStat = await prisma.playerMatchStat.create({
@@ -1238,11 +1238,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  create<T extends playerMatchStatCreateArgs>(args: Prisma.SelectSubset<T, playerMatchStatCreateArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  create<T extends PlayerMatchStatCreateArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatCreateArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "create", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Create many PlayerMatchStats.
-   * @param {playerMatchStatCreateManyArgs} args - Arguments to create many PlayerMatchStats.
+   * @param {PlayerMatchStatCreateManyArgs} args - Arguments to create many PlayerMatchStats.
    * @example
    * // Create many PlayerMatchStats
    * const playerMatchStat = await prisma.playerMatchStat.createMany({
@@ -1252,11 +1252,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * })
    *     
    */
-  createMany<T extends playerMatchStatCreateManyArgs>(args?: Prisma.SelectSubset<T, playerMatchStatCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  createMany<T extends PlayerMatchStatCreateManyArgs>(args?: Prisma.SelectSubset<T, PlayerMatchStatCreateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Create many PlayerMatchStats and returns the data saved in the database.
-   * @param {playerMatchStatCreateManyAndReturnArgs} args - Arguments to create many PlayerMatchStats.
+   * @param {PlayerMatchStatCreateManyAndReturnArgs} args - Arguments to create many PlayerMatchStats.
    * @example
    * // Create many PlayerMatchStats
    * const playerMatchStat = await prisma.playerMatchStat.createManyAndReturn({
@@ -1276,11 +1276,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  createManyAndReturn<T extends playerMatchStatCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, playerMatchStatCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
+  createManyAndReturn<T extends PlayerMatchStatCreateManyAndReturnArgs>(args?: Prisma.SelectSubset<T, PlayerMatchStatCreateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "createManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Delete a PlayerMatchStat.
-   * @param {playerMatchStatDeleteArgs} args - Arguments to delete one PlayerMatchStat.
+   * @param {PlayerMatchStatDeleteArgs} args - Arguments to delete one PlayerMatchStat.
    * @example
    * // Delete one PlayerMatchStat
    * const PlayerMatchStat = await prisma.playerMatchStat.delete({
@@ -1290,11 +1290,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  delete<T extends playerMatchStatDeleteArgs>(args: Prisma.SelectSubset<T, playerMatchStatDeleteArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  delete<T extends PlayerMatchStatDeleteArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatDeleteArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "delete", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Update one PlayerMatchStat.
-   * @param {playerMatchStatUpdateArgs} args - Arguments to update one PlayerMatchStat.
+   * @param {PlayerMatchStatUpdateArgs} args - Arguments to update one PlayerMatchStat.
    * @example
    * // Update one PlayerMatchStat
    * const playerMatchStat = await prisma.playerMatchStat.update({
@@ -1307,11 +1307,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  update<T extends playerMatchStatUpdateArgs>(args: Prisma.SelectSubset<T, playerMatchStatUpdateArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  update<T extends PlayerMatchStatUpdateArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatUpdateArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "update", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
   /**
    * Delete zero or more PlayerMatchStats.
-   * @param {playerMatchStatDeleteManyArgs} args - Arguments to filter PlayerMatchStats to delete.
+   * @param {PlayerMatchStatDeleteManyArgs} args - Arguments to filter PlayerMatchStats to delete.
    * @example
    * // Delete a few PlayerMatchStats
    * const { count } = await prisma.playerMatchStat.deleteMany({
@@ -1321,13 +1321,13 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  deleteMany<T extends playerMatchStatDeleteManyArgs>(args?: Prisma.SelectSubset<T, playerMatchStatDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  deleteMany<T extends PlayerMatchStatDeleteManyArgs>(args?: Prisma.SelectSubset<T, PlayerMatchStatDeleteManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more PlayerMatchStats.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {playerMatchStatUpdateManyArgs} args - Arguments to update one or more rows.
+   * @param {PlayerMatchStatUpdateManyArgs} args - Arguments to update one or more rows.
    * @example
    * // Update many PlayerMatchStats
    * const playerMatchStat = await prisma.playerMatchStat.updateMany({
@@ -1340,11 +1340,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * })
    * 
    */
-  updateMany<T extends playerMatchStatUpdateManyArgs>(args: Prisma.SelectSubset<T, playerMatchStatUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
+  updateMany<T extends PlayerMatchStatUpdateManyArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatUpdateManyArgs<ExtArgs>>): Prisma.PrismaPromise<Prisma.BatchPayload>
 
   /**
    * Update zero or more PlayerMatchStats and returns the data updated in the database.
-   * @param {playerMatchStatUpdateManyAndReturnArgs} args - Arguments to update many PlayerMatchStats.
+   * @param {PlayerMatchStatUpdateManyAndReturnArgs} args - Arguments to update many PlayerMatchStats.
    * @example
    * // Update many PlayerMatchStats
    * const playerMatchStat = await prisma.playerMatchStat.updateManyAndReturn({
@@ -1370,11 +1370,11 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * Read more here: https://pris.ly/d/null-undefined
    * 
    */
-  updateManyAndReturn<T extends playerMatchStatUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, playerMatchStatUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
+  updateManyAndReturn<T extends PlayerMatchStatUpdateManyAndReturnArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatUpdateManyAndReturnArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "updateManyAndReturn", GlobalOmitOptions>>
 
   /**
    * Create or update one PlayerMatchStat.
-   * @param {playerMatchStatUpsertArgs} args - Arguments to update or create a PlayerMatchStat.
+   * @param {PlayerMatchStatUpsertArgs} args - Arguments to update or create a PlayerMatchStat.
    * @example
    * // Update or create a PlayerMatchStat
    * const playerMatchStat = await prisma.playerMatchStat.upsert({
@@ -1389,14 +1389,14 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    *   }
    * })
    */
-  upsert<T extends playerMatchStatUpsertArgs>(args: Prisma.SelectSubset<T, playerMatchStatUpsertArgs<ExtArgs>>): Prisma.Prisma__playerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$playerMatchStatPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
+  upsert<T extends PlayerMatchStatUpsertArgs>(args: Prisma.SelectSubset<T, PlayerMatchStatUpsertArgs<ExtArgs>>): Prisma.Prisma__PlayerMatchStatClient<runtime.Types.Result.GetResult<Prisma.$PlayerMatchStatPayload<ExtArgs>, T, "upsert", GlobalOmitOptions>, never, ExtArgs, GlobalOmitOptions>
 
 
   /**
    * Count the number of PlayerMatchStats.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {playerMatchStatCountArgs} args - Arguments to filter PlayerMatchStats to count.
+   * @param {PlayerMatchStatCountArgs} args - Arguments to filter PlayerMatchStats to count.
    * @example
    * // Count the number of PlayerMatchStats
    * const count = await prisma.playerMatchStat.count({
@@ -1405,8 +1405,8 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    *   }
    * })
   **/
-  count<T extends playerMatchStatCountArgs>(
-    args?: Prisma.Subset<T, playerMatchStatCountArgs>,
+  count<T extends PlayerMatchStatCountArgs>(
+    args?: Prisma.Subset<T, PlayerMatchStatCountArgs>,
   ): Prisma.PrismaPromise<
     T extends runtime.Types.Utils.Record<'select', any>
       ? T['select'] extends true
@@ -1445,7 +1445,7 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * Group by PlayerMatchStat.
    * Note, that providing `undefined` is treated as the value not being there.
    * Read more here: https://pris.ly/d/null-undefined
-   * @param {playerMatchStatGroupByArgs} args - Group by arguments.
+   * @param {PlayerMatchStatGroupByArgs} args - Group by arguments.
    * @example
    * // Group by city, order by createdAt, get count
    * const result = await prisma.user.groupBy({
@@ -1460,14 +1460,14 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
    * 
   **/
   groupBy<
-    T extends playerMatchStatGroupByArgs,
+    T extends PlayerMatchStatGroupByArgs,
     HasSelectOrTake extends Prisma.Or<
       Prisma.Extends<'skip', Prisma.Keys<T>>,
       Prisma.Extends<'take', Prisma.Keys<T>>
     >,
     OrderByArg extends Prisma.True extends HasSelectOrTake
-      ? { orderBy: playerMatchStatGroupByArgs['orderBy'] }
-      : { orderBy?: playerMatchStatGroupByArgs['orderBy'] },
+      ? { orderBy: PlayerMatchStatGroupByArgs['orderBy'] }
+      : { orderBy?: PlayerMatchStatGroupByArgs['orderBy'] },
     OrderFields extends Prisma.ExcludeUnderscoreKeys<Prisma.Keys<Prisma.MaybeTupleToUnion<T['orderBy']>>>,
     ByFields extends Prisma.MaybeTupleToUnion<T['by']>,
     ByValid extends Prisma.Has<ByFields, OrderFields>,
@@ -1516,20 +1516,20 @@ export interface playerMatchStatDelegate<ExtArgs extends runtime.Types.Extension
           ? never
           : `Error: Field "${P}" in "orderBy" needs to be provided in "by"`
       }[OrderFields]
-  >(args: Prisma.SubsetIntersection<T, playerMatchStatGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlayerMatchStatGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
+  >(args: Prisma.SubsetIntersection<T, PlayerMatchStatGroupByArgs, OrderByArg> & InputErrors): {} extends InputErrors ? GetPlayerMatchStatGroupByPayload<T> : Prisma.PrismaPromise<InputErrors>
 /**
- * Fields of the playerMatchStat model
+ * Fields of the PlayerMatchStat model
  */
-readonly fields: playerMatchStatFieldRefs;
+readonly fields: PlayerMatchStatFieldRefs;
 }
 
 /**
- * The delegate class that acts as a "Promise-like" for playerMatchStat.
+ * The delegate class that acts as a "Promise-like" for PlayerMatchStat.
  * Why is this prefixed with `Prisma__`?
  * Because we want to prevent naming conflicts as mentioned in
  * https://github.com/prisma/prisma-client-js/issues/707
  */
-export interface Prisma__playerMatchStatClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
+export interface Prisma__PlayerMatchStatClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   player<T extends Prisma.PlayerDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.PlayerDefaultArgs<ExtArgs>>): Prisma.Prisma__PlayerClient<runtime.Types.Result.GetResult<Prisma.$PlayerPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   match<T extends Prisma.MatchDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.MatchDefaultArgs<ExtArgs>>): Prisma.Prisma__MatchClient<runtime.Types.Result.GetResult<Prisma.$MatchPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
@@ -1559,438 +1559,438 @@ export interface Prisma__playerMatchStatClient<T, Null = never, ExtArgs extends 
 
 
 /**
- * Fields of the playerMatchStat model
+ * Fields of the PlayerMatchStat model
  */
-export interface playerMatchStatFieldRefs {
-  readonly id: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly playerId: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly matchId: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly minutesPlayed: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly goals: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly assists: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly shots: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly shotsOnTarget: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly passes: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly keyPasses: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly tackles: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly interceptions: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly yellowCards: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly redCards: Prisma.FieldRef<"playerMatchStat", 'Int'>
-  readonly createdAt: Prisma.FieldRef<"playerMatchStat", 'DateTime'>
+export interface PlayerMatchStatFieldRefs {
+  readonly id: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly playerId: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly matchId: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly minutesPlayed: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly goals: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly assists: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly shots: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly shotsOnTarget: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly passes: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly keyPasses: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly tackles: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly interceptions: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly yellowCards: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly redCards: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly createdAt: Prisma.FieldRef<"PlayerMatchStat", 'DateTime'>
 }
     
 
 // Custom InputTypes
 /**
- * playerMatchStat findUnique
+ * PlayerMatchStat findUnique
  */
-export type playerMatchStatFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatFindUniqueArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * Filter, which playerMatchStat to fetch.
+   * Filter, which PlayerMatchStat to fetch.
    */
-  where: Prisma.playerMatchStatWhereUniqueInput
+  where: Prisma.PlayerMatchStatWhereUniqueInput
 }
 
 /**
- * playerMatchStat findUniqueOrThrow
+ * PlayerMatchStat findUniqueOrThrow
  */
-export type playerMatchStatFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatFindUniqueOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * Filter, which playerMatchStat to fetch.
+   * Filter, which PlayerMatchStat to fetch.
    */
-  where: Prisma.playerMatchStatWhereUniqueInput
+  where: Prisma.PlayerMatchStatWhereUniqueInput
 }
 
 /**
- * playerMatchStat findFirst
+ * PlayerMatchStat findFirst
  */
-export type playerMatchStatFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatFindFirstArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * Filter, which playerMatchStat to fetch.
+   * Filter, which PlayerMatchStat to fetch.
    */
-  where?: Prisma.playerMatchStatWhereInput
+  where?: Prisma.PlayerMatchStatWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of playerMatchStats to fetch.
+   * Determine the order of PlayerMatchStats to fetch.
    */
-  orderBy?: Prisma.playerMatchStatOrderByWithRelationInput | Prisma.playerMatchStatOrderByWithRelationInput[]
+  orderBy?: Prisma.PlayerMatchStatOrderByWithRelationInput | Prisma.PlayerMatchStatOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for playerMatchStats.
+   * Sets the position for searching for PlayerMatchStats.
    */
-  cursor?: Prisma.playerMatchStatWhereUniqueInput
+  cursor?: Prisma.PlayerMatchStatWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` playerMatchStats from the position of the cursor.
+   * Take `±n` PlayerMatchStats from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` playerMatchStats.
+   * Skip the first `n` PlayerMatchStats.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of playerMatchStats.
+   * Filter by unique combinations of PlayerMatchStats.
    */
   distinct?: Prisma.PlayerMatchStatScalarFieldEnum | Prisma.PlayerMatchStatScalarFieldEnum[]
 }
 
 /**
- * playerMatchStat findFirstOrThrow
+ * PlayerMatchStat findFirstOrThrow
  */
-export type playerMatchStatFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatFindFirstOrThrowArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * Filter, which playerMatchStat to fetch.
+   * Filter, which PlayerMatchStat to fetch.
    */
-  where?: Prisma.playerMatchStatWhereInput
+  where?: Prisma.PlayerMatchStatWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of playerMatchStats to fetch.
+   * Determine the order of PlayerMatchStats to fetch.
    */
-  orderBy?: Prisma.playerMatchStatOrderByWithRelationInput | Prisma.playerMatchStatOrderByWithRelationInput[]
+  orderBy?: Prisma.PlayerMatchStatOrderByWithRelationInput | Prisma.PlayerMatchStatOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for searching for playerMatchStats.
+   * Sets the position for searching for PlayerMatchStats.
    */
-  cursor?: Prisma.playerMatchStatWhereUniqueInput
+  cursor?: Prisma.PlayerMatchStatWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` playerMatchStats from the position of the cursor.
+   * Take `±n` PlayerMatchStats from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` playerMatchStats.
+   * Skip the first `n` PlayerMatchStats.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of playerMatchStats.
+   * Filter by unique combinations of PlayerMatchStats.
    */
   distinct?: Prisma.PlayerMatchStatScalarFieldEnum | Prisma.PlayerMatchStatScalarFieldEnum[]
 }
 
 /**
- * playerMatchStat findMany
+ * PlayerMatchStat findMany
  */
-export type playerMatchStatFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatFindManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * Filter, which playerMatchStats to fetch.
+   * Filter, which PlayerMatchStats to fetch.
    */
-  where?: Prisma.playerMatchStatWhereInput
+  where?: Prisma.PlayerMatchStatWhereInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/sorting Sorting Docs}
    * 
-   * Determine the order of playerMatchStats to fetch.
+   * Determine the order of PlayerMatchStats to fetch.
    */
-  orderBy?: Prisma.playerMatchStatOrderByWithRelationInput | Prisma.playerMatchStatOrderByWithRelationInput[]
+  orderBy?: Prisma.PlayerMatchStatOrderByWithRelationInput | Prisma.PlayerMatchStatOrderByWithRelationInput[]
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination#cursor-based-pagination Cursor Docs}
    * 
-   * Sets the position for listing playerMatchStats.
+   * Sets the position for listing PlayerMatchStats.
    */
-  cursor?: Prisma.playerMatchStatWhereUniqueInput
+  cursor?: Prisma.PlayerMatchStatWhereUniqueInput
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Take `±n` playerMatchStats from the position of the cursor.
+   * Take `±n` PlayerMatchStats from the position of the cursor.
    */
   take?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/pagination Pagination Docs}
    * 
-   * Skip the first `n` playerMatchStats.
+   * Skip the first `n` PlayerMatchStats.
    */
   skip?: number
   /**
    * {@link https://www.prisma.io/docs/concepts/components/prisma-client/distinct Distinct Docs}
    * 
-   * Filter by unique combinations of playerMatchStats.
+   * Filter by unique combinations of PlayerMatchStats.
    */
   distinct?: Prisma.PlayerMatchStatScalarFieldEnum | Prisma.PlayerMatchStatScalarFieldEnum[]
 }
 
 /**
- * playerMatchStat create
+ * PlayerMatchStat create
  */
-export type playerMatchStatCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatCreateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * The data needed to create a playerMatchStat.
+   * The data needed to create a PlayerMatchStat.
    */
-  data: Prisma.XOR<Prisma.playerMatchStatCreateInput, Prisma.playerMatchStatUncheckedCreateInput>
+  data: Prisma.XOR<Prisma.PlayerMatchStatCreateInput, Prisma.PlayerMatchStatUncheckedCreateInput>
 }
 
 /**
- * playerMatchStat createMany
+ * PlayerMatchStat createMany
  */
-export type playerMatchStatCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatCreateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to create many playerMatchStats.
+   * The data used to create many PlayerMatchStats.
    */
-  data: Prisma.playerMatchStatCreateManyInput | Prisma.playerMatchStatCreateManyInput[]
+  data: Prisma.PlayerMatchStatCreateManyInput | Prisma.PlayerMatchStatCreateManyInput[]
   skipDuplicates?: boolean
 }
 
 /**
- * playerMatchStat createManyAndReturn
+ * PlayerMatchStat createManyAndReturn
  */
-export type playerMatchStatCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelectCreateManyAndReturn<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelectCreateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
-   * The data used to create many playerMatchStats.
+   * The data used to create many PlayerMatchStats.
    */
-  data: Prisma.playerMatchStatCreateManyInput | Prisma.playerMatchStatCreateManyInput[]
+  data: Prisma.PlayerMatchStatCreateManyInput | Prisma.PlayerMatchStatCreateManyInput[]
   skipDuplicates?: boolean
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatIncludeCreateManyAndReturn<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * playerMatchStat update
+ * PlayerMatchStat update
  */
-export type playerMatchStatUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatUpdateArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * The data needed to update a playerMatchStat.
+   * The data needed to update a PlayerMatchStat.
    */
-  data: Prisma.XOR<Prisma.playerMatchStatUpdateInput, Prisma.playerMatchStatUncheckedUpdateInput>
+  data: Prisma.XOR<Prisma.PlayerMatchStatUpdateInput, Prisma.PlayerMatchStatUncheckedUpdateInput>
   /**
-   * Choose, which playerMatchStat to update.
+   * Choose, which PlayerMatchStat to update.
    */
-  where: Prisma.playerMatchStatWhereUniqueInput
+  where: Prisma.PlayerMatchStatWhereUniqueInput
 }
 
 /**
- * playerMatchStat updateMany
+ * PlayerMatchStat updateMany
  */
-export type playerMatchStatUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatUpdateManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * The data used to update playerMatchStats.
+   * The data used to update PlayerMatchStats.
    */
-  data: Prisma.XOR<Prisma.playerMatchStatUpdateManyMutationInput, Prisma.playerMatchStatUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PlayerMatchStatUpdateManyMutationInput, Prisma.PlayerMatchStatUncheckedUpdateManyInput>
   /**
-   * Filter which playerMatchStats to update
+   * Filter which PlayerMatchStats to update
    */
-  where?: Prisma.playerMatchStatWhereInput
+  where?: Prisma.PlayerMatchStatWhereInput
   /**
-   * Limit how many playerMatchStats to update.
+   * Limit how many PlayerMatchStats to update.
    */
   limit?: number
 }
 
 /**
- * playerMatchStat updateManyAndReturn
+ * PlayerMatchStat updateManyAndReturn
  */
-export type playerMatchStatUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelectUpdateManyAndReturn<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelectUpdateManyAndReturn<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
-   * The data used to update playerMatchStats.
+   * The data used to update PlayerMatchStats.
    */
-  data: Prisma.XOR<Prisma.playerMatchStatUpdateManyMutationInput, Prisma.playerMatchStatUncheckedUpdateManyInput>
+  data: Prisma.XOR<Prisma.PlayerMatchStatUpdateManyMutationInput, Prisma.PlayerMatchStatUncheckedUpdateManyInput>
   /**
-   * Filter which playerMatchStats to update
+   * Filter which PlayerMatchStats to update
    */
-  where?: Prisma.playerMatchStatWhereInput
+  where?: Prisma.PlayerMatchStatWhereInput
   /**
-   * Limit how many playerMatchStats to update.
+   * Limit how many PlayerMatchStats to update.
    */
   limit?: number
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatIncludeUpdateManyAndReturn<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
- * playerMatchStat upsert
+ * PlayerMatchStat upsert
  */
-export type playerMatchStatUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatUpsertArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * The filter to search for the playerMatchStat to update in case it exists.
+   * The filter to search for the PlayerMatchStat to update in case it exists.
    */
-  where: Prisma.playerMatchStatWhereUniqueInput
+  where: Prisma.PlayerMatchStatWhereUniqueInput
   /**
-   * In case the playerMatchStat found by the `where` argument doesn't exist, create a new playerMatchStat with this data.
+   * In case the PlayerMatchStat found by the `where` argument doesn't exist, create a new PlayerMatchStat with this data.
    */
-  create: Prisma.XOR<Prisma.playerMatchStatCreateInput, Prisma.playerMatchStatUncheckedCreateInput>
+  create: Prisma.XOR<Prisma.PlayerMatchStatCreateInput, Prisma.PlayerMatchStatUncheckedCreateInput>
   /**
-   * In case the playerMatchStat was found with the provided `where` argument, update it with this data.
+   * In case the PlayerMatchStat was found with the provided `where` argument, update it with this data.
    */
-  update: Prisma.XOR<Prisma.playerMatchStatUpdateInput, Prisma.playerMatchStatUncheckedUpdateInput>
+  update: Prisma.XOR<Prisma.PlayerMatchStatUpdateInput, Prisma.PlayerMatchStatUncheckedUpdateInput>
 }
 
 /**
- * playerMatchStat delete
+ * PlayerMatchStat delete
  */
-export type playerMatchStatDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatDeleteArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
   /**
-   * Filter which playerMatchStat to delete.
+   * Filter which PlayerMatchStat to delete.
    */
-  where: Prisma.playerMatchStatWhereUniqueInput
+  where: Prisma.PlayerMatchStatWhereUniqueInput
 }
 
 /**
- * playerMatchStat deleteMany
+ * PlayerMatchStat deleteMany
  */
-export type playerMatchStatDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Filter which playerMatchStats to delete
+   * Filter which PlayerMatchStats to delete
    */
-  where?: Prisma.playerMatchStatWhereInput
+  where?: Prisma.PlayerMatchStatWhereInput
   /**
-   * Limit how many playerMatchStats to delete.
+   * Limit how many PlayerMatchStats to delete.
    */
   limit?: number
 }
 
 /**
- * playerMatchStat without action
+ * PlayerMatchStat without action
  */
-export type playerMatchStatDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type PlayerMatchStatDefaultArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the playerMatchStat
+   * Select specific fields to fetch from the PlayerMatchStat
    */
-  select?: Prisma.playerMatchStatSelect<ExtArgs> | null
+  select?: Prisma.PlayerMatchStatSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the playerMatchStat
+   * Omit specific fields from the PlayerMatchStat
    */
-  omit?: Prisma.playerMatchStatOmit<ExtArgs> | null
+  omit?: Prisma.PlayerMatchStatOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.playerMatchStatInclude<ExtArgs> | null
+  include?: Prisma.PlayerMatchStatInclude<ExtArgs> | null
 }

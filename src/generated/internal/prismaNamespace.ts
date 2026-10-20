@@ -403,7 +403,7 @@ export const ModelName = {
   Match: 'Match',
   MatchEvent: 'MatchEvent',
   Player: 'Player',
-  playerMatchStat: 'playerMatchStat',
+  PlayerMatchStat: 'PlayerMatchStat',
   teamMatchStat: 'teamMatchStat'
 } as const
 
@@ -868,76 +868,76 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
-    playerMatchStat: {
-      payload: Prisma.$playerMatchStatPayload<ExtArgs>
-      fields: Prisma.playerMatchStatFieldRefs
+    PlayerMatchStat: {
+      payload: Prisma.$PlayerMatchStatPayload<ExtArgs>
+      fields: Prisma.PlayerMatchStatFieldRefs
       operations: {
         findUnique: {
-          args: Prisma.playerMatchStatFindUniqueArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload> | null
+          args: Prisma.PlayerMatchStatFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload> | null
         }
         findUniqueOrThrow: {
-          args: Prisma.playerMatchStatFindUniqueOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>
+          args: Prisma.PlayerMatchStatFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>
         }
         findFirst: {
-          args: Prisma.playerMatchStatFindFirstArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload> | null
+          args: Prisma.PlayerMatchStatFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload> | null
         }
         findFirstOrThrow: {
-          args: Prisma.playerMatchStatFindFirstOrThrowArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>
+          args: Prisma.PlayerMatchStatFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>
         }
         findMany: {
-          args: Prisma.playerMatchStatFindManyArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>[]
+          args: Prisma.PlayerMatchStatFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>[]
         }
         create: {
-          args: Prisma.playerMatchStatCreateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>
+          args: Prisma.PlayerMatchStatCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>
         }
         createMany: {
-          args: Prisma.playerMatchStatCreateManyArgs<ExtArgs>
+          args: Prisma.PlayerMatchStatCreateManyArgs<ExtArgs>
           result: BatchPayload
         }
         createManyAndReturn: {
-          args: Prisma.playerMatchStatCreateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>[]
+          args: Prisma.PlayerMatchStatCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>[]
         }
         delete: {
-          args: Prisma.playerMatchStatDeleteArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>
+          args: Prisma.PlayerMatchStatDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>
         }
         update: {
-          args: Prisma.playerMatchStatUpdateArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>
+          args: Prisma.PlayerMatchStatUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>
         }
         deleteMany: {
-          args: Prisma.playerMatchStatDeleteManyArgs<ExtArgs>
+          args: Prisma.PlayerMatchStatDeleteManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateMany: {
-          args: Prisma.playerMatchStatUpdateManyArgs<ExtArgs>
+          args: Prisma.PlayerMatchStatUpdateManyArgs<ExtArgs>
           result: BatchPayload
         }
         updateManyAndReturn: {
-          args: Prisma.playerMatchStatUpdateManyAndReturnArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>[]
+          args: Prisma.PlayerMatchStatUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>[]
         }
         upsert: {
-          args: Prisma.playerMatchStatUpsertArgs<ExtArgs>
-          result: runtime.Types.Utils.PayloadToResult<Prisma.$playerMatchStatPayload>
+          args: Prisma.PlayerMatchStatUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$PlayerMatchStatPayload>
         }
         aggregate: {
           args: Prisma.PlayerMatchStatAggregateArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.AggregatePlayerMatchStat>
         }
         groupBy: {
-          args: Prisma.playerMatchStatGroupByArgs<ExtArgs>
+          args: Prisma.PlayerMatchStatGroupByArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.PlayerMatchStatGroupByOutputType>[]
         }
         count: {
-          args: Prisma.playerMatchStatCountArgs<ExtArgs>
+          args: Prisma.PlayerMatchStatCountArgs<ExtArgs>
           result: runtime.Types.Utils.Optional<Prisma.PlayerMatchStatCountAggregateOutputType> | number
         }
       }
@@ -1113,11 +1113,22 @@ export type MatchScalarFieldEnum = (typeof MatchScalarFieldEnum)[keyof typeof Ma
 
 export const MatchEventScalarFieldEnum = {
   id: 'id',
+  provider: 'provider',
+  externalId: 'externalId',
   matchId: 'matchId',
   minute: 'minute',
   extraTime: 'extraTime',
+  period: 'period',
+  timestamp: 'timestamp',
+  eventIndex: 'eventIndex',
   type: 'type',
   detail: 'detail',
+  locationX: 'locationX',
+  locationY: 'locationY',
+  shotOutcome: 'shotOutcome',
+  shotXg: 'shotXg',
+  shotBodyPart: 'shotBodyPart',
+  shotTechnique: 'shotTechnique',
   teamId: 'teamId',
   playerId: 'playerId',
   createdAt: 'createdAt'
@@ -1128,6 +1139,8 @@ export type MatchEventScalarFieldEnum = (typeof MatchEventScalarFieldEnum)[keyof
 
 export const PlayerScalarFieldEnum = {
   id: 'id',
+  externalId: 'externalId',
+  provider: 'provider',
   name: 'name',
   position: 'position',
   nationality: 'nationality',
@@ -1422,7 +1435,7 @@ export type GlobalOmitConfig = {
   match?: Prisma.MatchOmit
   matchEvent?: Prisma.MatchEventOmit
   player?: Prisma.PlayerOmit
-  playerMatchStat?: Prisma.playerMatchStatOmit
+  playerMatchStat?: Prisma.PlayerMatchStatOmit
   teamMatchStat?: Prisma.teamMatchStatOmit
 }
 

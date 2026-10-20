@@ -48,10 +48,10 @@ export type MatchEvent = Prisma.MatchEventModel
  */
 export type Player = Prisma.PlayerModel
 /**
- * Model playerMatchStat
+ * Model PlayerMatchStat
  * 
  */
-export type playerMatchStat = Prisma.playerMatchStatModel
+export type PlayerMatchStat = Prisma.PlayerMatchStatModel
 /**
  * Model teamMatchStat
  * 

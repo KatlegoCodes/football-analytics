@@ -80,7 +80,7 @@ model Match {
   season   Season @relation(fields: [seasonId], references: [id])
 
   createdAt   DateTime          @default(now())
-  playerStats playerMatchStat[]
+  playerStats PlayerMatchStat[]
   matchEvents MatchEvent[]
   teamStats   teamMatchStat[]
 
@@ -90,13 +90,27 @@ model Match {
 model MatchEvent {
   id Int @id @default(autoincrement())
 
+  provider   String
+  externalId String
+
   matchId Int
 
-  minute    Int
-  extraTime Int?
+  minute     Int
+  extraTime  Int?
+  period     Int?
+  timestamp  String?
+  eventIndex Int?
 
   type   String
   detail String?
+
+  locationX Float?
+  locationY Float?
+
+  shotOutcome   String?
+  shotXg        Float?
+  shotBodyPart  String?
+  shotTechnique String?
 
   teamId   Int?
   playerId Int?
@@ -108,10 +122,15 @@ model MatchEvent {
   player Player? @relation(fields: [playerId], references: [id])
 
   createdAt DateTime @default(now())
+
+  @@unique([provider, externalId])
 }
 
 model Player {
   id Int @id @default(autoincrement())
+
+  externalId Int?
+  provider   String?
 
   name        String
   position    String?
@@ -122,13 +141,15 @@ model Player {
 
   team Team @relation(fields: [teamId], references: [id])
 
-  matchStats playerMatchStat[]
+  matchStats PlayerMatchStat[]
   events     MatchEvent[]
 
   createdAt DateTime @default(now())
+
+  @@unique([provider, externalId])
 }
 
-model playerMatchStat {
+model PlayerMatchStat {
   id Int @id @default(autoincrement())
 
   playerId Int
