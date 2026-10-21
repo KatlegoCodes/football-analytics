@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mapStatsBombEvent, type StatsBombEvent } from "./mapper";
+import mapStatsBombEvent, { type StatsBombEvent } from "./mapper";
 
 describe("mapStatsBombEvent", () => {
   it("maps shot events and their analytics fields", () => {
