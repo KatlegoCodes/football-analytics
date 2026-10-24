@@ -96,4 +96,11 @@ export const syncStatsBombMatches = async (competitionId: number, seasonId: numb
       created++;
     }
   }
+
+  return {
+    ...setup,
+    matchesProcessed: matches.length,
+    matchesCreated: created,
+    matchesUpdated: updated,
+  };
 };

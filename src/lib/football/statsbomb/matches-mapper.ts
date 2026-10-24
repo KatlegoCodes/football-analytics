@@ -47,9 +47,8 @@ export type MappedStatsBombMatch = {
 };
 
 export const mapStatsBombMatch = (match: StatsBombMatch): MappedStatsBombMatch => {
-  const playedAt = new Date(`${match.match_date}T${match.kick_off ?? "00:00:00"}`);
-
-  if (!Number.isNaN(playedAt.getTime())) {
+  const playedAt = new Date(`${match.match_date}T${match.kick_off ?? "00:00:00"}Z`);
+  if (Number.isNaN(playedAt.getTime())) {
     throw new Error(`Invalid match date for StatsBomb match ${match.match_id}`);
   }
 

@@ -1,7 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 import { getStatsBombMatches } from "../statsbomb/matches-client";
-import { mapStatsBombMatch, type StatsBombMatch } from "@/lib/football/statsbomb/matches-mapper";
-
+import { mapStatsBombMatch, type StatsBombMatch } from "../statsbomb/matches-mapper";
 export const syncStatsBombTeamsAndSeason = async (competitionId: number, seasonId: number) => {
   const rawMatches = await getStatsBombMatches(competitionId, seasonId);
 

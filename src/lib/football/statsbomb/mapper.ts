@@ -33,6 +33,21 @@ export type StatsBombEvent = {
       name: string;
     } | null;
   } | null;
+
+  tactics?:
+    | {
+        formation?: number | null;
+        lineup?: {
+          id: number;
+          name: string;
+        };
+        position?: {
+          id: number;
+          name: string;
+        } | null;
+        jersey_number?: number | null;
+      }[]
+    | null;
 };
 
 export type MappedstatsBombEvent = {
