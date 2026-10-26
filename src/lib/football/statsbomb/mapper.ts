@@ -34,20 +34,22 @@ export type StatsBombEvent = {
     } | null;
   } | null;
 
-  tactics?:
-    | {
-        formation?: number | null;
-        lineup?: {
-          id: number;
-          name: string;
-        };
-        position?: {
-          id: number;
-          name: string;
-        } | null;
-        jersey_number?: number | null;
-      }[]
-    | null;
+  tactics?: {
+    formation?: number | null;
+    lineup?:
+      | {
+          player: {
+            id: number;
+            name: string;
+          };
+          position?: {
+            id: number;
+            name: string;
+          } | null;
+          jersey_number?: number | null;
+        }[]
+      | null;
+  } | null;
 };
 
 export type MappedstatsBombEvent = {
