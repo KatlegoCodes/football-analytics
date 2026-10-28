@@ -58,7 +58,10 @@ export const mapStatsBombMatch = (match: StatsBombMatch): MappedStatsBombMatch =
     playedAt,
     homeScore: match.home_score,
     awayScore: match.away_score,
-    status: match.match_status ?? "FINISHED",
+    status:
+      match.home_score !== null && match.away_score !== null
+        ? "FINISHED"
+        : (match.match_status ?? "SCHEDULED"),
     matchday: match.match_week ?? null,
     competitionExternalId: match.competition.competition_id,
     competitionName: match.competition.competition_name,

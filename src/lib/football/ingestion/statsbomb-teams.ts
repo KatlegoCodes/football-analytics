@@ -18,9 +18,6 @@ export const syncStatsBombTeamsAndSeason = async (competitionId: number, seasonI
     where: { name: competitionName },
   });
 
-  console.log("StatsBomb competition:", competitionName);
-  console.log("League lookup result:", league);
-
   if (!league) {
     league = await prisma.league.create({
       data: {
