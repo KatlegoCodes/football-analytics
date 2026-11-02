@@ -140,4 +140,6 @@ export type PlayerPerformanceSummary = {
   goalsPer90: number;
   assistsPer90: number;
   goalContributionsPer90: number;
+
+  expectedGoals: number;
 };

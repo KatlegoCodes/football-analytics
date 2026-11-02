@@ -1,6 +1,7 @@
 import { prisma } from "@/lib/db/prisma";
 import type { PlayerPerformanceSummary } from "@/types/analytics";
 import { calculatePlayerPerformance } from "./calculations/player-performance";
+import getPlayerXg from "./calculations/player-xg-data";
 
 const getPlayerPerformance = async (
   playerId: number,
@@ -43,7 +44,12 @@ const getPlayerPerformance = async (
     },
   });
 
-  return calculatePlayerPerformance(player.id, stats);
+  const expectedGoals = await getPlayerXg({
+    playerId: player.id,
+    seasonId,
+  });
+
+  return calculatePlayerPerformance(player.id, stats, expectedGoals ?? 0);
 };
 
 export default getPlayerPerformance;

@@ -15,7 +15,8 @@ export type PlayerMatchPerformanceInput = {
 
 export const calculatePlayerPerformance = (
   playerId: number,
-  stats: PlayerMatchPerformanceInput[]
+  stats: PlayerMatchPerformanceInput[],
+  expectedGoals: number
 ): PlayerPerformanceSummary => {
   const appearances = stats.length;
 
@@ -43,6 +44,7 @@ export const calculatePlayerPerformance = (
     minutesPlayed,
     goals,
     assists,
+    expectedGoals,
     shots,
     shotsOnTarget,
     passesCompleted: 0,
