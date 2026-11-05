@@ -112,6 +112,20 @@ model MatchEvent {
   shotBodyPart  String?
   shotTechnique String?
 
+  passOutcome        String?
+  passType           String?
+  passReciepentId    Int?
+  passAssistId       Int?
+  passAssistedShotId String?
+
+  duelType    String?
+  duelOutcome String?
+
+  foulCard String?
+
+  substitutionReplacementId   Int?
+  substitutionReplacementName String?
+
   teamId   Int?
   playerId Int?
 

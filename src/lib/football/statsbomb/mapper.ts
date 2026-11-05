@@ -34,6 +34,26 @@ export type StatsBombEvent = {
     } | null;
   } | null;
 
+  pass?: {
+    outcome?: { name: string } | null;
+    type?: { name: string } | null;
+    recipient?: { id: number } | null;
+    assisted_shot_id?: string | null;
+  } | null;
+
+  duel?: {
+    type?: { name: string } | null;
+    outcome?: { name: string } | null;
+  } | null;
+
+  foul_committed?: {
+    card?: { name: string } | null;
+  } | null;
+
+  substitution?: {
+    replacement?: { id: number; name: string } | null;
+  } | null;
+
   tactics?: {
     formation?: number | null;
     lineup?:
@@ -67,6 +87,18 @@ export type MappedstatsBombEvent = {
   shotXg: number | null;
   shotBodyPart: string | null;
   shotTechnique: string | null;
+  passOutcome: string | null;
+  passType: string | null;
+  passRecipientId: number | null;
+  passAssistedShotId: string | null;
+
+  duelType: string | null;
+  duelOutcome: string | null;
+
+  foulCard: string | null;
+
+  substitutionReplacementId: number | null;
+  substitutionReplacementName: string | null;
   externalTeamId: number | null;
   externalPlayerId: number | null;
 };
@@ -89,6 +121,26 @@ const mapStatsBombEvent = (event: StatsBombEvent): MappedstatsBombEvent => {
     shotXg: isShot ? (event.shot?.statsbomb_xg ?? null) : null,
     shotBodyPart: isShot ? (event.shot?.body_part?.name ?? null) : null,
     shotTechnique: isShot ? (event.shot?.technique?.name ?? null) : null,
+    passOutcome: event.type.name === "Pass" ? (event.pass?.outcome?.name ?? null) : null,
+
+    passType: event.type.name === "Pass" ? (event.pass?.type?.name ?? null) : null,
+
+    passRecipientId: event.type.name === "Pass" ? (event.pass?.recipient?.id ?? null) : null,
+
+    passAssistedShotId: event.type.name === "Pass" ? (event.pass?.assisted_shot_id ?? null) : null,
+
+    duelType: event.type.name === "Duel" ? (event.duel?.type?.name ?? null) : null,
+
+    duelOutcome: event.type.name === "Duel" ? (event.duel?.outcome?.name ?? null) : null,
+
+    foulCard:
+      event.type.name === "Foul Committed" ? (event.foul_committed?.card?.name ?? null) : null,
+
+    substitutionReplacementId:
+      event.type.name === "Substitution" ? (event.substitution?.replacement?.id ?? null) : null,
+
+    substitutionReplacementName:
+      event.type.name === "Substitution" ? (event.substitution?.replacement?.name ?? null) : null,
     externalTeamId: event.team?.id ?? null,
     externalPlayerId: event.player?.id ?? null,
   };
