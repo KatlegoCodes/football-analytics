@@ -1,6 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 import { getStatsBombMatchEvents } from "../statsbomb/client";
-import mapStatsBombEvent, { MappedstatsBombEvent, type StatsBombEvent } from "../statsbomb/mapper";
+import mapStatsBombEvent, { type StatsBombEvent } from "../statsbomb/mapper";
 
 const PROVIDER = "statsbomb";
 
@@ -87,6 +87,44 @@ export const syncStatsBombMatchEvents = async (matchExternalId: number) => {
     const playerId =
       event.externalPlayerId === null ? null : playerIdByExternalId.get(event.externalPlayerId)!;
 
+    const eventData = {
+      matchId: match.id,
+      minute: event.minute,
+      period: event.period,
+      timestamp: event.timestamp,
+      eventIndex: event.eventIndex,
+      type: event.type,
+      detail: event.detail,
+      locationX: event.locationX,
+      locationY: event.locationY,
+
+      // Shot analytics
+      shotOutcome: event.shotOutcome,
+      shotXg: event.shotXg,
+      shotBodyPart: event.shotBodyPart,
+      shotTechnique: event.shotTechnique,
+
+      // Passing analytics
+      passOutcome: event.passOutcome,
+      passType: event.passType,
+      passRecipientId: event.passRecipientId,
+      passAssistedShotId: event.passAssistedShotId,
+
+      // Duel analytics
+      duelType: event.duelType,
+      duelOutcome: event.duelOutcome,
+
+      // Disciplinary analytics
+      foulCard: event.foulCard,
+
+      // Substitution analytics
+      substitutionReplacementId: event.substitutionReplacementId,
+      substitutionReplacementName: event.substitutionReplacementName,
+
+      teamId,
+      playerId,
+    };
+
     const existing = await prisma.matchEvent.findUnique({
       where: {
         provider_externalId: {
@@ -104,41 +142,11 @@ export const syncStatsBombMatchEvents = async (matchExternalId: number) => {
           externalId: event.externalId,
         },
       },
-      update: {
-        matchId: match.id,
-        minute: event.minute,
-        period: event.period,
-        timestamp: event.timestamp,
-        eventIndex: event.eventIndex,
-        type: event.type,
-        detail: event.detail,
-        locationX: event.locationX,
-        locationY: event.locationY,
-        shotOutcome: event.shotOutcome,
-        shotXg: event.shotXg,
-        shotBodyPart: event.shotBodyPart,
-        shotTechnique: event.shotTechnique,
-        teamId,
-        playerId,
-      },
+      update: eventData,
       create: {
         provider: PROVIDER,
         externalId: event.externalId,
-        matchId: match.id,
-        minute: event.minute,
-        period: event.period,
-        timestamp: event.timestamp,
-        eventIndex: event.eventIndex,
-        type: event.type,
-        detail: event.detail,
-        locationX: event.locationX,
-        locationY: event.locationY,
-        shotOutcome: event.shotOutcome,
-        shotXg: event.shotXg,
-        shotBodyPart: event.shotBodyPart,
-        shotTechnique: event.shotTechnique,
-        teamId,
-        playerId,
+        ...eventData,
       },
     });
 

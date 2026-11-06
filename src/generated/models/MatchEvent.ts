@@ -36,6 +36,9 @@ export type MatchEventAvgAggregateOutputType = {
   locationX: number | null
   locationY: number | null
   shotXg: number | null
+  passRecipientId: number | null
+  passAssistId: number | null
+  substitutionReplacementId: number | null
   teamId: number | null
   playerId: number | null
 }
@@ -50,6 +53,9 @@ export type MatchEventSumAggregateOutputType = {
   locationX: number | null
   locationY: number | null
   shotXg: number | null
+  passRecipientId: number | null
+  passAssistId: number | null
+  substitutionReplacementId: number | null
   teamId: number | null
   playerId: number | null
 }
@@ -72,6 +78,16 @@ export type MatchEventMinAggregateOutputType = {
   shotXg: number | null
   shotBodyPart: string | null
   shotTechnique: string | null
+  passOutcome: string | null
+  passType: string | null
+  passRecipientId: number | null
+  passAssistId: number | null
+  passAssistedShotId: string | null
+  duelType: string | null
+  duelOutcome: string | null
+  foulCard: string | null
+  substitutionReplacementId: number | null
+  substitutionReplacementName: string | null
   teamId: number | null
   playerId: number | null
   createdAt: Date | null
@@ -95,6 +111,16 @@ export type MatchEventMaxAggregateOutputType = {
   shotXg: number | null
   shotBodyPart: string | null
   shotTechnique: string | null
+  passOutcome: string | null
+  passType: string | null
+  passRecipientId: number | null
+  passAssistId: number | null
+  passAssistedShotId: string | null
+  duelType: string | null
+  duelOutcome: string | null
+  foulCard: string | null
+  substitutionReplacementId: number | null
+  substitutionReplacementName: string | null
   teamId: number | null
   playerId: number | null
   createdAt: Date | null
@@ -118,6 +144,16 @@ export type MatchEventCountAggregateOutputType = {
   shotXg: number
   shotBodyPart: number
   shotTechnique: number
+  passOutcome: number
+  passType: number
+  passRecipientId: number
+  passAssistId: number
+  passAssistedShotId: number
+  duelType: number
+  duelOutcome: number
+  foulCard: number
+  substitutionReplacementId: number
+  substitutionReplacementName: number
   teamId: number
   playerId: number
   createdAt: number
@@ -135,6 +171,9 @@ export type MatchEventAvgAggregateInputType = {
   locationX?: true
   locationY?: true
   shotXg?: true
+  passRecipientId?: true
+  passAssistId?: true
+  substitutionReplacementId?: true
   teamId?: true
   playerId?: true
 }
@@ -149,6 +188,9 @@ export type MatchEventSumAggregateInputType = {
   locationX?: true
   locationY?: true
   shotXg?: true
+  passRecipientId?: true
+  passAssistId?: true
+  substitutionReplacementId?: true
   teamId?: true
   playerId?: true
 }
@@ -171,6 +213,16 @@ export type MatchEventMinAggregateInputType = {
   shotXg?: true
   shotBodyPart?: true
   shotTechnique?: true
+  passOutcome?: true
+  passType?: true
+  passRecipientId?: true
+  passAssistId?: true
+  passAssistedShotId?: true
+  duelType?: true
+  duelOutcome?: true
+  foulCard?: true
+  substitutionReplacementId?: true
+  substitutionReplacementName?: true
   teamId?: true
   playerId?: true
   createdAt?: true
@@ -194,6 +246,16 @@ export type MatchEventMaxAggregateInputType = {
   shotXg?: true
   shotBodyPart?: true
   shotTechnique?: true
+  passOutcome?: true
+  passType?: true
+  passRecipientId?: true
+  passAssistId?: true
+  passAssistedShotId?: true
+  duelType?: true
+  duelOutcome?: true
+  foulCard?: true
+  substitutionReplacementId?: true
+  substitutionReplacementName?: true
   teamId?: true
   playerId?: true
   createdAt?: true
@@ -217,6 +279,16 @@ export type MatchEventCountAggregateInputType = {
   shotXg?: true
   shotBodyPart?: true
   shotTechnique?: true
+  passOutcome?: true
+  passType?: true
+  passRecipientId?: true
+  passAssistId?: true
+  passAssistedShotId?: true
+  duelType?: true
+  duelOutcome?: true
+  foulCard?: true
+  substitutionReplacementId?: true
+  substitutionReplacementName?: true
   teamId?: true
   playerId?: true
   createdAt?: true
@@ -327,6 +399,16 @@ export type MatchEventGroupByOutputType = {
   shotXg: number | null
   shotBodyPart: string | null
   shotTechnique: string | null
+  passOutcome: string | null
+  passType: string | null
+  passRecipientId: number | null
+  passAssistId: number | null
+  passAssistedShotId: string | null
+  duelType: string | null
+  duelOutcome: string | null
+  foulCard: string | null
+  substitutionReplacementId: number | null
+  substitutionReplacementName: string | null
   teamId: number | null
   playerId: number | null
   createdAt: Date
@@ -373,6 +455,16 @@ export type MatchEventWhereInput = {
   shotXg?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
   shotBodyPart?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   shotTechnique?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passType?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passRecipientId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  passAssistId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  passAssistedShotId?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  duelType?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  duelOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  foulCard?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  substitutionReplacementId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  substitutionReplacementName?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeFilter<"MatchEvent"> | Date | string
@@ -399,6 +491,16 @@ export type MatchEventOrderByWithRelationInput = {
   shotXg?: Prisma.SortOrderInput | Prisma.SortOrder
   shotBodyPart?: Prisma.SortOrderInput | Prisma.SortOrder
   shotTechnique?: Prisma.SortOrderInput | Prisma.SortOrder
+  passOutcome?: Prisma.SortOrderInput | Prisma.SortOrder
+  passType?: Prisma.SortOrderInput | Prisma.SortOrder
+  passRecipientId?: Prisma.SortOrderInput | Prisma.SortOrder
+  passAssistId?: Prisma.SortOrderInput | Prisma.SortOrder
+  passAssistedShotId?: Prisma.SortOrderInput | Prisma.SortOrder
+  duelType?: Prisma.SortOrderInput | Prisma.SortOrder
+  duelOutcome?: Prisma.SortOrderInput | Prisma.SortOrder
+  foulCard?: Prisma.SortOrderInput | Prisma.SortOrder
+  substitutionReplacementId?: Prisma.SortOrderInput | Prisma.SortOrder
+  substitutionReplacementName?: Prisma.SortOrderInput | Prisma.SortOrder
   teamId?: Prisma.SortOrderInput | Prisma.SortOrder
   playerId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -429,6 +531,16 @@ export type MatchEventWhereUniqueInput = Prisma.AtLeast<{
   shotXg?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
   shotBodyPart?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   shotTechnique?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passType?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passRecipientId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  passAssistId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  passAssistedShotId?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  duelType?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  duelOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  foulCard?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  substitutionReplacementId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  substitutionReplacementName?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeFilter<"MatchEvent"> | Date | string
@@ -455,6 +567,16 @@ export type MatchEventOrderByWithAggregationInput = {
   shotXg?: Prisma.SortOrderInput | Prisma.SortOrder
   shotBodyPart?: Prisma.SortOrderInput | Prisma.SortOrder
   shotTechnique?: Prisma.SortOrderInput | Prisma.SortOrder
+  passOutcome?: Prisma.SortOrderInput | Prisma.SortOrder
+  passType?: Prisma.SortOrderInput | Prisma.SortOrder
+  passRecipientId?: Prisma.SortOrderInput | Prisma.SortOrder
+  passAssistId?: Prisma.SortOrderInput | Prisma.SortOrder
+  passAssistedShotId?: Prisma.SortOrderInput | Prisma.SortOrder
+  duelType?: Prisma.SortOrderInput | Prisma.SortOrder
+  duelOutcome?: Prisma.SortOrderInput | Prisma.SortOrder
+  foulCard?: Prisma.SortOrderInput | Prisma.SortOrder
+  substitutionReplacementId?: Prisma.SortOrderInput | Prisma.SortOrder
+  substitutionReplacementName?: Prisma.SortOrderInput | Prisma.SortOrder
   teamId?: Prisma.SortOrderInput | Prisma.SortOrder
   playerId?: Prisma.SortOrderInput | Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -486,6 +608,16 @@ export type MatchEventScalarWhereWithAggregatesInput = {
   shotXg?: Prisma.FloatNullableWithAggregatesFilter<"MatchEvent"> | number | null
   shotBodyPart?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
   shotTechnique?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  passOutcome?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  passType?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  passRecipientId?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  passAssistId?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  passAssistedShotId?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  duelType?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  duelOutcome?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  foulCard?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
+  substitutionReplacementId?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
+  substitutionReplacementName?: Prisma.StringNullableWithAggregatesFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableWithAggregatesFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeWithAggregatesFilter<"MatchEvent"> | Date | string
@@ -507,6 +639,16 @@ export type MatchEventCreateInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   createdAt?: Date | string
   match: Prisma.MatchCreateNestedOneWithoutMatchEventsInput
   team?: Prisma.TeamCreateNestedOneWithoutEventsInput
@@ -531,6 +673,16 @@ export type MatchEventUncheckedCreateInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
@@ -552,6 +704,16 @@ export type MatchEventUpdateInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   match?: Prisma.MatchUpdateOneRequiredWithoutMatchEventsNestedInput
   team?: Prisma.TeamUpdateOneWithoutEventsNestedInput
@@ -576,6 +738,16 @@ export type MatchEventUncheckedUpdateInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -599,6 +771,16 @@ export type MatchEventCreateManyInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
@@ -620,6 +802,16 @@ export type MatchEventUpdateManyMutationInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
@@ -641,6 +833,16 @@ export type MatchEventUncheckedUpdateManyInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -679,6 +881,16 @@ export type MatchEventCountOrderByAggregateInput = {
   shotXg?: Prisma.SortOrder
   shotBodyPart?: Prisma.SortOrder
   shotTechnique?: Prisma.SortOrder
+  passOutcome?: Prisma.SortOrder
+  passType?: Prisma.SortOrder
+  passRecipientId?: Prisma.SortOrder
+  passAssistId?: Prisma.SortOrder
+  passAssistedShotId?: Prisma.SortOrder
+  duelType?: Prisma.SortOrder
+  duelOutcome?: Prisma.SortOrder
+  foulCard?: Prisma.SortOrder
+  substitutionReplacementId?: Prisma.SortOrder
+  substitutionReplacementName?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -694,6 +906,9 @@ export type MatchEventAvgOrderByAggregateInput = {
   locationX?: Prisma.SortOrder
   locationY?: Prisma.SortOrder
   shotXg?: Prisma.SortOrder
+  passRecipientId?: Prisma.SortOrder
+  passAssistId?: Prisma.SortOrder
+  substitutionReplacementId?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
 }
@@ -716,6 +931,16 @@ export type MatchEventMaxOrderByAggregateInput = {
   shotXg?: Prisma.SortOrder
   shotBodyPart?: Prisma.SortOrder
   shotTechnique?: Prisma.SortOrder
+  passOutcome?: Prisma.SortOrder
+  passType?: Prisma.SortOrder
+  passRecipientId?: Prisma.SortOrder
+  passAssistId?: Prisma.SortOrder
+  passAssistedShotId?: Prisma.SortOrder
+  duelType?: Prisma.SortOrder
+  duelOutcome?: Prisma.SortOrder
+  foulCard?: Prisma.SortOrder
+  substitutionReplacementId?: Prisma.SortOrder
+  substitutionReplacementName?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -739,6 +964,16 @@ export type MatchEventMinOrderByAggregateInput = {
   shotXg?: Prisma.SortOrder
   shotBodyPart?: Prisma.SortOrder
   shotTechnique?: Prisma.SortOrder
+  passOutcome?: Prisma.SortOrder
+  passType?: Prisma.SortOrder
+  passRecipientId?: Prisma.SortOrder
+  passAssistId?: Prisma.SortOrder
+  passAssistedShotId?: Prisma.SortOrder
+  duelType?: Prisma.SortOrder
+  duelOutcome?: Prisma.SortOrder
+  foulCard?: Prisma.SortOrder
+  substitutionReplacementId?: Prisma.SortOrder
+  substitutionReplacementName?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
   createdAt?: Prisma.SortOrder
@@ -754,6 +989,9 @@ export type MatchEventSumOrderByAggregateInput = {
   locationX?: Prisma.SortOrder
   locationY?: Prisma.SortOrder
   shotXg?: Prisma.SortOrder
+  passRecipientId?: Prisma.SortOrder
+  passAssistId?: Prisma.SortOrder
+  substitutionReplacementId?: Prisma.SortOrder
   teamId?: Prisma.SortOrder
   playerId?: Prisma.SortOrder
 }
@@ -908,6 +1146,16 @@ export type MatchEventCreateWithoutTeamInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   createdAt?: Date | string
   match: Prisma.MatchCreateNestedOneWithoutMatchEventsInput
   player?: Prisma.PlayerCreateNestedOneWithoutEventsInput
@@ -931,6 +1179,16 @@ export type MatchEventUncheckedCreateWithoutTeamInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   playerId?: number | null
   createdAt?: Date | string
 }
@@ -982,6 +1240,16 @@ export type MatchEventScalarWhereInput = {
   shotXg?: Prisma.FloatNullableFilter<"MatchEvent"> | number | null
   shotBodyPart?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   shotTechnique?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passType?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  passRecipientId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  passAssistId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  passAssistedShotId?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  duelType?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  duelOutcome?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  foulCard?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
+  substitutionReplacementId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
+  substitutionReplacementName?: Prisma.StringNullableFilter<"MatchEvent"> | string | null
   teamId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   playerId?: Prisma.IntNullableFilter<"MatchEvent"> | number | null
   createdAt?: Prisma.DateTimeFilter<"MatchEvent"> | Date | string
@@ -1003,6 +1271,16 @@ export type MatchEventCreateWithoutMatchInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   createdAt?: Date | string
   team?: Prisma.TeamCreateNestedOneWithoutEventsInput
   player?: Prisma.PlayerCreateNestedOneWithoutEventsInput
@@ -1025,6 +1303,16 @@ export type MatchEventUncheckedCreateWithoutMatchInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
@@ -1072,6 +1360,16 @@ export type MatchEventCreateWithoutPlayerInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   createdAt?: Date | string
   match: Prisma.MatchCreateNestedOneWithoutMatchEventsInput
   team?: Prisma.TeamCreateNestedOneWithoutEventsInput
@@ -1095,6 +1393,16 @@ export type MatchEventUncheckedCreateWithoutPlayerInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   teamId?: number | null
   createdAt?: Date | string
 }
@@ -1143,6 +1451,16 @@ export type MatchEventCreateManyTeamInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   playerId?: number | null
   createdAt?: Date | string
 }
@@ -1163,6 +1481,16 @@ export type MatchEventUpdateWithoutTeamInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   match?: Prisma.MatchUpdateOneRequiredWithoutMatchEventsNestedInput
   player?: Prisma.PlayerUpdateOneWithoutEventsNestedInput
@@ -1186,6 +1514,16 @@ export type MatchEventUncheckedUpdateWithoutTeamInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -1208,6 +1546,16 @@ export type MatchEventUncheckedUpdateManyWithoutTeamInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -1229,6 +1577,16 @@ export type MatchEventCreateManyMatchInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   teamId?: number | null
   playerId?: number | null
   createdAt?: Date | string
@@ -1250,6 +1608,16 @@ export type MatchEventUpdateWithoutMatchInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   team?: Prisma.TeamUpdateOneWithoutEventsNestedInput
   player?: Prisma.PlayerUpdateOneWithoutEventsNestedInput
@@ -1272,6 +1640,16 @@ export type MatchEventUncheckedUpdateWithoutMatchInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1294,6 +1672,16 @@ export type MatchEventUncheckedUpdateManyWithoutMatchInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   playerId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
@@ -1317,6 +1705,16 @@ export type MatchEventCreateManyPlayerInput = {
   shotXg?: number | null
   shotBodyPart?: string | null
   shotTechnique?: string | null
+  passOutcome?: string | null
+  passType?: string | null
+  passRecipientId?: number | null
+  passAssistId?: number | null
+  passAssistedShotId?: string | null
+  duelType?: string | null
+  duelOutcome?: string | null
+  foulCard?: string | null
+  substitutionReplacementId?: number | null
+  substitutionReplacementName?: string | null
   teamId?: number | null
   createdAt?: Date | string
 }
@@ -1337,6 +1735,16 @@ export type MatchEventUpdateWithoutPlayerInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   match?: Prisma.MatchUpdateOneRequiredWithoutMatchEventsNestedInput
   team?: Prisma.TeamUpdateOneWithoutEventsNestedInput
@@ -1360,6 +1768,16 @@ export type MatchEventUncheckedUpdateWithoutPlayerInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -1382,6 +1800,16 @@ export type MatchEventUncheckedUpdateManyWithoutPlayerInput = {
   shotXg?: Prisma.NullableFloatFieldUpdateOperationsInput | number | null
   shotBodyPart?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   shotTechnique?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  passRecipientId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  passAssistedShotId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelType?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  duelOutcome?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  foulCard?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  substitutionReplacementId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  substitutionReplacementName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   teamId?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
@@ -1406,6 +1834,16 @@ export type MatchEventSelect<ExtArgs extends runtime.Types.Extensions.InternalAr
   shotXg?: boolean
   shotBodyPart?: boolean
   shotTechnique?: boolean
+  passOutcome?: boolean
+  passType?: boolean
+  passRecipientId?: boolean
+  passAssistId?: boolean
+  passAssistedShotId?: boolean
+  duelType?: boolean
+  duelOutcome?: boolean
+  foulCard?: boolean
+  substitutionReplacementId?: boolean
+  substitutionReplacementName?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
@@ -1432,6 +1870,16 @@ export type MatchEventSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Ex
   shotXg?: boolean
   shotBodyPart?: boolean
   shotTechnique?: boolean
+  passOutcome?: boolean
+  passType?: boolean
+  passRecipientId?: boolean
+  passAssistId?: boolean
+  passAssistedShotId?: boolean
+  duelType?: boolean
+  duelOutcome?: boolean
+  foulCard?: boolean
+  substitutionReplacementId?: boolean
+  substitutionReplacementName?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
@@ -1458,6 +1906,16 @@ export type MatchEventSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Ex
   shotXg?: boolean
   shotBodyPart?: boolean
   shotTechnique?: boolean
+  passOutcome?: boolean
+  passType?: boolean
+  passRecipientId?: boolean
+  passAssistId?: boolean
+  passAssistedShotId?: boolean
+  duelType?: boolean
+  duelOutcome?: boolean
+  foulCard?: boolean
+  substitutionReplacementId?: boolean
+  substitutionReplacementName?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
@@ -1484,12 +1942,22 @@ export type MatchEventSelectScalar = {
   shotXg?: boolean
   shotBodyPart?: boolean
   shotTechnique?: boolean
+  passOutcome?: boolean
+  passType?: boolean
+  passRecipientId?: boolean
+  passAssistId?: boolean
+  passAssistedShotId?: boolean
+  duelType?: boolean
+  duelOutcome?: boolean
+  foulCard?: boolean
+  substitutionReplacementId?: boolean
+  substitutionReplacementName?: boolean
   teamId?: boolean
   playerId?: boolean
   createdAt?: boolean
 }
 
-export type MatchEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "provider" | "externalId" | "matchId" | "minute" | "extraTime" | "period" | "timestamp" | "eventIndex" | "type" | "detail" | "locationX" | "locationY" | "shotOutcome" | "shotXg" | "shotBodyPart" | "shotTechnique" | "teamId" | "playerId" | "createdAt", ExtArgs["result"]["matchEvent"]>
+export type MatchEventOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "provider" | "externalId" | "matchId" | "minute" | "extraTime" | "period" | "timestamp" | "eventIndex" | "type" | "detail" | "locationX" | "locationY" | "shotOutcome" | "shotXg" | "shotBodyPart" | "shotTechnique" | "passOutcome" | "passType" | "passRecipientId" | "passAssistId" | "passAssistedShotId" | "duelType" | "duelOutcome" | "foulCard" | "substitutionReplacementId" | "substitutionReplacementName" | "teamId" | "playerId" | "createdAt", ExtArgs["result"]["matchEvent"]>
 export type MatchEventInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
   team?: boolean | Prisma.MatchEvent$teamArgs<ExtArgs>
@@ -1531,6 +1999,16 @@ export type $MatchEventPayload<ExtArgs extends runtime.Types.Extensions.Internal
     shotXg: number | null
     shotBodyPart: string | null
     shotTechnique: string | null
+    passOutcome: string | null
+    passType: string | null
+    passRecipientId: number | null
+    passAssistId: number | null
+    passAssistedShotId: string | null
+    duelType: string | null
+    duelOutcome: string | null
+    foulCard: string | null
+    substitutionReplacementId: number | null
+    substitutionReplacementName: string | null
     teamId: number | null
     playerId: number | null
     createdAt: Date
@@ -1977,6 +2455,16 @@ export interface MatchEventFieldRefs {
   readonly shotXg: Prisma.FieldRef<"MatchEvent", 'Float'>
   readonly shotBodyPart: Prisma.FieldRef<"MatchEvent", 'String'>
   readonly shotTechnique: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly passOutcome: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly passType: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly passRecipientId: Prisma.FieldRef<"MatchEvent", 'Int'>
+  readonly passAssistId: Prisma.FieldRef<"MatchEvent", 'Int'>
+  readonly passAssistedShotId: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly duelType: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly duelOutcome: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly foulCard: Prisma.FieldRef<"MatchEvent", 'String'>
+  readonly substitutionReplacementId: Prisma.FieldRef<"MatchEvent", 'Int'>
+  readonly substitutionReplacementName: Prisma.FieldRef<"MatchEvent", 'String'>
   readonly teamId: Prisma.FieldRef<"MatchEvent", 'Int'>
   readonly playerId: Prisma.FieldRef<"MatchEvent", 'Int'>
   readonly createdAt: Prisma.FieldRef<"MatchEvent", 'DateTime'>
