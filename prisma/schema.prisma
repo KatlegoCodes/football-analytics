@@ -176,8 +176,9 @@ model PlayerMatchStat {
   shots         Int @default(0)
   shotsOnTarget Int @default(0)
 
-  passes    Int @default(0)
-  keyPasses Int @default(0)
+  passes          Int @default(0)
+  passesCompleted Int @default(0)
+  keyPasses       Int @default(0)
 
   tackles       Int @default(0)
   interceptions Int @default(0)
