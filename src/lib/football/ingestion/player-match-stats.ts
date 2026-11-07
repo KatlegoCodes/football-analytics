@@ -31,7 +31,7 @@ export const syncStatsBombPlayerMatchStats = async (matchExternalId: number) => 
   });
 
   if (!match) {
-    throw new Error(`statsBomb match ${matchExternalId} was not found`);
+    throw new Error(`StatsBomb match ${matchExternalId} was not found`);
   }
 
   const events = await prisma.matchEvent.findMany({
@@ -95,7 +95,7 @@ export const syncStatsBombPlayerMatchStats = async (matchExternalId: number) => 
       case "Shot": {
         stats.shots++;
 
-        if (event.shotOutcome === "Goal" || event.shotOutcome === "saved") {
+        if (["Goal", "Saved"].includes(event.shotOutcome ?? "")) {
           stats.shotsOnTarget++;
         }
 
