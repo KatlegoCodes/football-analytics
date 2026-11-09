@@ -1,6 +1,7 @@
 import { syncStatsBombMatches } from "./statsbomb-matches";
 import { syncStatsBombPlayers } from "./statsbomb-players";
 import { syncStatsBombMatchEvents } from "./match-events";
+import { syncStatsBombPlayerMatchStats } from "./player-match-stats";
 
 type StatsBombPipelineOptions = {
   competitionId: number;
@@ -13,18 +14,21 @@ export const syncStatsBombPipeline = async ({
   seasonId,
   matchExternalId,
 }: StatsBombPipelineOptions) => {
-  const matchResult = await syncStatsBombMatches(competitionId, seasonId);
+  const matchesResult = await syncStatsBombMatches(competitionId, seasonId);
 
-  const playerResult = await syncStatsBombPlayers(matchExternalId);
+  const playersResult = await syncStatsBombPlayers(matchExternalId);
 
-  const eventResult = await syncStatsBombMatchEvents(matchExternalId);
+  const eventsResult = await syncStatsBombMatchEvents(matchExternalId);
+
+  const playerStatsResult = await syncStatsBombPlayerMatchStats(matchExternalId);
 
   return {
     competitionId,
     seasonId,
     matchExternalId,
-    matches: matchResult,
-    players: playerResult,
-    events: eventResult,
+    matches: matchesResult,
+    players: playersResult,
+    events: eventsResult,
+    playerStats: playerStatsResult,
   };
 };

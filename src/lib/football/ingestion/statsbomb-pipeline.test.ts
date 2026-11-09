@@ -4,11 +4,13 @@ const {
   syncStatsBombMatchesMock,
   syncStatsBombPlayersMock,
   syncStatsBombMatchEventsMock,
+  syncStatsBombPlayerMatchStatsMock,
   callOrder,
 } = vi.hoisted(() => ({
   syncStatsBombMatchesMock: vi.fn(),
   syncStatsBombPlayersMock: vi.fn(),
   syncStatsBombMatchEventsMock: vi.fn(),
+  syncStatsBombPlayerMatchStatsMock: vi.fn(),
   callOrder: [] as string[],
 }));
 
@@ -24,10 +26,15 @@ vi.mock("./match-events", () => ({
   syncStatsBombMatchEvents: syncStatsBombMatchEventsMock,
 }));
 
+vi.mock("./player-match-stats", () => ({
+  syncStatsBombPlayerMatchStats: syncStatsBombPlayerMatchStatsMock,
+}));
+
 import { syncStatsBombPipeline } from "./statsbomb-pipeline";
 import { syncStatsBombMatches } from "./statsbomb-matches";
 import { syncStatsBombPlayers } from "./statsbomb-players";
 import { syncStatsBombMatchEvents } from "./match-events";
+import { syncStatsBombPlayerMatchStats } from "./player-match-stats";
 
 describe("syncStatsBombPipeline", () => {
   beforeEach(() => {
@@ -35,7 +42,7 @@ describe("syncStatsBombPipeline", () => {
     callOrder.length = 0;
   });
 
-  it("runs matches, players, and events in order", async () => {
+  it("runs matches, players, events, and player stats in order", async () => {
     syncStatsBombMatchesMock.mockImplementation(async () => {
       callOrder.push("matches");
       return { matchesProcessed: 1 };
@@ -51,6 +58,11 @@ describe("syncStatsBombPipeline", () => {
       return { received: 1500 };
     });
 
+    syncStatsBombPlayerMatchStatsMock.mockImplementation(async () => {
+      callOrder.push("playerStats");
+      return { playersProcessed: 22, created: 22 };
+    });
+
     const result = await syncStatsBombPipeline({
       competitionId: 9,
       seasonId: 281,
@@ -60,8 +72,9 @@ describe("syncStatsBombPipeline", () => {
     expect(syncStatsBombMatches).toHaveBeenCalledWith(9, 281);
     expect(syncStatsBombPlayers).toHaveBeenCalledWith(3895292);
     expect(syncStatsBombMatchEvents).toHaveBeenCalledWith(3895292);
+    expect(syncStatsBombPlayerMatchStats).toHaveBeenCalledWith(3895292);
 
-    expect(callOrder).toEqual(["matches", "players", "events"]);
+    expect(callOrder).toEqual(["matches", "players", "events", "playerStats"]);
 
     expect(result).toEqual({
       competitionId: 9,
@@ -70,6 +83,7 @@ describe("syncStatsBombPipeline", () => {
       matches: { matchesProcessed: 1 },
       players: { playersProcessed: 22 },
       events: { received: 1500 },
+      playerStats: { playersProcessed: 22, created: 22 },
     });
   });
 
@@ -86,5 +100,6 @@ describe("syncStatsBombPipeline", () => {
 
     expect(syncStatsBombPlayers).not.toHaveBeenCalled();
     expect(syncStatsBombMatchEvents).not.toHaveBeenCalled();
+    expect(syncStatsBombPlayerMatchStats).not.toHaveBeenCalled();
   });
 });
