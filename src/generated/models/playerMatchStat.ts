@@ -36,6 +36,7 @@ export type PlayerMatchStatAvgAggregateOutputType = {
   shots: number | null
   shotsOnTarget: number | null
   passes: number | null
+  passesCompleted: number | null
   keyPasses: number | null
   tackles: number | null
   interceptions: number | null
@@ -53,6 +54,7 @@ export type PlayerMatchStatSumAggregateOutputType = {
   shots: number | null
   shotsOnTarget: number | null
   passes: number | null
+  passesCompleted: number | null
   keyPasses: number | null
   tackles: number | null
   interceptions: number | null
@@ -70,6 +72,7 @@ export type PlayerMatchStatMinAggregateOutputType = {
   shots: number | null
   shotsOnTarget: number | null
   passes: number | null
+  passesCompleted: number | null
   keyPasses: number | null
   tackles: number | null
   interceptions: number | null
@@ -88,6 +91,7 @@ export type PlayerMatchStatMaxAggregateOutputType = {
   shots: number | null
   shotsOnTarget: number | null
   passes: number | null
+  passesCompleted: number | null
   keyPasses: number | null
   tackles: number | null
   interceptions: number | null
@@ -106,6 +110,7 @@ export type PlayerMatchStatCountAggregateOutputType = {
   shots: number
   shotsOnTarget: number
   passes: number
+  passesCompleted: number
   keyPasses: number
   tackles: number
   interceptions: number
@@ -126,6 +131,7 @@ export type PlayerMatchStatAvgAggregateInputType = {
   shots?: true
   shotsOnTarget?: true
   passes?: true
+  passesCompleted?: true
   keyPasses?: true
   tackles?: true
   interceptions?: true
@@ -143,6 +149,7 @@ export type PlayerMatchStatSumAggregateInputType = {
   shots?: true
   shotsOnTarget?: true
   passes?: true
+  passesCompleted?: true
   keyPasses?: true
   tackles?: true
   interceptions?: true
@@ -160,6 +167,7 @@ export type PlayerMatchStatMinAggregateInputType = {
   shots?: true
   shotsOnTarget?: true
   passes?: true
+  passesCompleted?: true
   keyPasses?: true
   tackles?: true
   interceptions?: true
@@ -178,6 +186,7 @@ export type PlayerMatchStatMaxAggregateInputType = {
   shots?: true
   shotsOnTarget?: true
   passes?: true
+  passesCompleted?: true
   keyPasses?: true
   tackles?: true
   interceptions?: true
@@ -196,6 +205,7 @@ export type PlayerMatchStatCountAggregateInputType = {
   shots?: true
   shotsOnTarget?: true
   passes?: true
+  passesCompleted?: true
   keyPasses?: true
   tackles?: true
   interceptions?: true
@@ -301,6 +311,7 @@ export type PlayerMatchStatGroupByOutputType = {
   shots: number
   shotsOnTarget: number
   passes: number
+  passesCompleted: number
   keyPasses: number
   tackles: number
   interceptions: number
@@ -342,6 +353,7 @@ export type PlayerMatchStatWhereInput = {
   shots?: Prisma.IntFilter<"PlayerMatchStat"> | number
   shotsOnTarget?: Prisma.IntFilter<"PlayerMatchStat"> | number
   passes?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  passesCompleted?: Prisma.IntFilter<"PlayerMatchStat"> | number
   keyPasses?: Prisma.IntFilter<"PlayerMatchStat"> | number
   tackles?: Prisma.IntFilter<"PlayerMatchStat"> | number
   interceptions?: Prisma.IntFilter<"PlayerMatchStat"> | number
@@ -362,6 +374,7 @@ export type PlayerMatchStatOrderByWithRelationInput = {
   shots?: Prisma.SortOrder
   shotsOnTarget?: Prisma.SortOrder
   passes?: Prisma.SortOrder
+  passesCompleted?: Prisma.SortOrder
   keyPasses?: Prisma.SortOrder
   tackles?: Prisma.SortOrder
   interceptions?: Prisma.SortOrder
@@ -386,6 +399,7 @@ export type PlayerMatchStatWhereUniqueInput = Prisma.AtLeast<{
   shots?: Prisma.IntFilter<"PlayerMatchStat"> | number
   shotsOnTarget?: Prisma.IntFilter<"PlayerMatchStat"> | number
   passes?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  passesCompleted?: Prisma.IntFilter<"PlayerMatchStat"> | number
   keyPasses?: Prisma.IntFilter<"PlayerMatchStat"> | number
   tackles?: Prisma.IntFilter<"PlayerMatchStat"> | number
   interceptions?: Prisma.IntFilter<"PlayerMatchStat"> | number
@@ -406,6 +420,7 @@ export type PlayerMatchStatOrderByWithAggregationInput = {
   shots?: Prisma.SortOrder
   shotsOnTarget?: Prisma.SortOrder
   passes?: Prisma.SortOrder
+  passesCompleted?: Prisma.SortOrder
   keyPasses?: Prisma.SortOrder
   tackles?: Prisma.SortOrder
   interceptions?: Prisma.SortOrder
@@ -432,6 +447,7 @@ export type PlayerMatchStatScalarWhereWithAggregatesInput = {
   shots?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
   shotsOnTarget?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
   passes?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
+  passesCompleted?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
   keyPasses?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
   tackles?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
   interceptions?: Prisma.IntWithAggregatesFilter<"PlayerMatchStat"> | number
@@ -447,6 +463,7 @@ export type PlayerMatchStatCreateInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -467,6 +484,7 @@ export type PlayerMatchStatUncheckedCreateInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -482,6 +500,7 @@ export type PlayerMatchStatUpdateInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -502,6 +521,7 @@ export type PlayerMatchStatUncheckedUpdateInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -520,6 +540,7 @@ export type PlayerMatchStatCreateManyInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -535,6 +556,7 @@ export type PlayerMatchStatUpdateManyMutationInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -553,6 +575,7 @@ export type PlayerMatchStatUncheckedUpdateManyInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -586,6 +609,7 @@ export type PlayerMatchStatCountOrderByAggregateInput = {
   shots?: Prisma.SortOrder
   shotsOnTarget?: Prisma.SortOrder
   passes?: Prisma.SortOrder
+  passesCompleted?: Prisma.SortOrder
   keyPasses?: Prisma.SortOrder
   tackles?: Prisma.SortOrder
   interceptions?: Prisma.SortOrder
@@ -604,6 +628,7 @@ export type PlayerMatchStatAvgOrderByAggregateInput = {
   shots?: Prisma.SortOrder
   shotsOnTarget?: Prisma.SortOrder
   passes?: Prisma.SortOrder
+  passesCompleted?: Prisma.SortOrder
   keyPasses?: Prisma.SortOrder
   tackles?: Prisma.SortOrder
   interceptions?: Prisma.SortOrder
@@ -621,6 +646,7 @@ export type PlayerMatchStatMaxOrderByAggregateInput = {
   shots?: Prisma.SortOrder
   shotsOnTarget?: Prisma.SortOrder
   passes?: Prisma.SortOrder
+  passesCompleted?: Prisma.SortOrder
   keyPasses?: Prisma.SortOrder
   tackles?: Prisma.SortOrder
   interceptions?: Prisma.SortOrder
@@ -639,6 +665,7 @@ export type PlayerMatchStatMinOrderByAggregateInput = {
   shots?: Prisma.SortOrder
   shotsOnTarget?: Prisma.SortOrder
   passes?: Prisma.SortOrder
+  passesCompleted?: Prisma.SortOrder
   keyPasses?: Prisma.SortOrder
   tackles?: Prisma.SortOrder
   interceptions?: Prisma.SortOrder
@@ -657,6 +684,7 @@ export type PlayerMatchStatSumOrderByAggregateInput = {
   shots?: Prisma.SortOrder
   shotsOnTarget?: Prisma.SortOrder
   passes?: Prisma.SortOrder
+  passesCompleted?: Prisma.SortOrder
   keyPasses?: Prisma.SortOrder
   tackles?: Prisma.SortOrder
   interceptions?: Prisma.SortOrder
@@ -755,6 +783,7 @@ export type PlayerMatchStatCreateWithoutMatchInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -773,6 +802,7 @@ export type PlayerMatchStatUncheckedCreateWithoutMatchInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -820,6 +850,7 @@ export type PlayerMatchStatScalarWhereInput = {
   shots?: Prisma.IntFilter<"PlayerMatchStat"> | number
   shotsOnTarget?: Prisma.IntFilter<"PlayerMatchStat"> | number
   passes?: Prisma.IntFilter<"PlayerMatchStat"> | number
+  passesCompleted?: Prisma.IntFilter<"PlayerMatchStat"> | number
   keyPasses?: Prisma.IntFilter<"PlayerMatchStat"> | number
   tackles?: Prisma.IntFilter<"PlayerMatchStat"> | number
   interceptions?: Prisma.IntFilter<"PlayerMatchStat"> | number
@@ -835,6 +866,7 @@ export type PlayerMatchStatCreateWithoutPlayerInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -853,6 +885,7 @@ export type PlayerMatchStatUncheckedCreateWithoutPlayerInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -896,6 +929,7 @@ export type PlayerMatchStatCreateManyMatchInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -911,6 +945,7 @@ export type PlayerMatchStatUpdateWithoutMatchInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -929,6 +964,7 @@ export type PlayerMatchStatUncheckedUpdateWithoutMatchInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -946,6 +982,7 @@ export type PlayerMatchStatUncheckedUpdateManyWithoutMatchInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -963,6 +1000,7 @@ export type PlayerMatchStatCreateManyPlayerInput = {
   shots?: number
   shotsOnTarget?: number
   passes?: number
+  passesCompleted?: number
   keyPasses?: number
   tackles?: number
   interceptions?: number
@@ -978,6 +1016,7 @@ export type PlayerMatchStatUpdateWithoutPlayerInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -996,6 +1035,7 @@ export type PlayerMatchStatUncheckedUpdateWithoutPlayerInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1013,6 +1053,7 @@ export type PlayerMatchStatUncheckedUpdateManyWithoutPlayerInput = {
   shots?: Prisma.IntFieldUpdateOperationsInput | number
   shotsOnTarget?: Prisma.IntFieldUpdateOperationsInput | number
   passes?: Prisma.IntFieldUpdateOperationsInput | number
+  passesCompleted?: Prisma.IntFieldUpdateOperationsInput | number
   keyPasses?: Prisma.IntFieldUpdateOperationsInput | number
   tackles?: Prisma.IntFieldUpdateOperationsInput | number
   interceptions?: Prisma.IntFieldUpdateOperationsInput | number
@@ -1033,6 +1074,7 @@ export type PlayerMatchStatSelect<ExtArgs extends runtime.Types.Extensions.Inter
   shots?: boolean
   shotsOnTarget?: boolean
   passes?: boolean
+  passesCompleted?: boolean
   keyPasses?: boolean
   tackles?: boolean
   interceptions?: boolean
@@ -1053,6 +1095,7 @@ export type PlayerMatchStatSelectCreateManyAndReturn<ExtArgs extends runtime.Typ
   shots?: boolean
   shotsOnTarget?: boolean
   passes?: boolean
+  passesCompleted?: boolean
   keyPasses?: boolean
   tackles?: boolean
   interceptions?: boolean
@@ -1073,6 +1116,7 @@ export type PlayerMatchStatSelectUpdateManyAndReturn<ExtArgs extends runtime.Typ
   shots?: boolean
   shotsOnTarget?: boolean
   passes?: boolean
+  passesCompleted?: boolean
   keyPasses?: boolean
   tackles?: boolean
   interceptions?: boolean
@@ -1093,6 +1137,7 @@ export type PlayerMatchStatSelectScalar = {
   shots?: boolean
   shotsOnTarget?: boolean
   passes?: boolean
+  passesCompleted?: boolean
   keyPasses?: boolean
   tackles?: boolean
   interceptions?: boolean
@@ -1101,7 +1146,7 @@ export type PlayerMatchStatSelectScalar = {
   createdAt?: boolean
 }
 
-export type PlayerMatchStatOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "playerId" | "matchId" | "minutesPlayed" | "goals" | "assists" | "shots" | "shotsOnTarget" | "passes" | "keyPasses" | "tackles" | "interceptions" | "yellowCards" | "redCards" | "createdAt", ExtArgs["result"]["playerMatchStat"]>
+export type PlayerMatchStatOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "playerId" | "matchId" | "minutesPlayed" | "goals" | "assists" | "shots" | "shotsOnTarget" | "passes" | "passesCompleted" | "keyPasses" | "tackles" | "interceptions" | "yellowCards" | "redCards" | "createdAt", ExtArgs["result"]["playerMatchStat"]>
 export type PlayerMatchStatInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   player?: boolean | Prisma.PlayerDefaultArgs<ExtArgs>
   match?: boolean | Prisma.MatchDefaultArgs<ExtArgs>
@@ -1131,6 +1176,7 @@ export type $PlayerMatchStatPayload<ExtArgs extends runtime.Types.Extensions.Int
     shots: number
     shotsOnTarget: number
     passes: number
+    passesCompleted: number
     keyPasses: number
     tackles: number
     interceptions: number
@@ -1571,6 +1617,7 @@ export interface PlayerMatchStatFieldRefs {
   readonly shots: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
   readonly shotsOnTarget: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
   readonly passes: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
+  readonly passesCompleted: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
   readonly keyPasses: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
   readonly tackles: Prisma.FieldRef<"PlayerMatchStat", 'Int'>
   readonly interceptions: Prisma.FieldRef<"PlayerMatchStat", 'Int'>

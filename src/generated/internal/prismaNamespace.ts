@@ -1172,6 +1172,7 @@ export const PlayerMatchStatScalarFieldEnum = {
   shots: 'shots',
   shotsOnTarget: 'shotsOnTarget',
   passes: 'passes',
+  passesCompleted: 'passesCompleted',
   keyPasses: 'keyPasses',
   tackles: 'tackles',
   interceptions: 'interceptions',
