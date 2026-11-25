@@ -1,5 +1,6 @@
 import { prisma } from "@/lib/db/prisma";
 import { getStatsBombArchive } from "@/lib/analytics/statsbomb-archive";
+import Link from "next/link";
 
 const BundesligaPage = async () => {
   const season = await prisma.season.findFirst({
@@ -49,7 +50,6 @@ const BundesligaPage = async () => {
           </div>
         </div>
       </header>
-
       <section className="grid gap-4 sm:grid-cols-2">
         <div className="rounded-xl border border-[#E8E5DE] bg-white p-6">
           <p className="text-sm text-[#8B8B86]">Matches in archive</p>
@@ -63,7 +63,6 @@ const BundesligaPage = async () => {
           </p>
         </div>
       </section>
-
       <section>
         <div className="mb-5">
           <h2 className="text-xl font-bold text-[#202631]">Match archive</h2>
@@ -78,7 +77,8 @@ const BundesligaPage = async () => {
           ) : (
             <div className="divide-y divide-[#E8E5DE]">
               {archive.matches.map((match) => (
-                <div
+                <Link
+                  href={`/matches/${match.id}`}
                   key={match.id}
                   className="grid grid-cols-[1fr_auto] items-center gap-4 px-5 py-5 sm:grid-cols-[1fr_auto_1fr]"
                 >
@@ -105,12 +105,13 @@ const BundesligaPage = async () => {
                   <div className="text-right text-sm font-medium text-[#202631]">
                     {match.awayTeam.name}
                   </div>
-                </div>
+                </Link>
               ))}
             </div>
           )}
         </div>
       </section>
+      ``
     </div>
   );
 };

@@ -71,9 +71,35 @@ export type MatchTeamDetail = {
   crestUrl: string | null;
 };
 
+export type MatchPlayerStatDetail = {
+  playerId: number;
+  playerName: string;
+  position: string | null;
+
+  minutesPlayed: number | null;
+
+  goals: number;
+  assists: number;
+  shots: number;
+  shotsOnTarget: number;
+
+  passes: number;
+  passesCompleted: number;
+  keyPasses: number;
+
+  tackles: number;
+  interceptions: number;
+
+  yellowCards: number;
+  redCards: number;
+};
+
 export type MatchDetail = {
   id: number;
   externalId: number | null;
+
+  provider: string | null;
+  playerStats: MatchPlayerStatDetail[];
 
   playedAt: Date;
   status: string;

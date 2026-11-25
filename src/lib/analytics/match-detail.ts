@@ -1,5 +1,5 @@
 import { prisma } from "@/lib/db/prisma";
-import type { MatchDetail, MatchOutcome } from "@/types/analytics";
+import type { MatchDetail, MatchOutcome, MatchPlayerStatDetail } from "@/types/analytics";
 
 export const getMatchDetail = async (matchId: number): Promise<MatchDetail | null> => {
   const match = await prisma.match.findUnique({
@@ -11,6 +11,18 @@ export const getMatchDetail = async (matchId: number): Promise<MatchDetail | nul
       homeTeam: true,
       awayTeam: true,
       season: true,
+
+      playerStats: {
+        include: {
+          player: {
+            select: {
+              id: true,
+              name: true,
+              position: true,
+            },
+          },
+        },
+      },
     },
   });
 
@@ -30,9 +42,36 @@ export const getMatchDetail = async (matchId: number): Promise<MatchDetail | nul
     }
   }
 
+  const playerStats: MatchPlayerStatDetail[] =
+    match.provider === "statsbomb"
+      ? match.playerStats.map((stat) => ({
+          playerId: stat.player.id,
+          playerName: stat.player.name,
+          position: stat.player.position,
+
+          minutesPlayed: stat.minutesPlayed,
+
+          goals: stat.goals,
+          assists: stat.assists,
+          shots: stat.shots,
+          shotsOnTarget: stat.shotsOnTarget,
+
+          passes: stat.passes,
+          passesCompleted: stat.passesCompleted,
+          keyPasses: stat.keyPasses,
+
+          tackles: stat.tackles,
+          interceptions: stat.interceptions,
+
+          yellowCards: stat.yellowCards,
+          redCards: stat.redCards,
+        }))
+      : [];
+
   return {
     id: match.id,
     externalId: match.externalId,
+    provider: match.provider,
 
     playedAt: match.playedAt,
     status: match.status,
@@ -65,5 +104,7 @@ export const getMatchDetail = async (matchId: number): Promise<MatchDetail | nul
       startYear: match.season.startYear,
       endYear: match.season.endYear,
     },
+
+    playerStats,
   };
 };
