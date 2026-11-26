@@ -6,7 +6,6 @@ const main = async () => {
   const result = await syncStatsBombPipeline({
     competitionId: 9,
     seasonId: 281,
-    matchExternalId: 3895292,
   });
 
   console.log("\nStatsBomb Sync Complete:");

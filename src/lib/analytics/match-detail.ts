@@ -30,6 +30,13 @@ export const getMatchDetail = async (matchId: number): Promise<MatchDetail | nul
     return null;
   }
 
+  console.log("MATCH PLAYER STATS DEBUG:", {
+    matchId: match.id,
+    externalId: match.externalId,
+    provider: match.provider,
+    playerStatsCount: match.playerStats.length,
+  });
+
   let outcome: MatchOutcome = null;
 
   if (match.status === "FINISHED" && match.homeScore !== null && match.awayScore !== null) {

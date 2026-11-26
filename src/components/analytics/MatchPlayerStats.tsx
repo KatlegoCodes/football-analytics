@@ -48,7 +48,10 @@ const MatchPlayerStats = ({ playerStats }: MatchPlayerStatsProp) => {
 
           <tbody>
             {playerStats.map((stat) => (
-              <tr key={stat.playerId} className="border-b border-[#8B8B86] last:border-0">
+              <tr
+                key={stat.playerId}
+                className="border-b border-[#8B8B86] text-[#202631] last:border-0"
+              >
                 <td className="py-4 pr-4">
                   <p className="font-semibold text-[#202631]">{stat.playerName}</p>
                   <p className="mt-1 text-xs text-[#8B8B86]">
