@@ -14,3 +14,6 @@ services:
 
 volumes:
   football-postgres-data:
+
+#Docker-Terminal
+#docker exec -it football-postgres psql -U football_user -d football_analytics
