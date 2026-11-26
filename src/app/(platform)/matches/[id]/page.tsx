@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 
 import { getMatchDetail } from "@/lib/analytics/match-detail";
-import { match } from "assert";
+import MatchPlayerStats from "@/components/analytics/MatchPlayerStats";
 
 type MatchPageProps = {
   params: Promise<{
@@ -89,6 +89,12 @@ const MatchPage = async ({ params }: MatchPageProps) => {
             />
           </div>
         </section>
+
+        {match.provider === "statsbomb" && (
+          <div className="mt-8">
+            <MatchPlayerStats playerStats={match.playerStats} />
+          </div>
+        )}
 
         {isFinished && (
           <section className="mt-6 grid gap-4 sm:grid-cols-3">
